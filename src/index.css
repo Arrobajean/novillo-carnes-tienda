@@ -1,126 +1,146 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 40 33% 98%;
-    --foreground: 20 10% 5%;
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 20 10% 5%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+ 
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 10% 5%;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
 
-    --primary: 0 68% 27%; /* Deep red */
-    --primary-foreground: 60 30% 96%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 30 25% 30%; /* Warm brown */
-    --secondary-foreground: 60 30% 96%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
 
-    --muted: 30 10% 96%;
-    --muted-foreground: 220 8% 46%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
 
-    --accent: 43 74% 49%; /* Gold */
-    --accent-foreground: 20 10% 5%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
 
-    --border: 20 5% 90%;
-    --input: 20 5% 90%;
-    --ring: 30 25% 30%;
+  --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+  --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+  --novillo-red: #bb2127;
+  --novillo-brown: #5b3920;
+  --novillo-light: #f2f0ef;
+  --novillo-gold: #d4af37;
+}
 
-  .dark {
-    /* We're not implementing dark mode for this project */
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    /* ... keep existing code ... */
-  }
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+ 
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.9%;
+
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+ 
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+
+  --ring: 212.7 26.8% 83.9%;
+}
+
+.product-card {
+  @apply rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:scale-105;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #8f54a0 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #8f54a0;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}
+
+.cm-theme-light {
+  --cm-color: #0D0D0D;
+  --cm-background: #F2F0EF;
+  --cm-selectionBackground: #7DD3FC;
+}
+
+.cm-theme-dark {
+  --cm-color: #F2F0EF;
+  --cm-background: #0D0D0D;
+  --cm-selectionBackground: #7DD3FC;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
 }
 
 @layer base {
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground font-sans;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
-  }
-  
-  /* Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Ensure transitions are smooth */
-  a, button, input, select, textarea {
-    @apply transition-all duration-200;
+    @apply bg-background text-foreground;
   }
 }
 
 @layer components {
-  .hero-gradient {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), var(--image-url);
-    background-size: cover;
-    background-position: center;
-  }
-
-  .product-card {
-    @apply bg-white rounded-md shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1;
-  }
-
-  .btn-primary {
-    @apply bg-novillo-red text-white hover:bg-red-900 transition-colors;
-  }
-
-  .btn-secondary {
-    @apply bg-novillo-brown text-white hover:bg-[#4A3328] transition-colors;
-  }
-
-  .section-padding {
-    @apply py-12 px-4 md:py-16 md:px-8 lg:py-20 lg:px-12;
-  }
-  
-  /* Page transition classes */
-  .page-enter {
-    @apply opacity-0 translate-y-4;
-  }
-  
-  .page-enter-active {
-    @apply opacity-100 translate-y-0 transition-all duration-300 ease-in-out;
-  }
-  
-  .page-exit {
-    @apply opacity-100;
-  }
-  
-  .page-exit-active {
-    @apply opacity-0 translate-y-4 transition-all duration-300 ease-in-out;
-  }
-  
-  /* Hover link effect */
-  .hover-link {
-    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-novillo-red after:transition-all after:duration-300 hover:after:w-full;
+  .container {
+    @apply max-w-7xl mx-auto w-full;
   }
 }
+
+/* Import home component styles */
+@import "./components/home/styles.css";
