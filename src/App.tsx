@@ -3,10 +3,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { CartProvider } from "@/context/CartContext";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { AnimatePresence, motion } from "framer-motion";
 
 // Pages
 import Index from "@/pages/Index";
@@ -19,6 +20,56 @@ import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Animation wrapper component
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
+  // Page transition variants
+  const pageVariants = {
+    initial: {
+      opacity: 0,
+      y: 10,
+    },
+    in: {
+      opacity: 1,
+      y: 0,
+    },
+    out: {
+      opacity: 0,
+      y: -10,
+    },
+  };
+
+  const pageTransition = {
+    type: "tween",
+    ease: "easeInOut",
+    duration: 0.3,
+  };
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location.pathname}
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+        transition={pageTransition}
+      >
+        <Routes location={location}>
+          <Route path="/" element={<Index />} />
+          <Route path="/productos" element={<Products />} />
+          <Route path="/productos/:id" element={<ProductDetail />} />
+          <Route path="/carrito" element={<Cart />} />
+          <Route path="/nosotros" element={<About />} />
+          <Route path="/contacto" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </motion.div>
+    </AnimatePresence>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -29,15 +80,7 @@ const App = () => (
           <div className="flex flex-col min-h-screen">
             <Navbar />
             <main className="flex-grow">
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/productos" element={<Products />} />
-                <Route path="/productos/:id" element={<ProductDetail />} />
-                <Route path="/carrito" element={<Cart />} />
-                <Route path="/nosotros" element={<About />} />
-                <Route path="/contacto" element={<Contact />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <AnimatedRoutes />
             </main>
             <Footer />
           </div>

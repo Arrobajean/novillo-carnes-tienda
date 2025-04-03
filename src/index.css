@@ -67,6 +67,16 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
   }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Ensure transitions are smooth */
+  a, button, input, select, textarea {
+    @apply transition-all duration-200;
+  }
 }
 
 @layer components {
@@ -90,5 +100,27 @@
 
   .section-padding {
     @apply py-12 px-4 md:py-16 md:px-8 lg:py-20 lg:px-12;
+  }
+  
+  /* Page transition classes */
+  .page-enter {
+    @apply opacity-0 translate-y-4;
+  }
+  
+  .page-enter-active {
+    @apply opacity-100 translate-y-0 transition-all duration-300 ease-in-out;
+  }
+  
+  .page-exit {
+    @apply opacity-100;
+  }
+  
+  .page-exit-active {
+    @apply opacity-0 translate-y-4 transition-all duration-300 ease-in-out;
+  }
+  
+  /* Hover link effect */
+  .hover-link {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-novillo-red after:transition-all after:duration-300 hover:after:w-full;
   }
 }
