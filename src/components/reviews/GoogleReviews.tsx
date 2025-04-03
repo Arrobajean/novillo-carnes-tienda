@@ -1,8 +1,8 @@
-
 import { useEffect, useState } from "react";
 import { ReviewCard } from "./ReviewCard";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
 
 // Estructura de datos temporales para mostrar en el diseño
 // Esta será reemplazada cuando integres la API de Google
