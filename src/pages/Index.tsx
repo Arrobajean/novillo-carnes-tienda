@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -6,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ProductCard } from '@/components/product/ProductCard';
 import { getFeaturedProducts, categories } from '@/data/products';
 import { Product } from '@/types';
+import { GoogleReviews } from '@/components/reviews/GoogleReviews';
 
 const Index = () => {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -166,6 +166,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Google Reviews Section */}
+      <GoogleReviews />
 
       {/* Testimonials Section */}
       <section className="py-16 px-4 bg-novillo-brown text-white">
