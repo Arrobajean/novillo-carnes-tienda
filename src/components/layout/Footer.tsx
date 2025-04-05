@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, MapPin, Phone, Mail, Clock } from "lucide-react";
 
@@ -17,18 +18,18 @@ export const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://facebook.com"
+                href="https://facebook.com/carneselnovillo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#CE1212] transition-colors"
+                className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors text-white"
               >
                 <Facebook size={20} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/carneselnovillo/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#CE1212] transition-colors"
+                className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors text-white"
               >
                 <Instagram size={20} />
               </a>
@@ -84,7 +85,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Hours */}
+          {/* Hours & Delivery */}
           <div>
             <h3 className="text-xl font-sans font-semibold mb-4 text-white">
               Horarios
@@ -104,6 +105,11 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
+            <div className="mt-4 bg-[#CE1212]/10 p-3 rounded-lg">
+              <p className="text-gray-300 font-medium">
+                <span className="text-[#D4AF37]">✓</span> ¡Hacemos entregas a domicilio!
+              </p>
+            </div>
           </div>
         </div>
 

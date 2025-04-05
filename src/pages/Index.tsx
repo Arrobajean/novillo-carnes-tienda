@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import { getFeaturedProducts, categories } from '@/data/products';
 import { Product } from '@/types';
-import { GoogleReviews } from '@/components/reviews/GoogleReviews';
 import { HeroSection } from '@/components/home/HeroSection';
 import { AboutSection } from '@/components/home/AboutSection';
 import { CategoriesSection } from '@/components/home/CategoriesSection';
@@ -31,9 +30,6 @@ const Index = () => {
 
       {/* Featured Products Section */}
       <FeaturedProductsSection products={featuredProducts} />
-
-      {/* Google Reviews Section */}
-      <GoogleReviews />
 
       {/* Testimonials Section */}
       <TestimonialsSection />

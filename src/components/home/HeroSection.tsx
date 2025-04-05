@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -12,12 +13,12 @@ export const HeroSection = () => {
         } as React.CSSProperties
       }
     >
-      <div className="container mx-auto px-4 z-10">
+      <div className="container mx-auto px-4 z-10 relative">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in">
             Tradición y Calidad en Cada Corte
           </h1>
-          <p className="text-xl md:text-2xl mb-8 animate-fade-in text-white/90">
+          <p className="text-xl md:text-2xl mb-8 animate-fade-in opacity-100 text-white">
             Descubre los mejores cortes de carne fresca, seleccionados por
             expertos para tu mesa
           </p>

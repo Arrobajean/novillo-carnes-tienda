@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCart, Menu, X } from "lucide-react";
@@ -17,13 +18,9 @@ export const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
-              src="/logo.png"
+              src="/lovable-uploads/ad88ae2f-4290-481b-9136-cd76d4c7eac1.png"
               alt="Carnes el Novillo"
-              className="h-12 w-auto"
-              onError={(e) => {
-                e.currentTarget.src =
-                  "https://placehold.co/200x80?text=Carnes+El+Novillo";
-              }}
+              className="h-14 w-auto"
             />
           </Link>
 

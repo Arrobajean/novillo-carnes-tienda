@@ -40,8 +40,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Dirección</h3>
-                    <p className="text-gray-600">Av. Providencia 1234, Providencia</p>
-                    <p className="text-gray-600">Santiago, Chile</p>
+                    <p className="text-gray-600">Pablo Urzúa 1489, local 2</p>
+                    <p className="text-gray-600">Independencia, Santiago, Chile</p>
                   </div>
                 </div>
                 
@@ -51,8 +51,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Teléfono</h3>
-                    <p className="text-gray-600">+56 2 2123 4567</p>
-                    <p className="text-gray-600">+56 9 1234 5678 (WhatsApp)</p>
+                    <p className="text-gray-600">+56 9 5840 4733</p>
+                    <p className="text-gray-600">+56 9 5840 4733 (WhatsApp)</p>
                   </div>
                 </div>
                 
@@ -73,7 +73,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Horarios de Atención</h3>
-                    <p className="text-gray-600">Lunes a Viernes: 9:00 - 19:00</p>
+                    <p className="text-gray-600">Lunes a Viernes: 9:00 - 22:00</p>
                     <p className="text-gray-600">Sábados: 9:00 - 14:00</p>
                     <p className="text-gray-600">Domingos: Cerrado</p>
                   </div>
@@ -84,7 +84,7 @@ const Contact = () => {
                 <h3 className="text-xl font-serif font-semibold mb-4">Síguenos en Redes Sociales</h3>
                 <div className="flex space-x-4">
                   <a 
-                    href="https://facebook.com" 
+                    href="https://facebook.com/carneselnovillo" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors"
@@ -94,7 +94,7 @@ const Contact = () => {
                     </svg>
                   </a>
                   <a 
-                    href="https://instagram.com" 
+                    href="https://www.instagram.com/carneselnovillo/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white p-3 rounded-full hover:opacity-90 transition-opacity"
@@ -112,7 +112,7 @@ const Contact = () => {
               <h2 className="text-3xl font-serif font-semibold mb-8 text-gray-800">Nuestra Ubicación</h2>
               <div className="bg-gray-200 rounded-lg overflow-hidden shadow-md h-[400px]">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53251.52886465996!2d-70.64176167832032!3d-33.45150800000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf6f0856fd15%3A0x5eb3a769ed8f3010!2sAv.%20Providencia%2C%20Providencia%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1ses-419!2s!4v1662021200000!5m2!1ses-419!2s" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.055407563578!2d-70.6656081231582!3d-33.422329997356595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c7a16bc4132f%3A0xe7ff1ab63c47f5ce!2sCarnes%20El%20Novillo!5e0!3m2!1ses-419!2scl!4v1712598758267!5m2!1ses-419!2scl" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
@@ -127,7 +127,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ Section - with delivery info */}
       <section className="py-16 px-4 bg-novillo-light">
         <div className="container mx-auto">
           <div className="text-center mb-12">
@@ -196,7 +196,7 @@ const Contact = () => {
           <Button 
             size="lg" 
             className="bg-novillo-red hover:bg-red-900 text-white"
-            onClick={() => window.open('https://wa.me/56912345678', '_blank')}
+            onClick={() => window.open('https://wa.me/56958404733', '_blank')}
           >
             Contáctanos por WhatsApp
           </Button>
