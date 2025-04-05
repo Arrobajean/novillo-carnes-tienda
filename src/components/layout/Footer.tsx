@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, MapPin, Phone, Mail, Clock } from "lucide-react";
 
@@ -85,7 +84,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Hours & Delivery */}
+          {/* Hours */}
           <div>
             <h3 className="text-xl font-sans font-semibold mb-4 text-white">
               Horarios
@@ -105,11 +104,6 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-            <div className="mt-4 bg-[#CE1212]/10 p-3 rounded-lg">
-              <p className="text-gray-300 font-medium">
-                <span className="text-[#D4AF37]">✓</span> ¡Hacemos entregas a domicilio!
-              </p>
-            </div>
           </div>
         </div>
 

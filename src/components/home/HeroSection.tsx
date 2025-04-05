@@ -1,34 +1,37 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export const HeroSection = () => {
   return (
     <section
-      className="hero-gradient relative h-[500px] md:h-[600px] flex items-center text-white"
+      className="hero-gradient relative h-[600px] md:h-[650px] flex items-center text-white"
       style={
         {
           "--image-url":
-            'url("https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?q=80&w=2000")',
+            'url("https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=2000")',
         } as React.CSSProperties
       }
     >
       <div className="container mx-auto px-4 z-10 relative">
         <div className="max-w-2xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in">
-            Tradición y Calidad en Cada Corte
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in">
+            Los Mejores Cortes Para <br />
+            <span className="text-[#D4AF37]">Tu Mesa</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 animate-fade-in opacity-100 text-white">
-            Descubre los mejores cortes de carne fresca, seleccionados por
-            expertos para tu mesa
+          <p className="text-xl md:text-2xl mb-8 animate-fade-in opacity-100 text-white/90">
+            Carnes seleccionadas de la mejor calidad, con más de 35 años de tradición y excelencia
           </p>
           <div className="flex flex-wrap gap-4 animate-fade-in">
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-primary/80 text-white"
+              className="bg-[#CE1212] hover:bg-[#CE1212]/80 text-white"
             >
-              <Link to="/productos">Ver Productos</Link>
+              <Link to="/productos" className="flex items-center gap-2">
+                Ver Catálogo <ArrowRight className="h-5 w-5" />
+              </Link>
             </Button>
             <Button
               asChild
@@ -36,8 +39,15 @@ export const HeroSection = () => {
               variant="outline"
               className="border-white text-white hover:bg-white/10"
             >
-              <Link to="/nosotros">Conocer Más</Link>
+              <Link to="/nosotros">Conocer Nuestra Historia</Link>
             </Button>
+          </div>
+          
+          <div className="mt-10 flex items-center gap-4 bg-black/30 backdrop-blur-sm p-4 rounded-lg w-fit animate-fade-in">
+            <div className="bg-[#D4AF37] h-12 w-1 rounded-full"></div>
+            <p className="text-lg">
+              Envíos a domicilio en<br />toda la Región Metropolitana
+            </p>
           </div>
         </div>
       </div>

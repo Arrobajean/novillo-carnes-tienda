@@ -1,7 +1,5 @@
-
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { GoogleReviews } from '@/components/reviews/GoogleReviews';
 
 const Contact = () => {
   return (
@@ -182,9 +180,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-      {/* Google Reviews Section */}
-      <GoogleReviews />
 
       {/* CTA Section */}
       <section className="py-16 px-4 bg-white">
