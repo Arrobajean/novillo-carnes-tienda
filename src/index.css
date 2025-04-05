@@ -2,145 +2,151 @@
 @tailwind components;
 @tailwind utilities;
 
+/* === Variables de color === */
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
+  --background: #000000;
+  --foreground: #EEEEEE;
 
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
- 
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
+  --card: #000000;
+  --card-foreground: #EEEEEE;
 
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
+  --popover: #000000;
+  --popover-foreground: #EEEEEE;
 
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
+  --primary: #CF0A0A;
+  --primary-foreground: #EEEEEE;
 
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
+  --secondary: #DC5F00;
+  --secondary-foreground: #EEEEEE;
 
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
+  --muted: #EEEEEE;
+  --muted-foreground: #000000;
 
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
+  --accent: #000000;
+  --accent-foreground: #EEEEEE;
 
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
+  --destructive: #CF0A0A;
+  --destructive-foreground: #EEEEEE;
 
-  --ring: 222.2 84% 4.9%;
+  --border: #DC5F00;
+  --input: #DC5F00;
+  --ring: #CF0A0A;
 
   --radius: 0.5rem;
 
-  --novillo-red: #bb2127;
-  --novillo-brown: #5b3920;
-  --novillo-light: #f2f0ef;
-  --novillo-gold: #d4af37;
+  /* Marca Novillo */
+  --novillo-red: #CF0A0A;
+  --novillo-orange: #DC5F00;
+  --novillo-black: #000000;
+  --novillo-light: #EEEEEE;
+  --novillo-gold: #D4AF37;
 }
 
+/* Dark Mode */
 .dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
- 
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
-
-  --primary: 210 40% 98%;
-  --primary-foreground: 222.2 47.4% 11.2%;
-
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
-
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.9%;
-
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
-
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
- 
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-
-  --ring: 212.7 26.8% 83.9%;
+  --background: #000000;
+  --foreground: #EEEEEE;
 }
 
-.product-card {
-  @apply rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:scale-105;
-}
-
+/* Reset base */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  @apply border-border;
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
+/* Tipografía y estilos base */
+@layer base {
+  body {
+    @apply font-sans bg-background text-foreground;
+    line-height: 1.6;
+  }
+
+  h1 {
+    @apply font-sans text-4xl font-bold leading-tight mb-4 text-foreground;
+  }
+
+  h2 {
+    @apply font-sans text-3xl font-semibold leading-snug mb-3 text-foreground;
+  }
+
+  h3 {
+    @apply font-sans text-2xl font-semibold leading-snug mb-2 text-foreground;
+  }
+
+  h4 {
+    @apply font-sans text-xl font-medium leading-snug mb-2 text-foreground;
+  }
+
+  h5 {
+    @apply font-sans text-lg font-medium mb-1 text-foreground;
+  }
+
+  h6 {
+    @apply font-sans text-base font-medium mb-1 text-foreground;
+  }
+
+  p {
+    @apply text-base leading-relaxed mb-2 text-muted-foreground;
+  }
+
+  ul,
+  ol {
+    @apply list-inside list-disc text-muted-foreground;
+  }
+
+  small {
+    @apply text-sm text-muted-foreground;
+  }
 }
 
-/* ===== Scrollbar CSS ===== */
-/* Firefox */
-* {
-  scrollbar-width: auto;
-  scrollbar-color: #8f54a0 #ffffff;
+/* Scrollbars con estilo */
+@layer utilities {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #CF0A0A #000000;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #CF0A0A;
+    border-radius: 10px;
+    border: 2px solid #000000;
+  }
 }
 
-/* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 10px;
+/* Tarjeta de producto */
+.product-card {
+  @apply rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:scale-105;
 }
 
-*::-webkit-scrollbar-track {
-  background: #ffffff;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #8f54a0;
-  border-radius: 10px;
-  border: 3px solid #ffffff;
-}
-
+/* CodeMirror Themes */
 .cm-theme-light {
-  --cm-color: #0D0D0D;
-  --cm-background: #F2F0EF;
-  --cm-selectionBackground: #7DD3FC;
+  --cm-color: #000000;
+  --cm-background: #EEEEEE;
+  --cm-selectionBackground: #CF0A0A;
 }
 
 .cm-theme-dark {
-  --cm-color: #F2F0EF;
-  --cm-background: #0D0D0D;
-  --cm-selectionBackground: #7DD3FC;
+  --cm-color: #EEEEEE;
+  --cm-background: #000000;
+  --cm-selectionBackground: #CF0A0A;
 }
 
-.dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
+/* Container responsive */
 @layer components {
   .container {
     @apply max-w-7xl mx-auto w-full;
   }
 }
 
-/* Import home component styles */
+/* Importaciones adicionales */
 @import "./components/home/styles.css";

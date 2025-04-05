@@ -1,27 +1,32 @@
-
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { ProductCard } from '@/components/product/ProductCard';
-import { Product } from '@/types';
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ProductCard } from "@/components/product/ProductCard";
+import { Product } from "@/types";
 
 interface FeaturedProductsSectionProps {
   products: Product[];
 }
 
-export const FeaturedProductsSection = ({ products }: FeaturedProductsSectionProps) => {
+export const FeaturedProductsSection = ({
+  products,
+}: FeaturedProductsSectionProps) => {
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="py-16 px-4 bg-background">
       <div className="container mx-auto">
         <div className="flex justify-between items-center mb-10">
           <div>
-            <h2 className="text-3xl font-serif font-semibold text-gray-800">Productos Destacados</h2>
-            <p className="text-gray-600">Nuestras mejores selecciones para ti</p>
+            <h2 className="text-3xl font-semibold text-foreground">
+              Productos Destacados
+            </h2>
+            <p className="text-foreground/70">
+              Nuestras mejores selecciones para ti
+            </p>
           </div>
-          <Button 
+          <Button
             asChild
-            variant="link" 
-            className="text-novillo-red hover:text-red-900"
+            variant="link"
+            className="text-primary hover:text-primary/80"
           >
             <Link to="/productos" className="inline-flex items-center">
               Ver todos los productos
@@ -29,7 +34,7 @@ export const FeaturedProductsSection = ({ products }: FeaturedProductsSectionPro
             </Link>
           </Button>
         </div>
-        
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
