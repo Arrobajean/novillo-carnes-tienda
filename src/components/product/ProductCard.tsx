@@ -20,7 +20,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <div
-      className="product-card group bg-[#1B1717] text-[#EEEBDD] shadow-md hover:shadow-lg transition-shadow duration-300 rounded-lg overflow-hidden"
+      className="product-card group bg-black text-[#EEEBDD] shadow-md hover:shadow-lg transition-shadow duration-300 rounded-lg overflow-hidden"
       aria-label={`Producto: ${product.name}`}
     >
       <Link to={`/productos/${product.id}`} className="block">
@@ -40,26 +40,23 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
         {/* Contenido textual */}
         <div className="p-4">
-          {/* Nombre del producto animado suavemente */}
           <h3 className="text-lg font-semibold mb-1 text-white transition-transform duration-300 group-hover:scale-[1.02]">
             {product.name}
           </h3>
 
-          {/* Descripción corta */}
           <p className="text-sm text-[#CCC] mb-2 line-clamp-2">
             {product.description}
           </p>
 
-          {/* Precio y botón agregar */}
           <div className="flex items-center justify-between mt-4">
-            <span className="font-semibold text-[#CE1212]">
+            <span className="font-semibold text-novillo-red">
               {formatPrice(product.price)}{" "}
               <span className="text-sm text-[#AAA]">/ {product.unit}</span>
             </span>
 
             <Button
               size="sm"
-              className="bg-[#CE1212] hover:bg-[#810000] text-white transition-colors"
+              className="bg-novillo-red hover:bg-novillo-dark text-white transition-colors"
               onClick={handleAddToCart}
               aria-label={`Agregar ${product.name} al carrito`}
             >

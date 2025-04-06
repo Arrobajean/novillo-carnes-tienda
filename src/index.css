@@ -5,7 +5,6 @@
 /* === Variables de color === */
 :root {
   --background: #000000;
-  --foreground: #EEEEEE;
 
   --card: #000000;
   --card-foreground: #EEEEEE;
@@ -131,12 +130,10 @@
 /* CodeMirror Themes */
 .cm-theme-light {
   --cm-color: #000000;
-  --cm-background: #EEEEEE;
   --cm-selectionBackground: #CF0A0A;
 }
 
 .cm-theme-dark {
-  --cm-color: #EEEEEE;
   --cm-background: #000000;
   --cm-selectionBackground: #CF0A0A;
 }

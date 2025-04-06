@@ -19,9 +19,9 @@ export default {
     },
     extend: {
       colors: {
-        /* === 🎨 PALETA OFICIAL FINAL === */
+        /* === 🎨 PALETA OFICIAL === */
         primary: {
-          DEFAULT: "#CE1212", // rojo fuerte
+          DEFAULT: "#CF0A0A", // rojo principal nuevo
           foreground: "#FFFFFF",
         },
         secondary: {
@@ -32,10 +32,16 @@ export default {
           DEFAULT: "#1B1717", // marrón casi negro
           foreground: "#FFFFFF",
         },
-        background: "#EEEBDD", // gris amarillento claro
-        foreground: "#1B1717", // texto base
+        background: {
+          DEFAULT: "#000000", // ✅ fondo negro corregido
+          light: "#EEEBDD", // opcional
+        },
+        foreground: {
+          DEFAULT: "#EEEBDD", // ✅ texto claro
+          dark: "#1B1717", // opcional
+        },
 
-        /* === OPCIONALES (no obligatorios pero útiles) */
+        /* === OPCIONALES Y SEMÁNTICOS === */
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -67,12 +73,13 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
 
-        /* === namespace opcional para iconos, badges, etc === */
+        /* === Paleta personalizada (Color Hunt) === */
         novillo: {
-          red: "#CE1212",
+          light: "#EEEBDD",
+          red: "#CF0A0A",
           darkred: "#810000",
           dark: "#1B1717",
-          light: "#EEEBDD",
+          white: "#FFFFFF",
           gold: "#D4AF37",
         },
       },
@@ -82,9 +89,10 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+
       fontFamily: {
-        serif: ["Playfair Display", "serif"], // disponible si lo necesitas
-        sans: ["Poppins", "sans-serif"], // fuente base
+        serif: ["Playfair Display", "serif"],
+        sans: ["Poppins", "sans-serif"],
       },
 
       keyframes: {
@@ -101,6 +109,7 @@ export default {
           "100%": { opacity: "1" },
         },
       },
+
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

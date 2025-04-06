@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -24,20 +23,10 @@ const queryClient = new QueryClient();
 const AnimatedRoutes = () => {
   const location = useLocation();
 
-  // Page transition variants
   const pageVariants = {
-    initial: {
-      opacity: 0,
-      y: 10,
-    },
-    in: {
-      opacity: 1,
-      y: 0,
-    },
-    out: {
-      opacity: 0,
-      y: -10,
-    },
+    initial: { opacity: 0, y: 10 },
+    in: { opacity: 1, y: 0 },
+    out: { opacity: 0, y: -10 },
   };
 
   const pageTransition = {
@@ -77,9 +66,9 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen bg-background text-foreground font-sans">
             <Navbar />
-            <main className="flex-grow">
+            <main className="flex-grow bg-background text-foreground font-sans">
               <AnimatedRoutes />
             </main>
             <Footer />

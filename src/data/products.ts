@@ -79,11 +79,11 @@ export const products: Product[] = [
   },
   {
     id: 9,
-    name: "Promoción Familiar",
+    name: "Combo Semana",
     description:
-      "Promoción Familiar: Combo completo que ofrece una variada selección de cortes exquisitos, diseñado para compartir y disfrutar en grupo.",
+      "Descubre el Combo Semana, la selección ideal para darle variedad y sabor a tus recetas diarias. Con 1kg de carne molida, 1kg de bistec, 1kg de chuleta ahumada, 1kg de truto cuarto y 1kg de pechuga entera, este combo te ofrece la versatilidad perfecta para asados, guisos y platillos caseros. Calidad y frescura garantizadas para que disfrutes de una semana llena de delicias culinarias.",
     price: 22990,
-    image: "/public/images/products/combo-familiar.png",
+    image: "/public/images/products/combo-semana.png",
     category: "promociones",
     unit: "pack",
   },
@@ -152,11 +152,11 @@ export const products: Product[] = [
   },
   {
     id: 16,
-    name: "Combo Exótico",
+    name: "Combo Sabor a la brasa",
     description:
-      "Combo Exótico: Pack innovador que combina sabores sorprendentes y cortes únicos, diseñado para quienes buscan experiencias culinarias distintas.",
+      "la opción ideal para realzar tus asados. Incluye una bandeja de anticuchos, 1kg de medallones de pollo y una salsa para sazonar que realza cada corte, garantizando un toque de sabor auténtico en cada preparación. Perfecto para compartir momentos especiales con amigos y familiares.",
     price: 23490,
-    image: "/images/combos/combo-exotico.jpg",
+    image: "/public/images/products/combo-sabor-brasa.png",
     category: "promociones",
     unit: "pack",
   },
@@ -176,7 +176,7 @@ export const products: Product[] = [
     description:
       "Descubre el Combo Novillo, una cuidada selección de cortes para inspirar tus creaciones en la cocina: 1kg de Bisteck Asiento, 1kg de Carne para Mechar o Guisar, 1kg de Carne Molida Especial, 1kg de Truto, 1kg de Pechuga Deshuesada, 1kg de Pulpa de Cerdo y 1kg de Chuleta Centro. ¡La opción ideal para disfrutar de calidad y versatilidad en cada preparación!",
     price: 52990,
-    image: "/public/images/products/Combo Novillo.png",
+    image: "/public/images/products/Combo-novillo.png",
     category: "promociones",
     unit: "pack",
   },
@@ -190,7 +190,7 @@ export const products: Product[] = [
     price: 9990,
     image: "/public/images/products/anticucho.png",
     category: "cerdo",
-    unit: "unidad",
+    unit: "bandeja",
   },
   {
     id: 20,
