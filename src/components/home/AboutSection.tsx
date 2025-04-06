@@ -4,30 +4,34 @@ import { Button } from "@/components/ui/button";
 
 export const AboutSection = () => {
   return (
-    <section className="py-16 px-4 bg-background">
+    <section className="py-16 px-4 bg-[#1B1717] text-[#EEEBDD] font-sans">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Texto */}
           <div>
-            <h2 className="text-3xl font-semibold mb-6 text-foreground">
+            <h2 className="text-3xl font-bold mb-6 text-white">
               Nuestra Historia
             </h2>
-            <p className="text-foreground mb-4">
-              Desde 1985, en{" "}
-              <span className="font-semibold">Carnes el Novillo</span> nos
-              dedicamos a ofrecer la mejor calidad en carnes frescas para las
-              familias chilenas. Nuestra tradición familiar nos ha permitido
-              seleccionar los mejores productos, garantizando frescura y sabor
-              en cada corte.
+            <p className="mb-4">
+              Fundada en 2020,{" "}
+              <span className="text-[#CE1212] font-semibold">
+                Carnes El Novillo
+              </span>{" "}
+              nace del compromiso de una familia apasionada por la buena carne.
+              Desde nuestros inicios en Santiago, nos propusimos llevar a la
+              mesa de cada cliente productos frescos, sabrosos y de origen
+              responsable.
             </p>
-            <p className="text-foreground mb-6">
-              Trabajamos directamente con productores locales para asegurar la
-              trazabilidad de nuestros productos y mantener los más altos
-              estándares de calidad en todo nuestro proceso.
+            <p className="mb-6">
+              Con un enfoque en calidad y cercanía, trabajamos directamente con
+              productores locales y seleccionamos cada corte pensando en el
+              sabor y la tradición chilena. Nos hemos ganado la confianza de
+              cientos de familias que nos eligen semana a semana.
             </p>
             <Button
               asChild
               variant="link"
-              className="text-primary hover:text-primary/80 p-0 h-auto font-medium"
+              className="text-[#CE1212] hover:text-[#CE1212]/80 p-0 h-auto font-semibold"
             >
               <Link to="/nosotros" className="inline-flex items-center">
                 Conoce nuestra historia
@@ -35,16 +39,17 @@ export const AboutSection = () => {
               </Link>
             </Button>
           </div>
+
+          {/* Imagen */}
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1551446358-5e2aa499369f?q=80&w=1000"
               alt="Carnicería El Novillo"
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
-            <div className="absolute -bottom-8 -left-8 bg-primary text-white p-6 rounded-lg shadow-lg max-w-[250px] hidden md:block">
-              <p className="text-lg font-semibold">
-                "Más de 35 años ofreciendo los mejores cortes de carne para tu
-                familia"
+            <div className="absolute -bottom-8 -left-8 bg-[#CE1212] text-white p-6 rounded-lg shadow-lg max-w-[280px] hidden md:block">
+              <p className="text-base font-semibold leading-snug">
+                “Desde 2020, calidad y sabor auténtico para tu familia”
               </p>
             </div>
           </div>

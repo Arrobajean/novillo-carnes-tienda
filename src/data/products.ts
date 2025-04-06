@@ -83,8 +83,7 @@ export const products: Product[] = [
     description:
       "Promoción Familiar: Combo completo que ofrece una variada selección de cortes exquisitos, diseñado para compartir y disfrutar en grupo.",
     price: 22990,
-    image:
-      "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?q=80&w=1000",
+    image: "/public/images/products/combo-familiar.png",
     category: "promociones",
     unit: "pack",
   },
@@ -123,11 +122,11 @@ export const products: Product[] = [
   // --- COMBOS ---
   {
     id: 13,
-    name: "Combo Mamá",
+    name: "Combo Fuego y Sazón",
     description:
-      "Combo Mamá: Pack completo con una cuidada selección de carnes y complementos, ideal para ofrecer variedad y calidad en cualquier asado.",
+      "La selección perfecta para un asado inolvidable. Este combo reúne 1kg de carne para asar, 1kg de costillar de cerdo, 1kg de ala entera y 1kg de longanizas, acompañado de una bolsa de carbón y la exclusiva salsa para sazonar especial del Novillo. Ideal para transformar cualquier reunión en una experiencia gourmet llena de sabor y calidad.",
     price: 35990,
-    image: "/images/combos/combo-mama.jpg",
+    image: "/public/images/products/combo-fuego-sazon.png",
     category: "promociones",
     unit: "pack",
   },
@@ -135,19 +134,19 @@ export const products: Product[] = [
     id: 14,
     name: "Combo Novillo Parrillero",
     description:
-      "Combo Novillo Parrillero: Conjunto premium que reúne cortes exclusivos y complementos de alta calidad para una experiencia de asado inigualable.",
+      "Disfruta del auténtico sabor de la parrilla con el Combo Novillo Parrillero: 1kg de lomo liso, 1kg de chuleta vetada, 1kg de truto, 1kg de longanizas, 2,5kg de carbón y una salsa para sazonar, todo lo necesario para un asado inolvidable.",
     price: 31990,
-    image: "/images/combos/novillo-parrillero.jpg",
+    image: "/public/images/products/combo-parrillero2.png",
     category: "promociones",
     unit: "pack",
   },
   {
     id: 15,
-    name: "Combo Para Ti",
+    name: "Combo Delicias Mixtas",
     description:
-      "Combo Para Ti: Selección equilibrada de cortes suculentos que ofrece versatilidad y sabor, perfecta para todo tipo de preparaciones.",
+      "Una exclusiva selección de cortes premium para inspirar tus recetas. Incluye ½ pulpa de cerdo, ½ bisteck, ½kg de filetillo, ½kg de truto y ½kg de carne molida, ideales para guisos, platillos gourmet o preparaciones caseras. Calidad, frescura y sabor auténtico en cada bocado para deleitar tu paladar.",
     price: 19990,
-    image: "/images/combos/combo-parati.jpg",
+    image: "/public/images/products/combo-delicias.png",
     category: "promociones",
     unit: "pack",
   },
@@ -175,9 +174,9 @@ export const products: Product[] = [
     id: 18,
     name: "Combo Novillo",
     description:
-      "Combo Novillo: Pack exclusivo que ofrece una amplia gama de cortes premium, diseñado para satisfacer a los paladares más exigentes.",
+      "Descubre el Combo Novillo, una cuidada selección de cortes para inspirar tus creaciones en la cocina: 1kg de Bisteck Asiento, 1kg de Carne para Mechar o Guisar, 1kg de Carne Molida Especial, 1kg de Truto, 1kg de Pechuga Deshuesada, 1kg de Pulpa de Cerdo y 1kg de Chuleta Centro. ¡La opción ideal para disfrutar de calidad y versatilidad en cada preparación!",
     price: 52990,
-    image: "/images/combos/combo-novillo.jpg",
+    image: "/public/images/products/Combo Novillo.png",
     category: "promociones",
     unit: "pack",
   },
@@ -187,9 +186,9 @@ export const products: Product[] = [
     id: 19,
     name: "Anticuchos",
     description:
-      "Anticuchos: Brochetas de carne de primera, con un equilibrio perfecto entre sabor y textura, ideales para cualquier reunión o evento.",
+      "Brochetas de carne, pollo y cerdo de primera, con un equilibrio perfecto entre sabor y textura, ideales para cualquier reunión o evento.",
     price: 9990,
-    image: "",
+    image: "/public/images/products/anticucho.png",
     category: "cerdo",
     unit: "unidad",
   },
@@ -228,7 +227,7 @@ export const products: Product[] = [
     id: 23,
     name: "Tocineta",
     description:
-      "Tocineta: Lonchas delgadas y premium con un toque ahumado que aportan un perfil de sabor único y distintivo a cualquier receta.",
+      "Lonchas delgadas y premium con un toque ahumado que aportan un perfil de sabor único y distintivo a cualquier receta.",
     price: 13490,
     image: "/public/images/products/tocineta.webp",
     category: "cerdo",
@@ -238,7 +237,7 @@ export const products: Product[] = [
     id: 24,
     name: "Lomo Vetado",
     description:
-      "Lomo Vetado: Corte excepcional de vacuno que combina un balance perfecto de grasa y carne, garantizando una experiencia culinaria superior.",
+      "Corte excepcional de vacuno que combina un balance perfecto de grasa y carne, garantizando una experiencia culinaria superior.",
     price: 19990,
     image: "/public/images/products/lomo-vetado.webp",
     category: "vacuno",
@@ -366,16 +365,16 @@ export const products: Product[] = [
     category: "aves",
     unit: "unidad",
   },
-  // {
-  //   id: 37,
-  //   name: "Trutro Ala",
-  //   description:
-  //     "Trutro Ala: Corte de cerdo diseñado para parrillas, que ofrece un sabor intenso y una textura inigualable en cada bocado.",
-  //   price: 5599,
-  //   image: "",
-  //   category: "cerdo",
-  //   unit: "kg",
-  // },
+  {
+    id: 37,
+    name: "Carne Molida de Pollo",
+    description:
+      "Nuestra Carne Molida de Pollo es la opción fresca y versátil que buscas para tus recetas. Elaborada con carne de alta calidad, su textura suave y sabor natural la hacen ideal para preparar hamburguesas, albóndigas o cualquier platillo ligero y nutritivo.",
+    price: 5599,
+    image: "/public/images/products/picadodecorral.webp",
+    category: "aves",
+    unit: "kg",
+  },
   {
     id: 38,
     name: "Pechuga de Pollo Entera",
@@ -396,16 +395,16 @@ export const products: Product[] = [
     category: "cerdo",
     unit: "kg",
   },
-  // {
-  //   id: 40,
-  //   name: "Costillar",
-  //   description:
-  //     "Costillar: Corte robusto de costillas de cerdo, caracterizado por su sabor profundo y textura que se deshace en cada bocado.",
-  //   price: 7490,
-  //   image: "",
-  //   category: "cerdo",
-  //   unit: "kg",
-  // },
+  {
+    id: 40,
+    name: "Pollo Entero",
+    description:
+      "la elección perfecta para asar y disfrutar en familia. Criado de manera natural, este pollo ofrece un sabor auténtico, jugoso y tierno que realza cualquier receta casera. En Carnes el Novillo nos enorgullece ofrecer carne de pollo de la más alta calidad, seleccionada cuidadosamente para garantizar una experiencia gastronómica excepcional. Ideal para preparar asados memorables, este producto sin aditivos te brinda la frescura y el sabor que buscas.",
+    price: 7490,
+    image: "/public/images/products/pollocorral.webp",
+    category: "aves",
+    unit: "kg",
+  },
   {
     id: 41,
     name: "Chuleta Vetada",
