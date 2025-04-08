@@ -25,8 +25,9 @@ export const AboutSection = () => {
             <p className="mb-6">
               Con un enfoque en calidad y cercanía, trabajamos directamente con
               productores locales y seleccionamos cada corte pensando en el
-              sabor y la tradición chilena. Nos hemos ganado la confianza de
-              cientos de familias que nos eligen semana a semana.
+              sabor y la tradicióaaaaaaaaaaaaaaaaaaaaaaaaaaaan chilena. Nos
+              hemos ganado la confianza de cientos de familias que nos eligen
+              semana a semana.
             </p>
             <Button
               asChild
@@ -43,7 +44,7 @@ export const AboutSection = () => {
           {/* Imagen */}
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1551446358-5e2aa499369f?q=80&w=1000"
+              src="/public/images/ui/pedidos-novillo.jpg"
               alt="Carnicería El Novillo"
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />

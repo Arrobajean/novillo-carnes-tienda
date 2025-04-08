@@ -17,20 +17,22 @@ const About = () => {
         className="hero-gradient relative h-[400px] flex items-center text-white"
         style={
           {
-            "--image-url":
-              'url("https://images.unsplash.com/photo-1553163147-622ab57be1c7?q=80&w=2000")',
+            "--image-url": 'url("/public/images/el-novillo2.webp")',
           } as React.CSSProperties
         }
       >
         <div className="container mx-auto px-4 z-10">
-          <div className="max-w-2xl">
-            <h1 className="text-5xl font-bold mb-4 font-sans">
-              Nuestra Historia
-            </h1>
+          <motion.div
+            className="max-w-2xl"
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+          >
+            <h1 className="text-5xl font-bold mb-4">Nuestra Historia</h1>
             <p className="text-xl">
               Calidad, tradición y compromiso desde 2020
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -44,24 +46,50 @@ const About = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-6 text-white">
+              <h2 className="text-3xl font-bold mb-6">
                 Un comienzo con propósito
               </h2>
               <p className="mb-4">
-                Fundada en 2020, <strong>Carnes El Novillo</strong> nació con la
-                misión de ofrecer carnes de alta calidad a precios justos. En
-                plena pandemia, vimos la oportunidad de apoyar a nuestras
-                comunidades ofreciendo productos confiables y un trato cercano.
+                Fundada en 2020,{" "}
+                <strong className="text-novillo-gold">Carnes El Novillo</strong>{" "}
+                nació en uno de los momentos más desafiantes de nuestra historia
+                reciente. En plena pandemia, decidimos abrir nuestras puertas
+                con una misión clara: ofrecer{" "}
+                <span className="text-novillo-gold">
+                  carnes de excelente calidad
+                </span>{" "}
+                a precios justos, convirtiéndonos en un pilar de apoyo para
+                nuestras comunidades en tiempos de incertidumbre.
               </p>
               <p className="mb-4">
-                Desde nuestros inicios en Santiago, hemos trabajado con
-                productores locales para entregar cortes frescos y
-                seleccionados, respetando siempre el origen y las tradiciones
-                chilenas.
+                Estamos ubicados en{" "}
+                <strong className="text-novillo-gold">Pablo Urzúa 1489</strong>,
+                en el corazón de la comuna de{" "}
+                <strong className="text-novillo-gold">Independencia</strong>,
+                donde nos hemos consolidado como referentes en el rubro cárnico,
+                tanto en esta comuna como en zonas aledañas.
+              </p>
+              <p className="mb-4">
+                Nuestra historia es también la historia de nuestros vecinos.
+                Muchos de quienes hoy son clientes fieles fueron los primeros en
+                apoyarnos cuando comenzamos, recomendándonos entre familias y
+                amigos. Gracias a ellos, crecimos no solo como negocio, sino
+                como parte de una comunidad que valora el esfuerzo local y la
+                cercanía en el servicio.
+              </p>
+              <p className="mb-4">
+                Trabajamos con productores locales para ofrecer{" "}
+                <span className="text-novillo-gold">cortes frescos</span>,
+                respetando la trazabilidad y la tradición de la cocina chilena.
+                Desde entrañas premium hasta costillares y carnes molidas
+                especiales, cada corte es una muestra de nuestro compromiso.
               </p>
               <p>
-                Nos enorgullece ser una carnicería que entiende lo que valoran
-                las familias chilenas: calidad, honestidad y un buen servicio.
+                En{" "}
+                <strong className="text-novillo-gold">Carnes El Novillo</strong>{" "}
+                no solo vendemos carne, construimos confianza en cada corte y
+                llevamos sabor a miles de mesas chilenas. Nos enorgullece ser
+                parte de tus celebraciones, asados y comidas en familia.
               </p>
             </motion.div>
 
@@ -73,7 +101,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <img
-                src="https://images.unsplash.com/photo-1545213816-e1f1e54e4911?q=80&w=1000"
+                src="/public/images/el-novillo2.webp"
                 alt="Inicios El Novillo"
                 className="w-full h-auto"
               />
@@ -82,7 +110,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Misión y visión */}
+      {/* Misión y Visión */}
       <section className="py-16 px-4 bg-[#CE1212] text-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -107,18 +135,34 @@ const About = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-6 text-white">
-                Nuestra Misión
-              </h2>
+              <h2 className="text-3xl font-bold mb-6">Nuestra Misión</h2>
               <p className="mb-4">
-                Nuestro objetivo es ofrecer carnes de calidad superior con
-                atención personalizada. Cada cliente es importante y merece una
-                experiencia única, desde la atención hasta el producto final.
+                En{" "}
+                <strong className="text-novillo-gold">Carnes El Novillo</strong>
+                , nuestro compromiso es ofrecer{" "}
+                <span className="text-novillo-gold">
+                  carnes de calidad superior
+                </span>
+                , seleccionadas cuidadosamente y entregadas con una atención
+                personalizada que marca la diferencia. Valoramos a cada cliente
+                como parte de nuestra comunidad, y buscamos que cada visita sea
+                una experiencia completa, desde el saludo inicial hasta el
+                momento de disfrutar el producto en casa.
               </p>
               <p>
-                Creemos en la cercanía, en el trato humano, y en compartir
-                nuestra pasión por los cortes tradicionales que tanto gustan en
-                las parrillas chilenas.
+                Creemos profundamente en la{" "}
+                <strong className="text-novillo-gold">
+                  cercanía y el trato humano
+                </strong>
+                , valores que nos han convertido en una carnicería de confianza
+                en la comuna de Independencia y sectores aledaños. Compartimos
+                con orgullo nuestra pasión por los{" "}
+                <span className="text-novillo-gold">
+                  cortes tradicionales chilenos
+                </span>
+                , ideales para la parrilla, el almuerzo familiar o celebraciones
+                especiales. Porque más que vender carne, nos dedicamos a brindar
+                sabor, tradición y servicio con sentido.
               </p>
             </motion.div>
           </div>
@@ -135,12 +179,10 @@ const About = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold mb-4 text-white">
-              Nuestro Proceso
-            </h2>
+            <h2 className="text-3xl font-bold mb-4">Nuestro Proceso</h2>
             <p className="max-w-2xl mx-auto">
               Cada corte que ofrecemos pasa por un meticuloso proceso de
-              selección y preparación artesanal
+              selección y preparación artesanal.
             </p>
           </motion.div>
 
@@ -151,34 +193,25 @@ const About = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <div className="mb-8">
-                <h3 className="text-2xl font-semibold mb-4 text-white">
-                  Selección
-                </h3>
-                <p className="mb-4">
-                  Trabajamos con proveedores que valoran el bienestar animal y
-                  la trazabilidad. Solo seleccionamos lo mejor.
-                </p>
-              </div>
-              <div className="mb-8">
-                <h3 className="text-2xl font-semibold mb-4 text-white">
-                  Maduración
-                </h3>
-                <p className="mb-4">
-                  Nuestras carnes maduran el tiempo justo para potenciar su
-                  sabor y lograr una textura ideal para parrilla o cocina.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-2xl font-semibold mb-4 text-white">
-                  Corte y Preparación
-                </h3>
-                <p>
-                  Nuestros carniceros realizan cada corte con precisión
-                  artesanal, cuidando cada detalle para entregar la mejor
-                  calidad.
-                </p>
-              </div>
+              {[
+                {
+                  title: "Selección",
+                  text: "Trabajamos con proveedores que valoran el bienestar animal y la trazabilidad. Solo seleccionamos lo mejor.",
+                },
+                {
+                  title: "Maduración",
+                  text: "Nuestras carnes maduran el tiempo justo para potenciar su sabor y lograr una textura ideal para parrilla o cocina.",
+                },
+                {
+                  title: "Corte y Preparación",
+                  text: "Nuestros carniceros realizan cada corte con precisión artesanal, cuidando cada detalle para entregar la mejor calidad.",
+                },
+              ].map((step, i) => (
+                <div key={i} className="mb-8">
+                  <h3 className="text-2xl font-semibold mb-4">{step.title}</h3>
+                  <p>{step.text}</p>
+                </div>
+              ))}
             </motion.div>
 
             <motion.div
@@ -233,7 +266,7 @@ const About = () => {
             viewport={{ once: true }}
           >
             <div className="order-2 lg:order-1">
-              <h2 className="text-3xl font-bold mb-6 text-white">
+              <h2 className="text-3xl font-bold mb-6">
                 Compromiso con la Sostenibilidad
               </h2>
               <p className="mb-4">
@@ -260,13 +293,24 @@ const About = () => {
       {/* CTA */}
       <section className="py-16 px-4 bg-[#1B1717] text-white text-center">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-6">
+          <motion.h2
+            className="text-3xl font-bold mb-6"
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+          >
             ¿Listo para Probar la Diferencia?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            className="text-xl mb-8 max-w-2xl mx-auto"
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+          >
             Explora nuestro catálogo y descubre por qué cada vez más chilenos
-            eligen Carnes el Novillo.
-          </p>
+            eligen{" "}
+            <strong className="text-novillo-gold">Carnes El Novillo</strong>.
+          </motion.p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
               asChild

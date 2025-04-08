@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -21,7 +20,9 @@ export const HeroSection = () => {
             <span className="text-[#D4AF37]">Tu Mesa</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 animate-fade-in opacity-100 text-white/90">
-            Carnes seleccionadas de la mejor calidad, con más de 35 años de tradición y excelencia
+            Descubre nuestros cortes premium a precios irresistibles. Recibe
+            carne de la más alta calidad a domicilio, sin renunciar al auténtico
+            sabor. ¡Lleva lo mejor a tu mesa!
           </p>
           <div className="flex flex-wrap gap-4 animate-fade-in">
             <Button
@@ -42,11 +43,13 @@ export const HeroSection = () => {
               <Link to="/nosotros">Conocer Nuestra Historia</Link>
             </Button>
           </div>
-          
+
           <div className="mt-10 flex items-center gap-4 bg-black/30 backdrop-blur-sm p-4 rounded-lg w-fit animate-fade-in">
             <div className="bg-[#D4AF37] h-12 w-1 rounded-full"></div>
             <p className="text-lg">
-              Envíos a domicilio en<br />toda la Región Metropolitana
+              Envíos a domicilio en
+              <br />
+              toda la Región Metropolitana.
             </p>
           </div>
         </div>

@@ -2,26 +2,44 @@ import { Product, CategoryInfo } from "@/types";
 
 export const products: Product[] = [
   // --- PRODUCTOS INDIVIDUALES ---
+
   {
     id: 2,
-    name: "Entraña",
+    name: "Entraña de Vacuno",
     description:
-      "Entraña: Corte exquisito de vacuno, reconocido por su ternura y sabor intenso. Una opción irresistible para realzar cualquier plato.",
+      "La entraña de vacuno es un corte selecto que destaca por su sabor profundo y su textura suave y jugosa. Presentada en bandejas de 1 kilo, cada porción ha sido cuidadosamente seleccionada para garantizar una experiencia de calidad superior. Gracias a su veteado natural y su cocción uniforme, es ideal para la parrilla o platos especiales que exigen lo mejor del sabor tradicional.",
     price: 15990,
     image: "/public/images/products/entrana-vacuno.jpg",
     category: "vacuno",
     unit: "kg",
+    details: [
+      "Porción: 100g",
+      "Calorías: 230 kcal",
+      "Proteínas: 21g",
+      "Grasas totales: 16g",
+      "Grasa saturada: 7g",
+      "Carbohidratos: 0g",
+    ],
   },
+
   {
     id: 3,
     name: "Costillar de Cerdo",
     description:
-      "Costillar de Cerdo: Costillas jugosas y llenas de sabor, elaboradas para conquistar los paladares más exigentes. Un clásico que destaca en cualquier asado.",
+      "Un corte sabroso y tradicional, ideal para asados familiares y celebraciones especiales. Presentado en bandejas de 1 kilo, cada costillar ofrece costillas tiernas y jugosas que se deshacen al contacto. Su carne infiltrada y su perfil aromático lo convierten en una opción versátil para la parrilla, el horno o preparaciones a la barbacoa. Una elección infalible para quienes buscan sabor y tradición.",
     price: 8990,
     image: "/public/images/products/costillar.webp",
     category: "cerdo",
     featured: true,
     unit: "kg",
+    details: [
+      "Porción: 100g",
+      "Calorías: 290 kcal",
+      "Proteínas: 18g",
+      "Grasas totales: 24g",
+      "Grasa saturada: 9g",
+      "Carbohidratos: 0g",
+    ],
   },
   {
     id: 4,
@@ -65,18 +83,18 @@ export const products: Product[] = [
     category: "cordero",
     unit: "kg",
   },
-  {
-    id: 8,
-    name: "Mix Parrillero Premium",
-    description:
-      "Mix Parrillero Premium: Combo exclusivo que combina cortes premium seleccionados para asados memorables. La opción ideal para celebraciones y eventos especiales.",
-    price: 29990,
-    image:
-      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1000",
-    category: "parrilleros",
-    featured: true,
-    unit: "pack",
-  },
+  // {
+  //   id: 8,
+  //   name: "Mix Parrillero Premium",
+  //   description:
+  //     "Mix Parrillero Premium: Combo exclusivo que combina cortes premium seleccionados para asados memorables. La opción ideal para celebraciones y eventos especiales.",
+  //   price: 29990,
+  //   image:
+  //     "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1000",
+  //   category: "parrilleros",
+  //   featured: true,
+  //   unit: "pack",
+  // },
   {
     id: 9,
     name: "Combo Semana",
@@ -210,7 +228,6 @@ export const products: Product[] = [
     price: 6490,
     image: "/public/images/products/chuleta-centro.jpg",
     category: "cerdo",
-    featured: true,
     unit: "kg",
   },
   {
@@ -279,11 +296,20 @@ export const products: Product[] = [
     id: 28,
     name: "Carne Molida Especial",
     description:
-      "Carne Molida Especial: Carne molida de alta calidad, perfecta para hamburguesas, empanadas y recetas versátiles que requieren textura y sabor intensos.",
+      "Nuestra Carne Molida Especial es elaborada con cortes seleccionados de vacuno, entregando un sabor intenso y una textura homogénea ideal para tus preparaciones favoritas. Presentada en bandejas de 1 kilo, es perfecta para empanadas, hamburguesas caseras, albóndigas o salsas. Su frescura y bajo contenido de grasa la convierten en una aliada versátil para quienes buscan calidad y rendimiento en la cocina.",
     price: 9990,
     image: "/public/images/products/carne-molida.webp",
+    featured: true,
     category: "vacuno",
     unit: "kg",
+    details: [
+      "Porción: 100g",
+      "Calorías: 220 kcal",
+      "Proteínas: 20g",
+      "Grasas totales: 15g",
+      "Grasa saturada: 6g",
+      "Carbohidratos: 0g",
+    ],
   },
   {
     id: 29,
@@ -409,11 +435,20 @@ export const products: Product[] = [
     id: 41,
     name: "Chuleta Vetada",
     description:
-      "Chuleta Vetada: Corte de vacuno con vetas de grasa que aseguran una perfecta combinación de sabor y jugosidad, ideal para platos de alta calidad.",
+      "Corte jugoso y sabroso que se distingue por sus vetas de grasa natural, ofreciendo una cocción uniforme y un sabor excepcional. Presentada en bandejas de 1 kilo, es perfecta para la parrilla, sartén o al horno. Su ternura y textura marmoleada la convierten en una opción ideal para platos de calidad que buscan resaltar el auténtico sabor del cerdo.",
     price: 6990,
     image: "/public/images/products/chuleta-vetada.webp",
     category: "cerdo",
+    featured: true,
     unit: "kg",
+    details: [
+      "Porción: 100g",
+      "Calorías: 250 kcal",
+      "Proteínas: 22g",
+      "Grasas totales: 18g",
+      "Grasa saturada: 7g",
+      "Carbohidratos: 0g",
+    ],
   },
   {
     id: 42,

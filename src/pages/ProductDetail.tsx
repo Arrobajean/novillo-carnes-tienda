@@ -80,31 +80,37 @@ const ProductDetail = () => {
             alt={product.name}
             className="w-full h-full object-cover"
             onError={(e) => {
-              e.currentTarget.src = "https://placehold.co/600x400?text=Imagen+no+disponible";
+              e.currentTarget.src =
+                "https://placehold.co/600x400?text=Imagen+no+disponible";
             }}
           />
         </div>
 
         <div>
           <h1 className="text-4xl font-bold mb-3">{product.name}</h1>
-          <div className="text-2xl font-semibold text-[#FFD700] mb-6">
+          <div className="text-2xl font-semibold text-[#FFD700] mb-2">
             {formatPrice(product.price)}{" "}
             <span className="text-sm text-gray-400">/ {product.unit}</span>
           </div>
 
-          <p className="text-gray-100 text-base leading-relaxed mb-8">
+          {/* Descripción */}
+          <p className="text-gray-100 text-base leading-relaxed mb-6">
             {product.description}
           </p>
 
-          <div className="mb-6">
-            <p className="text-gray-300 mb-2">Cantidad:</p>
-            <QuantitySelector
-              quantity={quantity}
-              onQuantityChange={setQuantity}
-              // Removed unsupported className prop
-              iconClassName="text-white"
-            />
-          </div>
+          {/* Detalles adicionales (después de descripción) */}
+          {product.details && (
+            <div className="mb-8">
+              <h4 className="text-lg font-semibold mb-2 text-white">
+                Información Nutricional:
+              </h4>
+              <ul className="list-disc pl-5 text-gray-300">
+                {product.details.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <Button
             className="w-full bg-novillo-red hover:bg-red-900 text-white text-lg py-6 transition duration-300"

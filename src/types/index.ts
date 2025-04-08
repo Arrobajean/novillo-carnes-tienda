@@ -1,4 +1,3 @@
-
 export interface Product {
   id: number;
   name: string;
@@ -9,15 +8,16 @@ export interface Product {
   featured?: boolean;
   unit?: string;
   stock?: number;
+  details?: string[];
 }
 
-export type ProductCategory = 
-  | "vacuno" 
-  | "cerdo" 
-  | "cordero" 
-  | "aves" 
-  | "embutidos" 
-  | "parrilleros" 
+export type ProductCategory =
+  | "vacuno"
+  | "cerdo"
+  | "cordero"
+  | "aves"
+  | "embutidos"
+  | "parrilleros"
   | "promociones";
 
 export interface CategoryInfo {
