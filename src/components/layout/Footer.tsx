@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, MapPin, Phone, Mail, Clock } from "lucide-react";
 import { motion } from "framer-motion";
@@ -9,10 +10,10 @@ const fadeIn = {
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#000000] text-white text-sm">
+    <footer className="bg-[#000000] text-white text-sm font-poppins">
       <div className="container mx-auto py-10 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
-          {/* About */}
+          {/* Logo and About */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -20,22 +21,18 @@ export const Footer = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center md:items-start"
           >
-            <h3 className="text-lg font-semibold mb-4 text-white">
-              Carnes el Novillo
-            </h3>
+            <div className="mb-4">
+              <img 
+                src="/public/lovable-uploads/6b236ce7-68d7-44f3-9e87-106f6e078528.png" 
+                alt="Carnes El Novillo Logo" 
+                className="h-24 w-auto"
+              />
+            </div>
             <p className="text-gray-300 mb-4">
-              Tradición y calidad en carnes desde 1985. Ofrecemos los mejores
+              Tradición y calidad en carnes desde 2020. Ofrecemos los mejores
               cortes con el sabor auténtico que caracteriza a nuestra marca.
             </p>
             <div className="flex space-x-4 justify-center md:justify-start">
-              <a
-                href="https://facebook.com/carneselnovillo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors text-white"
-              >
-                <Facebook size={20} />
-              </a>
               <a
                 href="https://www.instagram.com/carneselnovillo/"
                 target="_blank"
@@ -43,6 +40,14 @@ export const Footer = () => {
                 className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors text-white"
               >
                 <Instagram size={20} />
+              </a>
+              <a
+                href="https://facebook.com/carneselnovillo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors text-white"
+              >
+                <Facebook size={20} />
               </a>
             </div>
           </motion.div>

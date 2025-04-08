@@ -1,11 +1,30 @@
+
 import { useEffect, useState } from "react";
 import { ReviewCard } from "./ReviewCard";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 
-// Estructura de datos temporales para mostrar en el diseño
-// Esta será reemplazada cuando integres la API de Google
+// Interfaces para la API de Google
+interface GoogleReviewAPI {
+  id: string;
+  author_name: string;
+  rating: number;
+  relative_time_description: string;
+  text: string;
+  profile_photo_url?: string;
+  time: number;
+}
+
+interface GooglePlaceAPIResponse {
+  result: {
+    reviews: GoogleReviewAPI[];
+    rating: number;
+    user_ratings_total: number;
+  };
+}
+
+// Modelo para la UI
 interface GoogleReview {
   id: string;
   author: string;
@@ -66,17 +85,19 @@ export const GoogleReviews = () => {
   const [visibleReviews, setVisibleReviews] = useState<GoogleReview[]>([]);
   const [loading, setLoading] = useState(false);
   const [averageRating, setAverageRating] = useState(0);
+  const [totalRatings, setTotalRatings] = useState(0);
 
   useEffect(() => {
-    // Mostrar solo los primeros 3 reviews inicialmente
+    // En un entorno de producción, aquí se llamaría a la API de Google
+    fetchGoogleReviews();
+    
+    // Mientras tanto, usamos datos de muestra
     setVisibleReviews(reviews.slice(0, 3));
     
     // Calcular rating promedio
     const avgRating = reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length;
     setAverageRating(avgRating);
-    
-    // Aquí puedes agregar la lógica para cargar reviews desde la API de Google
-    // cuando hagas la integración
+    setTotalRatings(reviews.length);
   }, [reviews]);
 
   // Función para cargar más reviews
@@ -89,19 +110,55 @@ export const GoogleReviews = () => {
     }, 500);
   };
 
-  // Función que se usará cuando integres la API de Google
-  // para obtener los reviews reales
+  /**
+   * Función para obtener reseñas de Google Places API
+   * Para implementar correctamente, se necesita:
+   * 1. Una clave API de Google Places
+   * 2. Un proxy server para ocultar la clave API
+   * 3. El Place ID del negocio
+   */
   const fetchGoogleReviews = async () => {
-    // Aquí implementarás la llamada a la API de Google
-    // setReviews(dataFromGoogleAPI);
-    console.log("Esta función será implementada cuando integres la API de Google");
+    try {
+      // Código para producción - descomentar y configurar cuando se tenga la API key
+      /* 
+      const GOOGLE_PLACE_ID = 'TU_PLACE_ID'; // Reemplazar con el ID real
+      const API_URL = `/api/google-reviews?placeId=${GOOGLE_PLACE_ID}`; // Un endpoint del servidor que hace proxy
+      
+      const response = await fetch(API_URL);
+      
+      if (!response.ok) {
+        throw new Error('No se pudieron obtener las reseñas');
+      }
+      
+      const data: GooglePlaceAPIResponse = await response.json();
+      
+      // Convertir el formato de la API al formato de la UI
+      const formattedReviews: GoogleReview[] = data.result.reviews.map(review => ({
+        id: review.id,
+        author: review.author_name,
+        rating: review.rating,
+        date: review.relative_time_description,
+        content: review.text,
+        avatar: review.profile_photo_url
+      }));
+      
+      setReviews(formattedReviews);
+      setAverageRating(data.result.rating);
+      setTotalRatings(data.result.user_ratings_total);
+      */
+      
+      // Por ahora seguimos usando datos de muestra
+      console.log("Función preparada para integrar con Google Reviews API");
+    } catch (error) {
+      console.error("Error al obtener reseñas de Google:", error);
+    }
   };
 
   return (
     <section className="py-16 px-4 bg-white">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-serif font-semibold mb-4 text-gray-800">Opiniones de nuestros clientes</h2>
+          <h2 className="text-3xl font-poppins font-semibold mb-4 text-gray-800">Opiniones de nuestros clientes</h2>
           <div className="flex items-center justify-center gap-1 mb-3">
             {[...Array(5)].map((_, i) => (
               <Star 
@@ -117,10 +174,21 @@ export const GoogleReviews = () => {
               />
             ))}
             <span className="ml-2 text-xl font-semibold">{averageRating.toFixed(1)}</span>
+            <span className="ml-1 text-sm text-gray-500">({totalRatings} reseñas)</span>
           </div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Basado en las opiniones de nuestros clientes en Google
-          </p>
+          <div className="flex items-center justify-center">
+            <p className="text-gray-600 max-w-2xl mx-auto font-poppins">
+              Basado en las opiniones de nuestros clientes en Google
+            </p>
+            <a 
+              href="https://www.google.com/search?q=carnes+el+novillo+santiago&oq=carnes+el+novillo+santiago#lrd=0x9662c7a16bc4132f:0xe7ff1ab63c47f5ce,3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 text-novillo-red hover:text-novillo-red/80 text-sm font-semibold"
+            >
+              Escribir reseña
+            </a>
+          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
@@ -141,7 +209,7 @@ export const GoogleReviews = () => {
             <Button 
               onClick={loadMoreReviews} 
               variant="outline"
-              className="border-novillo-red text-novillo-red hover:bg-novillo-red/5"
+              className="border-novillo-red text-novillo-red hover:bg-novillo-red/5 font-poppins"
               disabled={loading}
             >
               {loading ? "Cargando..." : "Ver más opiniones"}
@@ -150,29 +218,29 @@ export const GoogleReviews = () => {
         )}
 
         <div className="mt-16 bg-gray-50 rounded-lg p-6 border border-gray-200">
-          <h3 className="text-xl font-semibold mb-4">Preguntas frecuentes sobre reseñas</h3>
+          <h3 className="text-xl font-semibold mb-4 font-poppins">Preguntas frecuentes sobre reseñas</h3>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
-              <AccordionTrigger className="text-left">
+              <AccordionTrigger className="text-left font-poppins">
                 ¿Cómo puedo dejar una reseña?
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="font-poppins">
                 Puedes dejar una reseña visitando nuestro perfil de Google Business o buscándonos en Google Maps. Haz clic en "Escribir una reseña" y comparte tu experiencia.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger className="text-left">
+              <AccordionTrigger className="text-left font-poppins">
                 ¿Por qué son importantes las reseñas?
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="font-poppins">
                 Las reseñas nos ayudan a mejorar nuestro servicio y productos. También ayudan a otros clientes a conocer las experiencias reales de nuestros clientes.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger className="text-left">
+              <AccordionTrigger className="text-left font-poppins">
                 ¿Responden a todas las reseñas?
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="font-poppins">
                 Intentamos responder a todas las reseñas, especialmente aquellas que incluyen sugerencias o problemas específicos. Valoramos mucho la retroalimentación de nuestros clientes.
               </AccordionContent>
             </AccordionItem>

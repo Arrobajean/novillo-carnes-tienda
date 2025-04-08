@@ -1,3 +1,4 @@
+
 export interface Product {
   id: number;
   name: string;
@@ -18,7 +19,8 @@ export type ProductCategory =
   | "aves"
   | "embutidos"
   | "parrilleros"
-  | "promociones";
+  | "promociones"
+  | "congelados";
 
 export interface CategoryInfo {
   id: ProductCategory;

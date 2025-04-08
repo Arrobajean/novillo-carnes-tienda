@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ShoppingCart } from "lucide-react";
@@ -9,6 +10,7 @@ import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/utils";
 import { Product } from "@/types";
 import { motion } from "framer-motion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -56,7 +58,7 @@ const ProductDetail = () => {
 
   return (
     <motion.div
-      className="container mx-auto py-10 px-4 font-sans text-white bg-[#1B1717] min-h-screen"
+      className="container mx-auto py-10 px-4 font-poppins text-white bg-[#1B1717] min-h-screen"
       initial="hidden"
       animate="visible"
       variants={fadeIn}
@@ -98,19 +100,47 @@ const ProductDetail = () => {
             {product.description}
           </p>
 
-          {/* Detalles adicionales (después de descripción) */}
-          {product.details && (
-            <div className="mb-8">
-              <h4 className="text-lg font-semibold mb-2 text-white">
-                Información Nutricional:
-              </h4>
-              <ul className="list-disc pl-5 text-gray-300">
-                {product.details.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          )}
+          {/* Acordeón con información nutricional y modos de elaboración */}
+          <div className="mb-8">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="nutritional-info" className="border-b border-gray-700">
+                <AccordionTrigger className="text-white hover:text-[#FFD700] hover:no-underline py-3">
+                  Información Nutricional
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-300 pb-4">
+                  {product.details ? (
+                    <ul className="list-disc pl-5 space-y-1">
+                      {product.details.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p>Información nutricional no disponible para este producto.</p>
+                  )}
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="preparation" className="border-b border-gray-700">
+                <AccordionTrigger className="text-white hover:text-[#FFD700] hover:no-underline py-3">
+                  Modos de Elaboración
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-300 pb-4">
+                  <div className="space-y-2">
+                    <p>Este corte es ideal para:</p>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>Parrilla (temperatura media-alta)</li>
+                      <li>Horno (180°C por 20-25 minutos)</li>
+                      <li>Plancha o sartén (fuego medio)</li>
+                      {product.category === "vacuno" && <li>Ideal para término medio o a punto</li>}
+                      {product.category === "cerdo" && <li>Cocinar bien para alcanzar 71°C internamente</li>}
+                      {product.category === "cordero" && <li>Ideal con hierbas aromáticas y especias</li>}
+                      {product.category === "aves" && <li>Cocinar completamente hasta que la parte interna no esté rosada</li>}
+                    </ul>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
 
           <Button
             className="w-full bg-novillo-red hover:bg-red-900 text-white text-lg py-6 transition duration-300"

@@ -1,9 +1,38 @@
+
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const Contact = () => {
+  const faqItems = [
+    {
+      question: "¿Realizan entregas a domicilio?",
+      answer: "Sí, realizamos entregas a domicilio en toda la Región Metropolitana. El costo del envío varía según la distancia. Consulta por los detalles específicos de tu zona."
+    },
+    {
+      question: "¿Cuál es el pedido mínimo para comprar?",
+      answer: "No tenemos un monto mínimo para compras en tienda. Para entregas a domicilio, el pedido mínimo es de $20.000 CLP."
+    },
+    {
+      question: "¿Qué métodos de pago aceptan?",
+      answer: "Aceptamos efectivo, tarjetas de débito, tarjetas de crédito, transferencias bancarias y pagos por aplicaciones móviles como WebPay y MercadoPago."
+    },
+    {
+      question: "¿Cómo puedo recibir información sobre promociones?",
+      answer: "Puedes seguirnos en nuestras redes sociales o suscribirte a nuestro boletín para recibir las últimas novedades y promociones especiales."
+    },
+    {
+      question: "¿Realizan cortes especiales o personalizados?",
+      answer: "Sí, podemos realizar cortes especiales o personalizados según tus necesidades. Te recomendamos contactarnos con anticipación para preparar tu pedido."
+    },
+    {
+      question: "¿Ofrecen asesoría para eventos o parrilladas?",
+      answer: "Absolutamente. Nuestro equipo puede asesorarte sobre las mejores opciones según el tipo de evento, número de comensales y presupuesto."
+    }
+  ];
+  
   return (
-    <div>
+    <div className="font-poppins">
       {/* Hero Section */}
       <section 
         className="hero-gradient relative h-[300px] flex items-center text-white" 
@@ -13,7 +42,7 @@ const Contact = () => {
       >
         <div className="container mx-auto px-4 z-10">
           <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-poppins font-bold mb-4">
               Contacto
             </h1>
             <p className="text-xl">
@@ -29,7 +58,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl font-serif font-semibold mb-8 text-gray-800">Información de Contacto</h2>
+              <h2 className="text-3xl font-poppins font-semibold mb-8 text-gray-800">Información de Contacto</h2>
               
               <div className="space-y-8">
                 <div className="flex items-start">
@@ -79,7 +108,7 @@ const Contact = () => {
               </div>
               
               <div className="mt-10">
-                <h3 className="text-xl font-serif font-semibold mb-4">Síguenos en Redes Sociales</h3>
+                <h3 className="text-xl font-poppins font-semibold mb-4">Síguenos en Redes Sociales</h3>
                 <div className="flex space-x-4">
                   <a 
                     href="https://facebook.com/carneselnovillo" 
@@ -107,7 +136,7 @@ const Contact = () => {
             
             {/* Map */}
             <div>
-              <h2 className="text-3xl font-serif font-semibold mb-8 text-gray-800">Nuestra Ubicación</h2>
+              <h2 className="text-3xl font-poppins font-semibold mb-8 text-gray-800">Nuestra Ubicación</h2>
               <div className="bg-gray-200 rounded-lg overflow-hidden shadow-md h-[400px]">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.055407563578!2d-70.6656081231582!3d-33.422329997356595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c7a16bc4132f%3A0xe7ff1ab63c47f5ce!2sCarnes%20El%20Novillo!5e0!3m2!1ses-419!2scl!4v1712598758267!5m2!1ses-419!2scl" 
@@ -125,58 +154,33 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ Section - with delivery info */}
+      {/* FAQ Section - with accordions */}
       <section className="py-16 px-4 bg-novillo-light">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-serif font-semibold mb-4 text-gray-800">Preguntas Frecuentes</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-poppins font-semibold mb-4 text-gray-800">Preguntas Frecuentes</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto font-poppins">
               Respuestas a las consultas más comunes de nuestros clientes
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-novillo-black p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">¿Realizan entregas a domicilio?</h3>
-              <p className="text-gray-600">
-                Sí, realizamos entregas a domicilio en toda la Región Metropolitana. El costo del envío varía según la distancia. Consulta por los detalles específicos de tu zona.
-              </p>
-            </div>
-            
-            <div className="bg-novillo-black p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">¿Cuál es el pedido mínimo para comprar?</h3>
-              <p className="text-gray-600">
-                No tenemos un monto mínimo para compras en tienda. Para entregas a domicilio, el pedido mínimo es de $20.000 CLP.
-              </p>
-            </div>
-            
-            <div className="bg-novillo-black p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">¿Qué métodos de pago aceptan?</h3>
-              <p className="text-gray-600">
-                Aceptamos efectivo, tarjetas de débito, tarjetas de crédito, transferencias bancarias y pagos por aplicaciones móviles como WebPay y MercadoPago.
-              </p>
-            </div>
-            
-            <div className="bg-novillo-black p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">¿Cómo puedo recibir información sobre promociones?</h3>
-              <p className="text-gray-600">
-                Puedes seguirnos en nuestras redes sociales o suscribirte a nuestro boletín para recibir las últimas novedades y promociones especiales.
-              </p>
-            </div>
-            
-            <div className="bg-novillo-black p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">¿Realizan cortes especiales o personalizados?</h3>
-              <p className="text-gray-600">
-                Sí, podemos realizar cortes especiales o personalizados según tus necesidades. Te recomendamos contactarnos con anticipación para preparar tu pedido.
-              </p>
-            </div>
-            
-            <div className="bg-novillo-black p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">¿Ofrecen asesoría para eventos o parrilladas?</h3>
-              <p className="text-gray-600">
-                Absolutamente. Nuestro equipo puede asesorarte sobre las mejores opciones según el tipo de evento, número de comensales y presupuesto.
-              </p>
-            </div>
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              {faqItems.map((item, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="border-b border-gray-200"
+                >
+                  <AccordionTrigger className="text-left text-lg font-medium py-4 hover:no-underline hover:text-novillo-red">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 py-4 px-2">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
@@ -184,13 +188,13 @@ const Contact = () => {
       {/* CTA Section */}
       <section className="py-16 px-4 bg-novillo-black">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-serif font-semibold mb-6">¿Tienes Alguna Otra Pregunta?</h2>
-          <p className="text-gray-600 mb-8">
+          <h2 className="text-3xl font-poppins font-semibold mb-6">¿Tienes Alguna Otra Pregunta?</h2>
+          <p className="text-gray-600 mb-8 font-poppins">
             Estamos aquí para ayudarte. Contáctanos directamente o visita nuestra tienda para una atención personalizada.
           </p>
           <Button 
             size="lg" 
-            className="bg-novillo-red hover:bg-red-900 text-white"
+            className="bg-novillo-red hover:bg-red-900 text-white font-poppins"
             onClick={() => window.open('https://wa.me/56958404733', '_blank')}
           >
             Contáctanos por WhatsApp
