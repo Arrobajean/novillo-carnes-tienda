@@ -169,7 +169,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Nuestro Proceso */}
+      {/* Valores y Filosofía - Nueva sección que reemplaza "Nuestro Proceso" */}
       <section className="py-16 px-4 bg-[#1B1717] text-white">
         <div className="container mx-auto">
           <motion.div
@@ -179,78 +179,59 @@ const About = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold mb-4">Nuestro Proceso</h2>
+            <h2 className="text-3xl font-bold mb-4">Nuestros Valores</h2>
             <p className="max-w-2xl mx-auto">
-              Cada corte que ofrecemos pasa por un meticuloso proceso de
-              selección y preparación artesanal.
+              Los principios que guían nuestro trabajo diario y nuestro compromiso con cada cliente.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              variants={fadeIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              {[
-                {
-                  title: "Selección",
-                  text: "Trabajamos con proveedores que valoran el bienestar animal y la trazabilidad. Solo seleccionamos lo mejor.",
-                },
-                {
-                  title: "Maduración",
-                  text: "Nuestras carnes maduran el tiempo justo para potenciar su sabor y lograr una textura ideal para parrilla o cocina.",
-                },
-                {
-                  title: "Corte y Preparación",
-                  text: "Nuestros carniceros realizan cada corte con precisión artesanal, cuidando cada detalle para entregar la mejor calidad.",
-                },
-              ].map((step, i) => (
-                <div key={i} className="mb-8">
-                  <h3 className="text-2xl font-semibold mb-4">{step.title}</h3>
-                  <p>{step.text}</p>
-                </div>
-              ))}
-            </motion.div>
-
-            <motion.div
-              className="grid grid-cols-2 gap-4"
-              variants={fadeIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              {[
-                {
-                  title: "Selección Premium",
-                  src: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=987",
-                },
-                {
-                  title: "Proceso de Maduración",
-                  src: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?q=80&w=1000",
-                },
-                {
-                  title: "Corte Artesanal",
-                  src: "https://images.unsplash.com/photo-1608877907149-a206d75ba011?q=80&w=1000",
-                },
-                {
-                  title: "Producto Final",
-                  src: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=1000",
-                },
-              ].map((item, i) => (
-                <Card key={i} className="overflow-hidden">
-                  <img
-                    src={item.src}
-                    alt={item.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <CardContent className="p-4">
-                    <p className="font-medium text-center">{item.title}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Excelencia",
+                description: "Nos esforzamos por ofrecer productos de la más alta calidad, con sabor incomparable y presentación impecable.",
+                icon: "🏆"
+              },
+              {
+                title: "Honestidad",
+                description: "Transparencia en cada proceso, desde la selección de nuestros proveedores hasta la atención personalizada a cada cliente.",
+                icon: "🤝"
+              },
+              {
+                title: "Tradición",
+                description: "Preservamos las técnicas tradicionales que realzan el sabor auténtico de nuestros cortes, respetando nuestra herencia cultural.",
+                icon: "📜"
+              },
+              {
+                title: "Innovación",
+                description: "Buscamos constantemente mejorar nuestros procesos y ofrecer nuevas experiencias a nuestros clientes.",
+                icon: "💡"
+              },
+              {
+                title: "Responsabilidad Social",
+                description: "Comprometidos con nuestra comunidad y con prácticas sostenibles que respetan el medio ambiente.",
+                icon: "🌱"
+              },
+              {
+                title: "Pasión",
+                description: "Amamos lo que hacemos y esa pasión se refleja en cada uno de nuestros productos y en el servicio que brindamos.",
+                icon: "❤️"
+              }
+            ].map((value, i) => (
+              <motion.div
+                key={i}
+                className="bg-novillo-black/50 backdrop-blur-sm p-6 rounded-lg border border-[#D4AF37]/20 hover:border-[#D4AF37] transition-colors"
+                variants={fadeIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <div className="text-4xl mb-4 text-center">{value.icon}</div>
+                <h3 className="text-xl font-bold mb-3 text-center">{value.title}</h3>
+                <p className="text-white/80 text-center">{value.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

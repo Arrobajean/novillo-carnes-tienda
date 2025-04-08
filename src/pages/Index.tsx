@@ -22,20 +22,20 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* About Section */}
-      <AboutSection />
+      {/* CTA Section with Online Purchase Process - Moved right after Hero */}
+      <CTASection />
 
-      {/* Categories Section */}
+      {/* Featured Products Section - Now before Categories */}
+      <FeaturedProductsSection products={featuredProducts} />
+
+      {/* Categories Section - Now after Featured Products */}
       <CategoriesSection categories={categories} />
 
-      {/* Featured Products Section */}
-      <FeaturedProductsSection products={featuredProducts} />
+      {/* About Section */}
+      <AboutSection />
       
-      {/* Google Reviews Section - Moved from Contact page */}
+      {/* Google Reviews Section */}
       <GoogleReviews />
-
-      {/* CTA Section with Online Purchase Process */}
-      <CTASection />
     </div>
   );
 };
