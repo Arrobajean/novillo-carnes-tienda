@@ -122,7 +122,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <img
-                src="https://images.unsplash.com/photo-1542223616-740d5dff7f56?q=80&w=1000"
+                src="/public/images/ui/mision.jpg"
                 alt="Misión y valores"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
@@ -169,7 +169,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Valores y Filosofía - Nueva sección que reemplaza "Nuestro Proceso" */}
+      {/* Valores */}
       <section className="py-16 px-4 bg-[#1B1717] text-white">
         <div className="container mx-auto">
           <motion.div
@@ -181,7 +181,8 @@ const About = () => {
           >
             <h2 className="text-3xl font-bold mb-4">Nuestros Valores</h2>
             <p className="max-w-2xl mx-auto">
-              Los principios que guían nuestro trabajo diario y nuestro compromiso con cada cliente.
+              Los principios que guían nuestro trabajo diario y nuestro
+              compromiso con cada cliente.
             </p>
           </motion.div>
 
@@ -189,34 +190,40 @@ const About = () => {
             {[
               {
                 title: "Excelencia",
-                description: "Nos esforzamos por ofrecer productos de la más alta calidad, con sabor incomparable y presentación impecable.",
-                icon: "🏆"
+                description:
+                  "Nos esforzamos por ofrecer productos de la más alta calidad, con sabor incomparable y presentación impecable.",
+                icon: "🏆",
               },
               {
                 title: "Honestidad",
-                description: "Transparencia en cada proceso, desde la selección de nuestros proveedores hasta la atención personalizada a cada cliente.",
-                icon: "🤝"
+                description:
+                  "Transparencia en cada proceso, desde la selección de nuestros proveedores hasta la atención personalizada a cada cliente.",
+                icon: "🤝",
               },
               {
                 title: "Tradición",
-                description: "Preservamos las técnicas tradicionales que realzan el sabor auténtico de nuestros cortes, respetando nuestra herencia cultural.",
-                icon: "📜"
+                description:
+                  "Preservamos las técnicas tradicionales que realzan el sabor auténtico de nuestros cortes, respetando nuestra herencia cultural.",
+                icon: "📜",
               },
               {
                 title: "Innovación",
-                description: "Buscamos constantemente mejorar nuestros procesos y ofrecer nuevas experiencias a nuestros clientes.",
-                icon: "💡"
+                description:
+                  "Buscamos constantemente mejorar nuestros procesos y ofrecer nuevas experiencias a nuestros clientes.",
+                icon: "💡",
               },
               {
                 title: "Responsabilidad Social",
-                description: "Comprometidos con nuestra comunidad y con prácticas sostenibles que respetan el medio ambiente.",
-                icon: "🌱"
+                description:
+                  "Comprometidos con nuestra comunidad y con prácticas sostenibles que respetan el medio ambiente.",
+                icon: "🌱",
               },
               {
                 title: "Pasión",
-                description: "Amamos lo que hacemos y esa pasión se refleja en cada uno de nuestros productos y en el servicio que brindamos.",
-                icon: "❤️"
-              }
+                description:
+                  "Amamos lo que hacemos y esa pasión se refleja en cada uno de nuestros productos y en el servicio que brindamos.",
+                icon: "❤️",
+              },
             ].map((value, i) => (
               <motion.div
                 key={i}
@@ -228,7 +235,9 @@ const About = () => {
                 transition={{ delay: i * 0.1 }}
               >
                 <div className="text-4xl mb-4 text-center">{value.icon}</div>
-                <h3 className="text-xl font-bold mb-3 text-center">{value.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-center">
+                  {value.title}
+                </h3>
                 <p className="text-white/80 text-center">{value.description}</p>
               </motion.div>
             ))}
@@ -262,7 +271,7 @@ const About = () => {
             </div>
             <div className="order-1 lg:order-2 rounded-lg overflow-hidden shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1516267792074-2789d31a3efe?q=80&w=1000"
+                src="/public/images/ui/ganaderia-sostenible.jpeg"
                 alt="Ganadería sostenible"
                 className="w-full h-auto"
               />

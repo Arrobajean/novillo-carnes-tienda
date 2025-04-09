@@ -1,70 +1,76 @@
+import { motion } from "framer-motion";
+
 export const TestimonialsSection = () => {
   return (
-    <section className="py-16 px-4 bg-accent text-accent-foreground">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-semibold mb-10 text-center">
+    <section
+      className="relative py-16 px-4 text-accent-foreground"
+      style={{
+        backgroundImage: 'url("/public/images/ui/background-pattern.jpg")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Overlay oscuro */}
+      <div className="absolute inset-0 bg-black/70 z-0" />
+
+      <div className="container mx-auto relative z-10">
+        <motion.h2
+          className="text-3xl font-semibold mb-12 text-center text-white"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
           Lo Que Dicen Nuestros Clientes
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Testimonio 1 */}
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-            <div className="flex items-center mb-4">
-              <img
-                src="https://randomuser.me/api/portraits/men/32.jpg"
-                alt="Cliente"
-                className="w-12 h-12 rounded-full object-cover mr-4"
-              />
-              <div>
-                <h4 className="font-medium">Roberto Méndez</h4>
-                <p className="text-sm text-foreground/60">Cliente desde 2018</p>
+          {[
+            {
+              name: "Roberto Méndez",
+              image: "https://randomuser.me/api/portraits/men/32.jpg",
+              since: "Cliente desde 2018",
+              quote:
+                "La calidad de la carne es extraordinaria. Siempre encuentro cortes frescos y el servicio es excelente. Mi carnicería de confianza.",
+            },
+            {
+              name: "Carolina Vega",
+              image: "https://randomuser.me/api/portraits/women/44.jpg",
+              since: "Cliente desde 2020",
+              quote:
+                "Sus promociones familiares son perfectas para nuestros asados de fin de semana. Siempre recomiendo El Novillo a mis amigos y familiares.",
+            },
+            {
+              name: "Javier Soto",
+              image: "https://randomuser.me/api/portraits/men/67.jpg",
+              since: "Cliente desde 2015",
+              quote:
+                "Como chef, valoro la consistencia en la calidad. El Novillo nunca me ha decepcionado, sus cortes son siempre de primera categoría.",
+            },
+          ].map((testimonial, index) => (
+            <motion.div
+              key={index}
+              className="bg-white/10 backdrop-blur-sm p-6 rounded-lg"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2, duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center mb-4">
+                <img
+                  src={testimonial.image}
+                  alt={`Foto de ${testimonial.name}`}
+                  className="w-12 h-12 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-medium text-white">{testimonial.name}</h4>
+                  <p className="text-sm text-white/60">{testimonial.since}</p>
+                </div>
               </div>
-            </div>
-            <p className="italic text-foreground/80">
-              "La calidad de la carne es extraordinaria. Siempre encuentro
-              cortes frescos y el servicio es excelente. Mi carnicería de
-              confianza."
-            </p>
-          </div>
-
-          {/* Testimonio 2 */}
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-            <div className="flex items-center mb-4">
-              <img
-                src="https://randomuser.me/api/portraits/women/44.jpg"
-                alt="Cliente"
-                className="w-12 h-12 rounded-full object-cover mr-4"
-              />
-              <div>
-                <h4 className="font-medium">Carolina Vega</h4>
-                <p className="text-sm text-foreground/60">Cliente desde 2020</p>
-              </div>
-            </div>
-            <p className="italic text-foreground/80">
-              "Sus promociones familiares son perfectas para nuestros asados de
-              fin de semana. Siempre recomiendo El Novillo a mis amigos y
-              familiares."
-            </p>
-          </div>
-
-          {/* Testimonio 3 */}
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-            <div className="flex items-center mb-4">
-              <img
-                src="https://randomuser.me/api/portraits/men/67.jpg"
-                alt="Cliente"
-                className="w-12 h-12 rounded-full object-cover mr-4"
-              />
-              <div>
-                <h4 className="font-medium">Javier Soto</h4>
-                <p className="text-sm text-foreground/60">Cliente desde 2015</p>
-              </div>
-            </div>
-            <p className="italic text-foreground/80">
-              "Como chef, valoro la consistencia en la calidad. El Novillo nunca
-              me ha decepcionado, sus cortes son siempre de primera categoría."
-            </p>
-          </div>
+              <p className="italic text-white/80">"{testimonial.quote}"</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

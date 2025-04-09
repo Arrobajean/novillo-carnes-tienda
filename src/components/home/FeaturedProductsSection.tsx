@@ -12,35 +12,35 @@ export const FeaturedProductsSection = ({
   products,
 }: FeaturedProductsSectionProps) => {
   return (
-    <section className="py-16 px-4 bg-background">
-      <div className="container mx-auto">
-        <div className="flex justify-between items-center mb-10">
-          <div>
-            <h2 className="text-3xl font-semibold text-foreground">
-              Productos Destacados
-            </h2>
-            <p className="text-foreground/70">
-              Nuestras mejores selecciones para ti
-            </p>
+    <>
+      <section className="relative pt-30 pb-16 px-4 bg-[#3D0000] text-white font-poppins">
+        <div className="container mx-auto relative z-10">
+          <div className="flex justify-between items-center mb-10 flex-wrap gap-4">
+            <div>
+              <h2 className="text-3xl font-semibold">Productos Destacados</h2>
+              <p className="text-white/80">
+                Nuestras mejores selecciones para ti
+              </p>
+            </div>
+            <Button
+              asChild
+              variant="link"
+              className="text-novillo-gold hover:text-white font-semibold"
+            >
+              <Link to="/productos" className="inline-flex items-center">
+                Ver todos los productos
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
-          <Button
-            asChild
-            variant="link"
-            className="text-primary hover:text-primary/80"
-          >
-            <Link to="/productos" className="inline-flex items-center">
-              Ver todos los productos
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };

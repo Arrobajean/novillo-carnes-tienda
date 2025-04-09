@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, MapPin, Phone, Mail, Clock } from "lucide-react";
 import { motion } from "framer-motion";
@@ -22,9 +21,9 @@ export const Footer = () => {
             className="flex flex-col items-center md:items-start"
           >
             <div className="mb-4">
-              <img 
-                src="/public/lovable-uploads/6b236ce7-68d7-44f3-9e87-106f6e078528.png" 
-                alt="Carnes El Novillo Logo" 
+              <img
+                src="/public/images/ui/logo-png.png"
+                alt="Carnes El Novillo Logo"
                 className="h-24 w-auto"
               />
             </div>
@@ -42,7 +41,7 @@ export const Footer = () => {
                 <Instagram size={20} />
               </a>
               <a
-                href="https://facebook.com/carneselnovillo"
+                href="https://www.facebook.com/profile.php?id=61550850388071"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors text-white"

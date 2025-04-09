@@ -19,29 +19,29 @@ export default {
     },
     extend: {
       colors: {
-        /* === 🎨 PALETA OFICIAL === */
+        /* 🎨 PALETA OFICIAL */
         primary: {
-          DEFAULT: "#CF0A0A", // rojo principal nuevo
+          DEFAULT: "#CF0A0A",
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#810000", // rojo oscuro
+          DEFAULT: "#810000",
           foreground: "#FFFFFF",
         },
         accent: {
-          DEFAULT: "#1B1717", // marrón casi negro
+          DEFAULT: "#1B1717",
           foreground: "#FFFFFF",
         },
         background: {
-          DEFAULT: "#000000", // ✅ fondo negro corregido
-          light: "#EEEBDD", // opcional
+          DEFAULT: "#000000",
+          light: "#EEEBDD",
         },
         foreground: {
-          DEFAULT: "#EEEBDD", // ✅ texto claro
-          dark: "#1B1717", // opcional
+          DEFAULT: "#EEEBDD",
+          dark: "#1B1717",
         },
 
-        /* === OPCIONALES Y SEMÁNTICOS === */
+        /* OPCIONALES Y SEMÁNTICOS */
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -73,7 +73,6 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
 
-        /* === Paleta personalizada (Color Hunt) === */
         novillo: {
           light: "#EEEBDD",
           red: "#CF0A0A",
@@ -108,12 +107,17 @@ export default {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        wave: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(5px)" },
+        },
       },
 
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fadeIn 0.5s ease-in-out",
+        wave: "wave 6s ease-in-out infinite",
       },
     },
   },
