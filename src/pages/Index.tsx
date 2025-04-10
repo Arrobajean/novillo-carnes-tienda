@@ -19,9 +19,13 @@ const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <HeroSection />
+      
+      {/* Combined CTA and About Section - created directly in the new component */}
       <CTASection />
-      <FeaturedProductsSection products={featuredProducts} />
+      
+      {/* Moved Categories before Featured Products */}
       <CategoriesSection categories={categories} />
+      <FeaturedProductsSection products={featuredProducts} />
       <AboutSection />
       <Reviews />
     </div>

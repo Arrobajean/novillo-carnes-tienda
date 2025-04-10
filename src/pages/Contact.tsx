@@ -2,6 +2,7 @@
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const faqItems = [
@@ -40,7 +41,10 @@ const Contact = () => {
           '--image-url': 'url("https://images.unsplash.com/photo-1485846147915-69f139ac30b9?q=80&w=2000")' 
         } as React.CSSProperties}
       >
-        <div className="container mx-auto px-4 z-10">
+        {/* Upper wave decoration */}
+        <div className="absolute inset-0 bg-black/60 z-10"></div>
+        
+        <div className="container mx-auto px-4 z-20">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-poppins font-bold mb-4">
               Contacto
@@ -50,17 +54,30 @@ const Contact = () => {
             </p>
           </div>
         </div>
+        
+        {/* Bottom wave decoration */}
+        <svg
+          className="absolute bottom-0 left-0 w-full"
+          viewBox="0 0 1440 150"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#1B1717"
+            d="M0,120 C360,40 1080,140 1440,60 L1440,150 L0,150 Z"
+          />
+        </svg>
       </section>
 
       {/* Contact Info */}
-      <section className="py-16 px-4 bg-novillo-black">
+      <section className="py-12 px-4 bg-novillo-black">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl font-poppins font-semibold mb-8 text-white">Información de Contacto</h2>
+              <h2 className="text-3xl font-poppins font-semibold mb-6 text-white">Información de Contacto</h2>
               
-              <div className="space-y-8">
+              <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="bg-novillo-red/10 p-3 rounded-lg mr-4">
                     <MapPin className="h-6 w-6 text-novillo-red" />
@@ -71,10 +88,10 @@ const Contact = () => {
                       href="https://maps.app.goo.gl/KLxWBLKvu5YvCrQk8" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="text-gray-400 hover:text-novillo-red transition-colors"
+                      className="text-gray-400 hover:text-novillo-red transition-colors group"
                     >
-                      <p>Pablo Urzúa 1489, local 2</p>
-                      <p>Independencia, Santiago, Chile</p>
+                      <p className="group-hover:underline">Pablo Urzúa 1489, local 2</p>
+                      <p className="group-hover:underline">Independencia, Santiago, Chile</p>
                     </a>
                   </div>
                 </div>
@@ -87,7 +104,7 @@ const Contact = () => {
                     <h3 className="text-lg font-semibold mb-1 text-white">Teléfono</h3>
                     <a 
                       href="tel:+56958404733" 
-                      className="text-gray-400 hover:text-novillo-red transition-colors"
+                      className="text-gray-400 hover:text-novillo-red hover:underline transition-colors"
                     >
                       +56 9 5840 4733
                     </a>
@@ -102,7 +119,7 @@ const Contact = () => {
                     <h3 className="text-lg font-semibold mb-1 text-white">Email</h3>
                     <a 
                       href="mailto:contacto@carneselnovillo.cl"
-                      className="text-gray-400 hover:text-novillo-red transition-colors"
+                      className="text-gray-400 hover:text-novillo-red hover:underline transition-colors"
                     >
                       contacto@carneselnovillo.cl
                     </a>
@@ -122,10 +139,9 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="mt-10">
+              <div className="mt-8">
                 <h3 className="text-xl font-poppins font-semibold mb-4 text-white">Síguenos en Redes Sociales</h3>
-                <div className="flex space-x-4">
-                  {/* Usando los mismos estilos de iconos que en el footer */}
+                <div className="flex justify-center md:justify-start space-x-4">
                   <a 
                     href="https://facebook.com/carneselnovillo" 
                     target="_blank" 
@@ -156,7 +172,7 @@ const Contact = () => {
             
             {/* Map */}
             <div>
-              <h2 className="text-3xl font-poppins font-semibold mb-8 text-white">Nuestra Ubicación</h2>
+              <h2 className="text-3xl font-poppins font-semibold mb-6 text-white">Nuestra Ubicación</h2>
               <div className="bg-gray-200 rounded-lg overflow-hidden shadow-md h-[400px]">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.055407563578!2d-70.6656081231582!3d-33.422329997356595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c7a16bc4132f%3A0xe7ff1ab63c47f5ce!2sCarnes%20El%20Novillo!5e0!3m2!1ses-419!2scl!4v1712598758267!5m2!1ses-419!2scl" 
@@ -172,12 +188,25 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        
+        {/* Wave decoration for transition */}
+        <svg
+          className="w-full mt-12"
+          viewBox="0 0 1440 150"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#f7f7f7"
+            d="M0,0 C360,120 1080,0 1440,120 L1440,150 L0,150 Z"
+          />
+        </svg>
       </section>
 
-      {/* FAQ Section - mejorando contraste */}
-      <section className="py-16 px-4 bg-gray-100">
+      {/* FAQ Section - with improved contrast */}
+      <section className="py-12 px-4 bg-gray-100">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2 className="text-3xl font-poppins font-semibold mb-4 text-gray-900">Preguntas Frecuentes</h2>
             <p className="text-gray-700 max-w-2xl mx-auto font-poppins">
               Respuestas a las consultas más comunes de nuestros clientes
@@ -203,12 +232,25 @@ const Contact = () => {
             </Accordion>
           </div>
         </div>
+        
+        {/* Wave decoration for transition */}
+        <svg
+          className="w-full mt-12"
+          viewBox="0 0 1440 150"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#000000"
+            d="M0,0 C360,120 1080,0 1440,120 L1440,150 L0,150 Z"
+          />
+        </svg>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-novillo-black">
+      <section className="py-12 px-4 bg-novillo-black">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-poppins font-semibold mb-6 text-white">¿Tienes Alguna Otra Pregunta?</h2>
+          <h2 className="text-3xl font-poppins font-semibold mb-4 text-white">¿Tienes Alguna Otra Pregunta?</h2>
           <p className="text-gray-400 mb-8 font-poppins">
             Estamos aquí para ayudarte. Contáctanos directamente o visita nuestra tienda para una atención personalizada.
           </p>

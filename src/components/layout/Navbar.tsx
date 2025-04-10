@@ -49,67 +49,97 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className={`sticky top-0 bg-[#000000] text-white shadow-md z-50 transition-all duration-300 ${
-      isScrolled ? "py-2" : "py-3"
-    }`}>
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
-          {/* Mobile menu button - Left on mobile - Animado */}
-          <button
-            className="md:hidden order-1 relative w-6 h-6"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
-          >
-            <motion.div
-              animate={isMenuOpen ? "open" : "closed"}
-              variants={iconVariants}
-              transition={{ duration: 0.3 }}
-              className="flex items-center justify-center"
+    <>
+      <nav className={`sticky top-0 bg-[#000000] text-white shadow-md z-50 transition-all duration-300 ${
+        isScrolled ? "py-2" : "py-3"
+      }`}>
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between">
+            {/* Mobile menu button - Left on mobile - Animado */}
+            <button
+              className="md:hidden order-1 relative w-6 h-6"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
             >
-              {isMenuOpen ? (
-                <X className="h-6 w-6 text-[#CE1212] transition-colors duration-300" />
-              ) : (
-                <Menu className="h-6 w-6 hover:text-[#CE1212] transition-colors duration-300" />
-              )}
-            </motion.div>
-          </button>
-
-          {/* Logo - Centered on mobile */}
-          <Link to="/" className="flex items-center md:order-1 order-2 mx-auto md:mx-0">
-            <motion.img
-              src="/lovable-uploads/ad88ae2f-4290-481b-9136-cd76d4c7eac1.png"
-              alt="Carnes el Novillo"
-              className="h-16 w-auto" // Slightly larger logo
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            />
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-10 md:order-2">
-            {["/", "/productos", "/nosotros", "/contacto"].map((path, index) => (
-              <Link
-                key={index}
-                to={path}
-                className="hover:text-[#CE1212] font-medium transition-colors duration-300"
+              <motion.div
+                animate={isMenuOpen ? "open" : "closed"}
+                variants={iconVariants}
+                transition={{ duration: 0.3 }}
+                className="flex items-center justify-center"
               >
-                {["Inicio", "Productos", "Nosotros", "Contacto"][index]}
-              </Link>
-            ))}
-          </div>
+                {isMenuOpen ? (
+                  <X className="h-6 w-6 text-[#CE1212] transition-colors duration-300" />
+                ) : (
+                  <Menu className="h-6 w-6 hover:text-[#CE1212] transition-colors duration-300" />
+                )}
+              </motion.div>
+            </button>
 
-          {/* Cart - Right on mobile */}
-          <div className="flex items-center md:order-3 order-3">
-            <Link to="/carrito" className="relative">
-              <ShoppingCart className="h-6 w-6 hover:text-[#CE1212] transition-colors duration-300" />
-              {totalItems > 0 && (
-                <span className="absolute -top-2 -right-2 bg-[#CE1212] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {totalItems}
-                </span>
-              )}
+            {/* Logo - Centered on mobile */}
+            <Link to="/" className="flex items-center md:order-1 order-2 mx-auto md:mx-0">
+              <motion.img
+                src="/lovable-uploads/ad88ae2f-4290-481b-9136-cd76d4c7eac1.png"
+                alt="Carnes el Novillo"
+                className="h-16 w-auto" // Slightly larger logo
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              />
             </Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-10 md:order-2">
+              {["/", "/productos", "/nosotros", "/contacto"].map((path, index) => (
+                <Link
+                  key={index}
+                  to={path}
+                  className="hover:text-[#CE1212] font-medium transition-colors duration-300"
+                >
+                  {["Inicio", "Productos", "Nosotros", "Contacto"][index]}
+                </Link>
+              ))}
+            </div>
+
+            {/* Cart - Right on mobile */}
+            <div className="flex items-center md:order-3 order-3">
+              <Link to="/carrito" className="relative">
+                <motion.div
+                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.1 }}
+                  className="relative"
+                >
+                  <ShoppingCart className="h-6 w-6 hover:text-[#CE1212] transition-colors duration-300" />
+                  {totalItems > 0 && (
+                    <motion.span 
+                      className="absolute -top-2 -right-2 bg-[#CE1212] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      key={totalItems}
+                    >
+                      {totalItems}
+                    </motion.span>
+                  )}
+                </motion.div>
+              </Link>
+            </div>
           </div>
         </div>
+      </nav>
+      
+      {/* Developer Credit Banner */}
+      <div className="bg-black py-1 px-4 text-center text-xs text-white/70 flex items-center justify-center">
+        <span className="mr-2">Página desarrollada por:</span>
+        <a 
+          href="https://github.com/dr-memonguito" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex items-center hover:opacity-80 transition-opacity"
+        >
+          <img 
+            src="/lovable-uploads/4d61745a-bcf8-4729-8e46-7c8074d574dd.png" 
+            alt="Developer Logo" 
+            className="h-5 w-auto"
+          />
+        </a>
       </div>
 
       {/* Mobile Navigation - Animated */}
@@ -160,6 +190,6 @@ export const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   );
 };

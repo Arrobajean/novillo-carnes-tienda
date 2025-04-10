@@ -25,7 +25,7 @@ export const Footer = () => {
               <img
                 src="/lovable-uploads/ad88ae2f-4290-481b-9136-cd76d4c7eac1.png"
                 alt="Carnes El Novillo Logo"
-                className="h-28 w-auto" // Increased logo size
+                className="h-32 w-auto" // Increased logo size
               />
             </Link>
             <p className="text-gray-300 mb-4">
@@ -60,7 +60,7 @@ export const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Links - Remove list markers */}
+          {/* Links */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -69,7 +69,7 @@ export const Footer = () => {
             className="flex flex-col items-center md:items-start"
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Enlaces</h3>
-            <ul className="space-y-2 list-none"> {/* Added list-none to remove markers */}
+            <ul className="space-y-2 list-none"> {/* list-none to remove markers */}
               {[
                 { label: "Inicio", path: "/" },
                 { label: "Productos", path: "/productos" },
@@ -88,26 +88,28 @@ export const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Contact */}
+          {/* Contact - with improved centering for address */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-col items-center md:items-start text-center md:text-left"
+            className="flex flex-col items-center md:items-start"
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Contacto</h3>
-            <ul className="space-y-3 w-full list-none"> {/* Added list-none to remove markers */}
-              <li>
+            <ul className="space-y-3 w-full list-none"> {/* list-none to remove markers */}
+              <li className="flex justify-center md:justify-start">
                 <a 
                   href="https://maps.app.goo.gl/KLxWBLKvu5YvCrQk8" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex justify-center md:justify-start items-start space-x-2 text-left hover:text-[#CE1212] transition-colors"
+                  className="flex items-start space-x-2 text-center md:text-left hover:text-[#CE1212] transition-colors group"
                 >
-                  <MapPin className="h-5 w-5 text-[#D4AF37] shrink-0 mt-1" />
-                  <span className="text-gray-300 leading-snug hover:underline">
-                    Pablo Urzúa 1489, local 2, Independencia, Santiago.{" "}
+                  <MapPin className="h-5 w-5 text-[#D4AF37] shrink-0 mt-1 group-hover:text-[#CE1212]" />
+                  <span className="text-gray-300 leading-snug">
+                    Pablo Urzúa 1489,<br />
+                    local 2, Independencia,<br />
+                    Santiago.
                   </span>
                 </a>
               </li>
@@ -115,19 +117,19 @@ export const Footer = () => {
               <li>
                 <a 
                   href="tel:+56958404733"
-                  className="flex items-center justify-center md:justify-start hover:text-[#CE1212] transition-colors"
+                  className="flex items-center justify-center md:justify-start hover:text-[#CE1212] transition-colors group"
                 >
-                  <Phone className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0" />
-                  <span className="text-gray-300 hover:underline">+56 9 5840 4733</span>
+                  <Phone className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0 group-hover:text-[#CE1212]" />
+                  <span className="text-gray-300">+56 9 5840 4733</span>
                 </a>
               </li>
               <li>
                 <a 
                   href="mailto:contacto@carneselnovillo.cl"
-                  className="flex items-center justify-center md:justify-start hover:text-[#CE1212] transition-colors"
+                  className="flex items-center justify-center md:justify-start hover:text-[#CE1212] transition-colors group"
                 >
-                  <Mail className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0" />
-                  <span className="text-gray-300 hover:underline">
+                  <Mail className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0 group-hover:text-[#CE1212]" />
+                  <span className="text-gray-300">
                     contacto@carneselnovillo.cl
                   </span>
                 </a>
@@ -144,13 +146,13 @@ export const Footer = () => {
             className="flex flex-col items-center md:items-start"
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Horarios</h3>
-            <ul className="space-y-2 text-left list-none"> {/* Added list-none to remove markers */}
+            <ul className="space-y-2 text-left list-none"> {/* list-none to remove markers */}
               {[
                 { day: "Lunes a Viernes", time: "9:00 - 22:00" },
                 { day: "Sábados", time: "9:00 - 14:00" },
                 { day: "Domingos", time: "Cerrado" },
               ].map((item, i) => (
-                <li className="flex items-start" key={i}>
+                <li className="flex items-start justify-center md:justify-start" key={i}>
                   <Clock className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0 mt-0.5" />
                   <div>
                     <p className="text-gray-300">{item.day}</p>

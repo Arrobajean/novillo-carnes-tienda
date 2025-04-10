@@ -1,73 +1,30 @@
 
 import { Link } from "react-router-dom";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 export const AboutSection = () => {
-  const reasons = [
-    "Carnes frescas seleccionadas diariamente",
-    "Cortes realizados por maestros carniceros",
-    "Precios justos y competitivos",
-    "Envíos a domicilio en toda la Región Metropolitana",
-    "Atención personalizada y asesoría en tus compras",
-  ];
-
   return (
     <section
-      className="relative pt-20 bg-contain bg-repeat bg-center text-white font-poppins overflow-hidden"
-      style={{
-        backgroundImage: "url('/images/ui/background-pattern.jpg')",
-      }}
+      className="relative bg-contain bg-center text-white font-poppins overflow-hidden bg-[#1B1717]"
     >
-      {/* Capa oscura opcional encima del fondo */}
-      <div className="absolute inset-0 bg-black/50 z-0" />
-
-      <div className="container mx-auto relative z-20">
+      {/* Upper wave decoration */}
+      <svg
+        className="w-full block pointer-events-none -mt-1"
+        viewBox="0 0 1440 150"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill="#810000"
+          d="M0,0 C360,120 1080,0 1440,120 L1440,150 L0,150 Z"
+          transform="rotate(180 720 75)"
+        />
+      </svg>
+      
+      <div className="container mx-auto relative z-20 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Texto */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              ¿Por qué comprar en{" "}
-              <span className="text-novillo-gold">Carnes El Novillo</span>?
-            </h2>
-
-            <ul className="mb-6 space-y-3">
-              {reasons.map((reason, index) => (
-                <li key={index} className="flex items-start">
-                  <Check className="mr-2 h-5 w-5 text-novillo-gold mt-1 shrink-0" />
-                  <span>{reason}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="mb-6 text-white/90 leading-relaxed">
-              En{" "}
-              <span className="text-[#CE1212] font-semibold">
-                Carnes El Novillo
-              </span>{" "}
-              nos dedicamos a seleccionar lo mejor del campo chileno para
-              llevarlo directo a tu mesa. Calidad, sabor y servicio
-              personalizado en cada corte.
-            </p>
-
-            <Button
-              asChild
-              variant="link"
-              className="text-[#CE1212] hover:text-[#CE1212]/80 p-0 h-auto font-semibold text-lg"
-            >
-              <Link to="/productos" className="inline-flex items-center">
-                Ver nuestros productos 🍖{" "}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </motion.div>
-
           {/* Imagen decorativa */}
           <motion.div
             className="relative"
@@ -77,17 +34,53 @@ export const AboutSection = () => {
             viewport={{ once: true }}
           >
             <img
-              src="/images/ui/pedidos-novillo.jpg"
-              alt="Carnicería El Novillo"
+              src="/images/ui/ganaderia-sostenible.jpeg"
+              alt="Ganadería sostenible"
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
+          </motion.div>
+          
+          {/* Texto */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+              Nuestra <span className="text-novillo-gold">Filosofía</span>
+            </h2>
+
+            <p className="mb-5 text-white/90 leading-relaxed">
+              En <span className="text-[#CE1212] font-semibold">Carnes El Novillo</span>{" "}
+              creemos en el equilibrio entre la tradición artesanal y la innovación. 
+              Cada corte representa nuestro compromiso con la calidad, y cada cliente 
+              es parte fundamental de nuestra historia.
+            </p>
+            
+            <p className="mb-6 text-white/90 leading-relaxed">
+              Trabajamos con productores locales que comparten nuestra visión de sostenibilidad 
+              y bienestar animal, garantizando la mejor calidad en cada producto que ofrecemos 
+              desde nuestra tienda hasta tu mesa.
+            </p>
+
+            <Button
+              asChild
+              variant="default"
+              className="bg-[#CE1212] hover:bg-[#CE1212]/80 text-white"
+            >
+              <Link to="/nosotros" className="inline-flex items-center">
+                Conoce nuestra historia
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </motion.div>
         </div>
       </div>
       
-      {/* Añadiendo ola decorativa inferior para consistencia visual */}
+      {/* Bottom wave decoration */}
       <svg
-        className="w-full block pointer-events-none mt-16"
+        className="w-full block pointer-events-none"
         viewBox="0 0 1440 150"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"

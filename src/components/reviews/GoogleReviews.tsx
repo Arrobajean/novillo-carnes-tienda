@@ -1,5 +1,6 @@
 
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 const GoogleReviews = () => {
   useEffect(() => {
@@ -26,14 +27,34 @@ const GoogleReviews = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-[#1B1717] text-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+    <section className="py-16 bg-[#1B1717] text-white relative overflow-hidden">
+      {/* Upper wave decoration */}
+      <svg
+        className="w-full absolute top-0 left-0 right-0"
+        viewBox="0 0 1440 150"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill="#3D0000"
+          d="M0,0 C360,120 1080,0 1440,120 L1440,150 L0,150 Z"
+          transform="rotate(180 720 75)"
+        />
+      </svg>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-3xl font-bold mb-4 font-poppins">Lo Que Dicen Nuestros Clientes</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Descubre por qué nuestros clientes confían en la calidad y sabor de Carnes El Novillo
           </p>
-        </div>
+        </motion.div>
         
         {/* Widget de Google Reviews */}
         <div
@@ -59,6 +80,19 @@ const GoogleReviews = () => {
           </a>
         </div>
       </div>
+      
+      {/* Bottom wave decoration */}
+      <svg
+        className="w-full absolute bottom-0 left-0 right-0"
+        viewBox="0 0 1440 150"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill="#000000"
+          d="M0,0 C360,120 1080,0 1440,120 L1440,150 L0,150 Z"
+        />
+      </svg>
     </section>
   );
 };

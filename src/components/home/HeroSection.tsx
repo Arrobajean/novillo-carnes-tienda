@@ -70,6 +70,19 @@ export const HeroSection = () => {
           </div>
         </motion.div>
       </div>
+      
+      {/* Bottom wave decoration */}
+      <svg
+        className="absolute bottom-0 left-0 right-0 pointer-events-none"
+        viewBox="0 0 1440 150"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill="#000000"
+          d="M0,120 C360,40 1080,140 1440,60 L1440,150 L0,150 Z"
+        />
+      </svg>
     </section>
   );
 };
