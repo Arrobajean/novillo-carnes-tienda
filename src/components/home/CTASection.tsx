@@ -26,7 +26,7 @@ export const CTASection = () => {
         backgroundImage: "url('/images/ui/background-pattern.jpg')",
       }}
     >
-      {/* Wave superior */}
+      {/* Upper wave */}
       <svg
         className="w-full block pointer-events-none -mt-1"
         viewBox="0 0 1440 150"
@@ -39,7 +39,7 @@ export const CTASection = () => {
         />
       </svg>
 
-      {/* Capa oscura */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/80 z-0" />
 
       <div className="container mx-auto px-4 relative z-10 py-16 md:py-20">
@@ -77,7 +77,7 @@ export const CTASection = () => {
             ].map(({ Icon, title, text }, i) => (
               <div
                 key={i}
-                className="bg-[#1B1717] p-3 md:p-4 rounded-lg border border-novillo-red hover:scale-105 transition-transform duration-300 h-full"
+                className="bg-[#1B1717] p-3 md:p-4 rounded-lg border border-[#D4AF37]/20 hover:border-[#D4AF37] transition-colors h-full"
               >
                 <div className="bg-gradient-to-br from-novillo-red to-novillo-red/70 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
                   <Icon className="h-5 w-5 md:h-6 md:w-6 text-white" />
@@ -117,7 +117,7 @@ export const CTASection = () => {
             <Button
               asChild
               variant="link"
-              className="text-novillo-gold hover:text-novillo-gold/80 p-0 h-auto font-semibold text-lg"
+              className="text-[#CE1212] hover:text-[#CE1212]/80 p-0 h-auto font-semibold text-lg"
             >
               <Link to="/productos" className="inline-flex items-center">
                 Ver nuestros productos 🍖
@@ -165,7 +165,7 @@ export const CTASection = () => {
         </div>
       </div>
 
-      {/* Wave inferior */}
+      {/* Wave final */}
       <svg
         className="w-full block pointer-events-none -mb-1"
         viewBox="0 0 1440 60"
