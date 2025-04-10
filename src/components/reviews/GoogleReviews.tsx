@@ -11,6 +11,18 @@ const GoogleReviews = () => {
       script.id = scriptId;
       document.body.appendChild(script);
     }
+
+    // Limpieza del script cuando el componente se desmonte
+    return () => {
+      // Solo eliminamos si no hay otras instancias del widget que lo necesiten
+      const otherWidgets = document.querySelectorAll('[data-elfsight-app-lazy]');
+      if (otherWidgets.length <= 1) {
+        const scriptElement = document.getElementById(scriptId);
+        if (scriptElement) {
+          scriptElement.remove();
+        }
+      }
+    };
   }, []);
 
   return (
@@ -29,9 +41,22 @@ const GoogleReviews = () => {
           data-elfsight-app-lazy
         ></div>
         
-        {/* Mensaje para indicar que el componente está listo para la integración */}
-        <div className="text-center mt-8 text-sm text-gray-500">
-          <p>El componente está listo para la integración con Google Reviews.</p>
+        {/* Información sobre la integración */}
+        <div className="text-center mt-8">
+          <p className="text-gray-500 text-sm">
+            Estas reseñas son proporcionadas directamente por Google Reviews.
+          </p>
+          <p className="text-gray-500 text-sm">
+            Si has disfrutado de nuestros productos, ¡nos encantaría que nos dejaras una reseña!
+          </p>
+          <a 
+            href="https://g.page/r/CX7kRD9MlL_KEBM/review" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex mt-4 text-novillo-red hover:text-novillo-gold transition-colors"
+          >
+            Escribe una reseña
+          </a>
         </div>
       </div>
     </section>

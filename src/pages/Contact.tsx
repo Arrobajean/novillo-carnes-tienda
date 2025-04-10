@@ -1,5 +1,5 @@
 
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -58,7 +58,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl font-poppins font-semibold mb-8 text-gray-800">Información de Contacto</h2>
+              <h2 className="text-3xl font-poppins font-semibold mb-8 text-white">Información de Contacto</h2>
               
               <div className="space-y-8">
                 <div className="flex items-start">
@@ -66,9 +66,16 @@ const Contact = () => {
                     <MapPin className="h-6 w-6 text-novillo-red" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-1">Dirección</h3>
-                    <p className="text-gray-600">Pablo Urzúa 1489, local 2</p>
-                    <p className="text-gray-600">Independencia, Santiago, Chile</p>
+                    <h3 className="text-lg font-semibold mb-1 text-white">Dirección</h3>
+                    <a 
+                      href="https://maps.app.goo.gl/KLxWBLKvu5YvCrQk8" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-gray-400 hover:text-novillo-red transition-colors"
+                    >
+                      <p>Pablo Urzúa 1489, local 2</p>
+                      <p>Independencia, Santiago, Chile</p>
+                    </a>
                   </div>
                 </div>
                 
@@ -77,9 +84,13 @@ const Contact = () => {
                     <Phone className="h-6 w-6 text-novillo-red" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-1">Teléfono</h3>
-                    <p className="text-gray-600">+56 9 5840 4733</p>
-                    <p className="text-gray-600">+56 9 5840 4733 (WhatsApp)</p>
+                    <h3 className="text-lg font-semibold mb-1 text-white">Teléfono</h3>
+                    <a 
+                      href="tel:+56958404733" 
+                      className="text-gray-400 hover:text-novillo-red transition-colors"
+                    >
+                      +56 9 5840 4733
+                    </a>
                   </div>
                 </div>
                 
@@ -88,9 +99,13 @@ const Contact = () => {
                     <Mail className="h-6 w-6 text-novillo-red" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-1">Email</h3>
-                    <p className="text-gray-600">contacto@carneselnovillo.cl</p>
-                    <p className="text-gray-600">ventas@carneselnovillo.cl</p>
+                    <h3 className="text-lg font-semibold mb-1 text-white">Email</h3>
+                    <a 
+                      href="mailto:contacto@carneselnovillo.cl"
+                      className="text-gray-400 hover:text-novillo-red transition-colors"
+                    >
+                      contacto@carneselnovillo.cl
+                    </a>
                   </div>
                 </div>
                 
@@ -99,46 +114,41 @@ const Contact = () => {
                     <Clock className="h-6 w-6 text-novillo-red" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-1">Horarios de Atención</h3>
-                    <p className="text-gray-600">Lunes a Viernes: 9:00 - 22:00</p>
-                    <p className="text-gray-600">Sábados: 9:00 - 14:00</p>
-                    <p className="text-gray-600">Domingos: Cerrado</p>
+                    <h3 className="text-lg font-semibold mb-1 text-white">Horarios de Atención</h3>
+                    <p className="text-gray-400">Lunes a Viernes: 9:00 - 22:00</p>
+                    <p className="text-gray-400">Sábados: 9:00 - 14:00</p>
+                    <p className="text-gray-400">Domingos: Cerrado</p>
                   </div>
                 </div>
               </div>
               
               <div className="mt-10">
-                <h3 className="text-xl font-poppins font-semibold mb-4">Síguenos en Redes Sociales</h3>
+                <h3 className="text-xl font-poppins font-semibold mb-4 text-white">Síguenos en Redes Sociales</h3>
                 <div className="flex space-x-4">
+                  {/* Usando los mismos estilos de iconos que en el footer */}
                   <a 
                     href="https://facebook.com/carneselnovillo" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-novillo-red hover:bg-red-900 transition-colors text-white p-3 rounded-full"
+                    className="bg-gray-800 p-3 rounded-full hover:bg-[#CE1212] transition-colors text-white hover:scale-110 transform duration-200"
                   >
-                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
-                    </svg>
+                    <Facebook className="h-5 w-5" />
                   </a>
                   <a 
                     href="https://www.instagram.com/carneselnovillo/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-novillo-red hover:bg-red-900 transition-colors text-white p-3 rounded-full"
+                    className="bg-gray-800 p-3 rounded-full hover:bg-[#CE1212] transition-colors text-white hover:scale-110 transform duration-200"
                   >
-                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
-                    </svg>
+                    <Instagram className="h-5 w-5" />
                   </a>
                   <a 
                     href="https://wa.me/56958404733" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-novillo-red hover:bg-red-900 transition-colors text-white p-3 rounded-full"
+                    className="bg-gray-800 p-3 rounded-full hover:bg-[#CE1212] transition-colors text-white hover:scale-110 transform duration-200"
                   >
-                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path fillRule="evenodd" d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.677.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.72.045.419-.1.824z" clipRule="evenodd" />
-                    </svg>
+                    <MessageCircle className="h-5 w-5" />
                   </a>
                 </div>
               </div>
@@ -146,7 +156,7 @@ const Contact = () => {
             
             {/* Map */}
             <div>
-              <h2 className="text-3xl font-poppins font-semibold mb-8 text-gray-800">Nuestra Ubicación</h2>
+              <h2 className="text-3xl font-poppins font-semibold mb-8 text-white">Nuestra Ubicación</h2>
               <div className="bg-gray-200 rounded-lg overflow-hidden shadow-md h-[400px]">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.055407563578!2d-70.6656081231582!3d-33.422329997356595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c7a16bc4132f%3A0xe7ff1ab63c47f5ce!2sCarnes%20El%20Novillo!5e0!3m2!1ses-419!2scl!4v1712598758267!5m2!1ses-419!2scl" 
@@ -164,12 +174,12 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ Section - with accordions */}
-      <section className="py-16 px-4 bg-novillo-light">
+      {/* FAQ Section - mejorando contraste */}
+      <section className="py-16 px-4 bg-gray-100">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-poppins font-semibold mb-4 text-gray-800">Preguntas Frecuentes</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto font-poppins">
+            <h2 className="text-3xl font-poppins font-semibold mb-4 text-gray-900">Preguntas Frecuentes</h2>
+            <p className="text-gray-700 max-w-2xl mx-auto font-poppins">
               Respuestas a las consultas más comunes de nuestros clientes
             </p>
           </div>
@@ -180,12 +190,12 @@ const Contact = () => {
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
-                  className="border-b border-gray-200"
+                  className="border-b border-gray-300"
                 >
-                  <AccordionTrigger className="text-left text-lg font-medium py-4 hover:no-underline hover:text-novillo-red">
+                  <AccordionTrigger className="text-left text-lg font-medium py-4 hover:no-underline hover:text-novillo-red text-gray-900">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 py-4 px-2">
+                  <AccordionContent className="text-gray-700 py-4 px-2">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -198,8 +208,8 @@ const Contact = () => {
       {/* CTA Section */}
       <section className="py-16 px-4 bg-novillo-black">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-poppins font-semibold mb-6">¿Tienes Alguna Otra Pregunta?</h2>
-          <p className="text-gray-600 mb-8 font-poppins">
+          <h2 className="text-3xl font-poppins font-semibold mb-6 text-white">¿Tienes Alguna Otra Pregunta?</h2>
+          <p className="text-gray-400 mb-8 font-poppins">
             Estamos aquí para ayudarte. Contáctanos directamente o visita nuestra tienda para una atención personalizada.
           </p>
           <Button 

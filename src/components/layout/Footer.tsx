@@ -25,7 +25,7 @@ export const Footer = () => {
               <img
                 src="/lovable-uploads/ad88ae2f-4290-481b-9136-cd76d4c7eac1.png"
                 alt="Carnes El Novillo Logo"
-                className="h-24 w-auto"
+                className="h-28 w-auto" // Increased logo size
               />
             </Link>
             <p className="text-gray-300 mb-4">
@@ -60,7 +60,7 @@ export const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Links */}
+          {/* Links - Remove list markers */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -69,7 +69,7 @@ export const Footer = () => {
             className="flex flex-col items-center md:items-start"
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Enlaces</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 list-none"> {/* Added list-none to remove markers */}
               {[
                 { label: "Inicio", path: "/" },
                 { label: "Productos", path: "/productos" },
@@ -97,7 +97,7 @@ export const Footer = () => {
             className="flex flex-col items-center md:items-start text-center md:text-left"
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Contacto</h3>
-            <ul className="space-y-3 w-full">
+            <ul className="space-y-3 w-full list-none"> {/* Added list-none to remove markers */}
               <li>
                 <a 
                   href="https://maps.app.goo.gl/KLxWBLKvu5YvCrQk8" 
@@ -144,7 +144,7 @@ export const Footer = () => {
             className="flex flex-col items-center md:items-start"
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Horarios</h3>
-            <ul className="space-y-2 text-left">
+            <ul className="space-y-2 text-left list-none"> {/* Added list-none to remove markers */}
               {[
                 { day: "Lunes a Viernes", time: "9:00 - 22:00" },
                 { day: "Sábados", time: "9:00 - 14:00" },

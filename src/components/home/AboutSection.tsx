@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -81,10 +82,21 @@ export const AboutSection = () => {
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
           </motion.div>
-
-          
         </div>
       </div>
+      
+      {/* Añadiendo ola decorativa inferior para consistencia visual */}
+      <svg
+        className="w-full block pointer-events-none mt-16"
+        viewBox="0 0 1440 150"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill="#3D0000"
+          d="M0,0 C360,120 1080,0 1440,120 L1440,150 L0,150 Z"
+        />
+      </svg>
     </section>
   );
 };

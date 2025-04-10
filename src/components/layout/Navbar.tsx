@@ -26,23 +26,52 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Variantes de animación para el icono del menú hamburguesa
+  const iconVariants = {
+    closed: { rotate: 0, scale: 1 },
+    open: { rotate: 180, scale: 1 }
+  };
+
+  // Variantes para líneas del menú hamburguesa (implementado como versión alternativa)
+  const lineTopVariants = {
+    closed: { rotate: 0, translateY: 0 },
+    open: { rotate: 45, translateY: 8 }
+  };
+  
+  const lineCenterVariants = {
+    closed: { opacity: 1 },
+    open: { opacity: 0 }
+  };
+  
+  const lineBottomVariants = {
+    closed: { rotate: 0, translateY: 0 },
+    open: { rotate: -45, translateY: -8 }
+  };
+
   return (
     <nav className={`sticky top-0 bg-[#000000] text-white shadow-md z-50 transition-all duration-300 ${
       isScrolled ? "py-2" : "py-3"
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          {/* Mobile menu button - Left on mobile */}
+          {/* Mobile menu button - Left on mobile - Animado */}
           <button
-            className="md:hidden order-1"
+            className="md:hidden order-1 relative w-6 h-6"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
           >
-            {isMenuOpen ? (
-              <X className="h-6 w-6 hover:text-[#CE1212] transition-colors duration-300" />
-            ) : (
-              <Menu className="h-6 w-6 hover:text-[#CE1212] transition-colors duration-300" />
-            )}
+            <motion.div
+              animate={isMenuOpen ? "open" : "closed"}
+              variants={iconVariants}
+              transition={{ duration: 0.3 }}
+              className="flex items-center justify-center"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6 text-[#CE1212] transition-colors duration-300" />
+              ) : (
+                <Menu className="h-6 w-6 hover:text-[#CE1212] transition-colors duration-300" />
+              )}
+            </motion.div>
           </button>
 
           {/* Logo - Centered on mobile */}
@@ -95,24 +124,38 @@ export const Navbar = () => {
           >
             <div className="flex flex-col items-center space-y-4">
               {["/", "/productos", "/nosotros", "/contacto"].map((path, index) => (
-                <Link
+                <motion.div
                   key={index}
-                  to={path}
-                  className="block text-center hover:text-[#CE1212] transition-colors duration-300 py-2 w-full text-lg"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="w-full"
+                >
+                  <Link
+                    to={path}
+                    className="block text-center hover:text-[#CE1212] transition-colors duration-300 py-2 w-full text-lg"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {["Inicio", "Productos", "Nosotros", "Contacto"][index]}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="w-full"
+              >
+                <Button
+                  asChild
+                  className="bg-[#CE1212] hover:bg-[#CE1212]/80 text-white w-full mt-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {["Inicio", "Productos", "Nosotros", "Contacto"][index]}
-                </Link>
-              ))}
-              <Button
-                asChild
-                className="bg-[#CE1212] hover:bg-[#CE1212]/80 text-white w-full mt-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Link to="/carrito" className="flex items-center justify-center gap-2">
-                  <ShoppingCart className="h-5 w-5" /> Ver carrito
-                </Link>
-              </Button>
+                  <Link to="/carrito" className="flex items-center justify-center gap-2">
+                    <ShoppingCart className="h-5 w-5" /> Ver carrito
+                  </Link>
+                </Button>
+              </motion.div>
             </div>
           </motion.div>
         )}
