@@ -1,5 +1,6 @@
+
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Facebook, Instagram, MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 const fadeIn = {
@@ -20,13 +21,13 @@ export const Footer = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center md:items-start"
           >
-            <div className="mb-4">
+            <Link to="/" className="mb-4 transition-transform hover:scale-105">
               <img
-                src="/public/images/ui/logo-png.png"
+                src="/lovable-uploads/ad88ae2f-4290-481b-9136-cd76d4c7eac1.png"
                 alt="Carnes El Novillo Logo"
                 className="h-24 w-auto"
               />
-            </div>
+            </Link>
             <p className="text-gray-300 mb-4">
               Tradición y calidad en carnes desde 2020. Ofrecemos los mejores
               cortes con el sabor auténtico que caracteriza a nuestra marca.
@@ -36,7 +37,7 @@ export const Footer = () => {
                 href="https://www.instagram.com/carneselnovillo/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors text-white"
+                className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors text-white hover:scale-110 transform duration-200"
               >
                 <Instagram size={20} />
               </a>
@@ -44,9 +45,17 @@ export const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=61550850388071"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors text-white"
+                className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors text-white hover:scale-110 transform duration-200"
               >
                 <Facebook size={20} />
+              </a>
+              <a
+                href="https://wa.me/56958404733"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors text-white hover:scale-110 transform duration-200"
+              >
+                <MessageCircle size={20} />
               </a>
             </div>
           </motion.div>
@@ -89,22 +98,39 @@ export const Footer = () => {
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Contacto</h3>
             <ul className="space-y-3 w-full">
-              <li className="flex justify-center md:justify-start items-start space-x-2 text-left">
-                <MapPin className="h-5 w-5 text-[#D4AF37] shrink-0 mt-1" />
-                <span className="text-gray-300 leading-snug">
-                  Pablo Urzúa 1489, local 2, Independencia, Santiago.{" "}
-                </span>
+              <li>
+                <a 
+                  href="https://maps.app.goo.gl/KLxWBLKvu5YvCrQk8" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex justify-center md:justify-start items-start space-x-2 text-left hover:text-[#CE1212] transition-colors"
+                >
+                  <MapPin className="h-5 w-5 text-[#D4AF37] shrink-0 mt-1" />
+                  <span className="text-gray-300 leading-snug hover:underline">
+                    Pablo Urzúa 1489, local 2, Independencia, Santiago.{" "}
+                  </span>
+                </a>
               </li>
 
-              <li className="flex items-center justify-center md:justify-start">
-                <Phone className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0" />
-                <span className="text-gray-300">+56 9 5840 4733</span>
+              <li>
+                <a 
+                  href="tel:+56958404733"
+                  className="flex items-center justify-center md:justify-start hover:text-[#CE1212] transition-colors"
+                >
+                  <Phone className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0" />
+                  <span className="text-gray-300 hover:underline">+56 9 5840 4733</span>
+                </a>
               </li>
-              <li className="flex items-center justify-center md:justify-start">
-                <Mail className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0" />
-                <span className="text-gray-300">
-                  contacto@carneselnovillo.cl
-                </span>
+              <li>
+                <a 
+                  href="mailto:contacto@carneselnovillo.cl"
+                  className="flex items-center justify-center md:justify-start hover:text-[#CE1212] transition-colors"
+                >
+                  <Mail className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0" />
+                  <span className="text-gray-300 hover:underline">
+                    contacto@carneselnovillo.cl
+                  </span>
+                </a>
               </li>
             </ul>
           </motion.div>

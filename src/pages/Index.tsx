@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { getFeaturedProducts, categories } from "@/data/products";
 import { Product } from "@/types";
@@ -6,7 +7,7 @@ import { AboutSection } from "@/components/home/AboutSection";
 import { CategoriesSection } from "@/components/home/CategoriesSection";
 import { FeaturedProductsSection } from "@/components/home/FeaturedProductsSection";
 import { CTASection } from "@/components/home/CTASection";
-import Reviews from "@/components/reviews/GoogleReviews"; // ← Corregido aquí
+import Reviews from "@/components/reviews/GoogleReviews";
 
 const Index = () => {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -22,7 +23,7 @@ const Index = () => {
       <FeaturedProductsSection products={featuredProducts} />
       <CategoriesSection categories={categories} />
       <AboutSection />
-      <Reviews /> {/* ← Corregido aquí */}
+      <Reviews />
     </div>
   );
 };

@@ -1,14 +1,17 @@
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { ShoppingBag, ArrowRight, ClipboardCheck } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { ShoppingBag, ArrowRight, ClipboardCheck, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { CartItem } from "@/components/cart/CartItem";
 import { formatPrice, generateWhatsAppUrl } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 const Cart = () => {
   const { items, getTotalPrice, clearCart } = useCart();
   const totalPrice = getTotalPrice();
+  const navigate = useNavigate();
 
   const whatsappNumber = "56912345678";
 
@@ -19,26 +22,40 @@ const Cart = () => {
     );
   };
 
+  const handleClose = () => {
+    navigate(-1); // Navigate back
+  };
+
   if (items.length === 0) {
     return (
       <div className="container mx-auto py-20 px-4 bg-[#1B1717] text-white min-h-screen">
-        <div className="text-center max-w-md mx-auto">
-          <div className="bg-[#333] rounded-full p-6 w-24 h-24 mx-auto mb-6 flex items-center justify-center">
-            <ShoppingBag className="h-10 w-10 text-novillo-gold" />
-          </div>
-          <h1 className="text-2xl font-sans font-semibold mb-4">
-            Tu carrito está vacío
-          </h1>
-          <p className="text-gray-400 mb-8">
-            Parece que aún no has agregado productos. Explora nuestro catálogo
-            para encontrar los mejores cortes.
-          </p>
-          <Button
-            asChild
-            className="bg-novillo-red hover:bg-red-900 text-white"
+        <div className="relative max-w-md mx-auto">
+          <Button 
+            variant="ghost" 
+            className="absolute right-0 top-0 text-gray-400 hover:text-white"
+            onClick={handleClose}
           >
-            <Link to="/productos">Ver Productos</Link>
+            <X className="h-6 w-6" />
           </Button>
+          
+          <div className="text-center">
+            <div className="bg-[#333] rounded-full p-6 w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+              <ShoppingBag className="h-10 w-10 text-novillo-gold" />
+            </div>
+            <h1 className="text-2xl font-sans font-semibold mb-4">
+              Tu carrito está vacío
+            </h1>
+            <p className="text-gray-400 mb-8">
+              Parece que aún no has agregado productos. Explora nuestro catálogo
+              para encontrar los mejores cortes.
+            </p>
+            <Button
+              asChild
+              className="bg-novillo-red hover:bg-red-900 text-white"
+            >
+              <Link to="/productos">Ver Productos</Link>
+            </Button>
+          </div>
         </div>
       </div>
     );
@@ -46,7 +63,17 @@ const Cart = () => {
 
   return (
     <div className="container mx-auto py-10 px-4 bg-[#1B1717] text-white min-h-screen font-sans">
-      <h1 className="text-3xl font-bold mb-6">Tu Carrito</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-3xl font-bold">Tu Carrito</h1>
+        <Button 
+          variant="ghost" 
+          className="text-gray-400 hover:text-white"
+          onClick={handleClose}
+          aria-label="Cerrar carrito"
+        >
+          <X className="h-6 w-6" />
+        </Button>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
         {/* Cart Items */}
@@ -78,7 +105,12 @@ const Cart = () => {
 
         {/* Order Summary */}
         <div className="lg:col-span-1">
-          <div className="bg-black rounded-lg shadow-md p-6 sticky top-24">
+          <motion.div 
+            className="bg-black rounded-lg shadow-md p-6 sticky top-24"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
             <h2 className="text-xl font-semibold mb-4">Resumen del Pedido</h2>
 
             <div className="space-y-3 mb-6">
@@ -112,7 +144,7 @@ const Cart = () => {
                 </span>
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
