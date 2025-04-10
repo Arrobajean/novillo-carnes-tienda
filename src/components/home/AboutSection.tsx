@@ -13,21 +13,14 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section className="relative py-20 px-4 text-[#EEEBDD] font-poppins overflow-hidden">
-      {/* Imagen de fondo que rellena todo */}
-      <img
-        src="/images/ui/background-pattern4.jpg"
-        alt="Fondo de Carnes El Novillo"
-        className="absolute inset-0 w-full h-full object-[top] object-contain z-0 opacity-60"
-      />
-
-      {/* Overlay negro con animación */}
-      <motion.div
-        className="absolute inset-0 bg-black/70 z-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.7 }}
-        transition={{ duration: 1 }}
-      />
+    <section
+      className="relative pt-20 bg-contain bg-repeat bg-center text-white font-poppins overflow-hidden"
+      style={{
+        backgroundImage: "url('/images/ui/background-pattern.jpg')",
+      }}
+    >
+      {/* Capa oscura opcional encima del fondo */}
+      <div className="absolute inset-0 bg-black/50 z-0" />
 
       <div className="container mx-auto relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -88,6 +81,8 @@ export const AboutSection = () => {
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
           </motion.div>
+
+          
         </div>
       </div>
     </section>
