@@ -34,19 +34,21 @@ const Contact = () => {
   
   return (
     <div className="font-poppins">
-      {/* Hero Section */}
+      {/* Hero Section with updated background */}
       <section 
-        className="hero-gradient relative h-[300px] flex items-center text-white" 
+        className="relative h-[300px] flex items-center text-white" 
         style={{ 
-          '--image-url': 'url("https://images.unsplash.com/photo-1485846147915-69f139ac30b9?q=80&w=2000")' 
-        } as React.CSSProperties}
+          background: "url('/images/ui/background-pattern.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center"
+        }}
       >
-        {/* Upper wave decoration */}
+        {/* Overlay for better text contrast */}
         <div className="absolute inset-0 bg-black/60 z-10"></div>
         
         <div className="container mx-auto px-4 z-20">
           <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-poppins font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-poppins font-bold mb-3">
               Contacto
             </h1>
             <p className="text-xl">
@@ -55,7 +57,7 @@ const Contact = () => {
           </div>
         </div>
         
-        {/* Bottom wave decoration */}
+        {/* Bottom wave decoration that connects directly with the next section */}
         <svg
           className="absolute bottom-0 left-0 w-full"
           viewBox="0 0 1440 150"
@@ -69,7 +71,7 @@ const Contact = () => {
         </svg>
       </section>
 
-      {/* Contact Info */}
+      {/* Contact Info - removed margin-top to eliminate gap */}
       <section className="py-12 px-4 bg-novillo-black">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -143,7 +145,7 @@ const Contact = () => {
                 <h3 className="text-xl font-poppins font-semibold mb-4 text-white">Síguenos en Redes Sociales</h3>
                 <div className="flex justify-center md:justify-start space-x-4">
                   <a 
-                    href="https://facebook.com/carneselnovillo" 
+                    href="https://www.facebook.com/profile.php?id=61550850388071" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-gray-800 p-3 rounded-full hover:bg-[#CE1212] transition-colors text-white hover:scale-110 transform duration-200"
@@ -170,7 +172,7 @@ const Contact = () => {
               </div>
             </div>
             
-            {/* Map */}
+            {/* Map with direct link to Google Maps */}
             <div>
               <h2 className="text-3xl font-poppins font-semibold mb-6 text-white">Nuestra Ubicación</h2>
               <div className="bg-gray-200 rounded-lg overflow-hidden shadow-md h-[400px]">
@@ -184,6 +186,17 @@ const Contact = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Ubicación de Carnes el Novillo"
                 ></iframe>
+              </div>
+              <div className="mt-3 text-center">
+                <a 
+                  href="https://maps.app.goo.gl/KLxWBLKvu5YvCrQk8" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-novillo-red hover:underline inline-flex items-center"
+                >
+                  Ver en Google Maps
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </a>
               </div>
             </div>
           </div>
@@ -256,9 +269,10 @@ const Contact = () => {
           </p>
           <Button 
             size="lg" 
-            className="bg-novillo-red hover:bg-red-900 text-white font-poppins transition-colors"
+            className="bg-novillo-red hover:bg-red-900 text-white font-poppins transition-all transform hover:scale-105 shadow-lg"
             onClick={() => window.open('https://wa.me/56958404733', '_blank')}
           >
+            <MessageCircle className="mr-2 h-5 w-5 animate-pulse" />
             Contáctanos por WhatsApp
           </Button>
         </div>

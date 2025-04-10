@@ -7,7 +7,7 @@ import { AboutSection } from "@/components/home/AboutSection";
 import { CategoriesSection } from "@/components/home/CategoriesSection";
 import { FeaturedProductsSection } from "@/components/home/FeaturedProductsSection";
 import { CTASection } from "@/components/home/CTASection";
-import Reviews from "@/components/reviews/GoogleReviews";
+import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 
 const Index = () => {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -20,14 +20,16 @@ const Index = () => {
     <div className="flex flex-col min-h-screen">
       <HeroSection />
       
-      {/* Combined CTA and About Section - created directly in the new component */}
+      {/* Combined CTA and About Section */}
       <CTASection />
       
       {/* Moved Categories before Featured Products */}
       <CategoriesSection categories={categories} />
       <FeaturedProductsSection products={featuredProducts} />
       <AboutSection />
-      <Reviews />
+      
+      {/* Use custom Testimonials instead of external Google Reviews */}
+      <TestimonialsSection />
     </div>
   );
 };

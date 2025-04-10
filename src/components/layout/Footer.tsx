@@ -25,7 +25,7 @@ export const Footer = () => {
               <img
                 src="/lovable-uploads/ad88ae2f-4290-481b-9136-cd76d4c7eac1.png"
                 alt="Carnes El Novillo Logo"
-                className="h-32 w-auto" // Increased logo size
+                className="h-36 w-auto" // Increased logo size slightly
               />
             </Link>
             <p className="text-gray-300 mb-4">
@@ -69,7 +69,7 @@ export const Footer = () => {
             className="flex flex-col items-center md:items-start"
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Enlaces</h3>
-            <ul className="space-y-2 list-none"> {/* list-none to remove markers */}
+            <ul className="space-y-2 list-none">
               {[
                 { label: "Inicio", path: "/" },
                 { label: "Productos", path: "/productos" },
@@ -97,7 +97,7 @@ export const Footer = () => {
             className="flex flex-col items-center md:items-start"
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Contacto</h3>
-            <ul className="space-y-3 w-full list-none"> {/* list-none to remove markers */}
+            <ul className="space-y-3 w-full list-none">
               <li className="flex justify-center md:justify-start">
                 <a 
                   href="https://maps.app.goo.gl/KLxWBLKvu5YvCrQk8" 
@@ -146,7 +146,7 @@ export const Footer = () => {
             className="flex flex-col items-center md:items-start"
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Horarios</h3>
-            <ul className="space-y-2 text-left list-none"> {/* list-none to remove markers */}
+            <ul className="space-y-2 text-left list-none">
               {[
                 { day: "Lunes a Viernes", time: "9:00 - 22:00" },
                 { day: "Sábados", time: "9:00 - 14:00" },
@@ -164,7 +164,7 @@ export const Footer = () => {
           </motion.div>
         </div>
 
-        {/* Copyright */}
+        {/* Copyright + Developer Credit */}
         <motion.div
           variants={fadeIn}
           initial="hidden"
@@ -172,10 +172,19 @@ export const Footer = () => {
           viewport={{ once: true }}
           className="border-t border-gray-700 mt-10 pt-6 text-center"
         >
-          <p className="text-gray-400 text-xs">
+          <p className="text-gray-400 text-xs mb-3">
             © {new Date().getFullYear()} Carnes el Novillo. Todos los derechos
             reservados.
           </p>
+          {/* Developer credit */}
+          <div className="flex items-center justify-center text-xs text-gray-500">
+            <span className="mr-2">Sitio desarrollado por</span>
+            <img 
+              src="/lovable-uploads/4d61745a-bcf8-4729-8e46-7c8074d574dd.png" 
+              alt="Logo del desarrollador" 
+              className="h-5 w-auto" 
+            />
+          </div>
         </motion.div>
       </div>
     </footer>

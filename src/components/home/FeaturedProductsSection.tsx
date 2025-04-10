@@ -16,7 +16,7 @@ export const FeaturedProductsSection = ({
     <section className="py-12 md:py-16 bg-[#810000]">
       {/* Upper wave decoration */}
       <svg
-        className="w-full block pointer-events-none -mt-1"
+        className="w-full block pointer-events-none"
         viewBox="0 0 1440 150"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -40,10 +40,12 @@ export const FeaturedProductsSection = ({
           </p>
         </div>
 
-        {/* Reduced padding and spacing for mobile */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        {/* Products grid with improved responsive sizing */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 justify-items-center">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <div key={product.id} className="w-full max-w-xs">
+              <ProductCard product={product} />
+            </div>
           ))}
         </div>
 

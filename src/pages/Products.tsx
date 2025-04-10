@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { products, getProductsByCategory } from "@/data/products";
@@ -31,6 +32,19 @@ const Products = () => {
 
   return (
     <div className="bg-[#7D0A0A] min-h-screen">
+      {/* Upper wave decoration */}
+      <svg
+        className="w-full block pointer-events-none -mt-1"
+        viewBox="0 0 1440 150"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill="#7D0A0A"
+          d="M0,150 C600,100 900,0 1440,80 L1440,0 L0,0 Z"
+        />
+      </svg>
+      
       <div className="container mx-auto py-10 px-4">
         {/* Encabezado centrado */}
         <div className="mb-8 text-center">
@@ -52,6 +66,19 @@ const Products = () => {
         {/* Lista de productos */}
         <ProductGrid products={filteredProducts} />
       </div>
+      
+      {/* Bottom wave decoration */}
+      <svg
+        className="w-full block pointer-events-none"
+        viewBox="0 0 1440 150"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill="#000000"
+          d="M0,0 C360,120 1080,0 1440,120 L1440,150 L0,150 Z"
+        />
+      </svg>
     </div>
   );
 };
