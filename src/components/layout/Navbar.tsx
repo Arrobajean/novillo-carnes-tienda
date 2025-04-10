@@ -76,7 +76,7 @@ export const Navbar = () => {
               </motion.div>
             </button>
 
-            {/* Logo - Centered on mobile */}
+      
             <Link
               to="/"
               className="flex items-center md:order-1 order-2 mx-auto md:mx-0"
@@ -131,7 +131,6 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Navigation - Animated */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div

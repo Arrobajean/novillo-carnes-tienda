@@ -176,8 +176,6 @@ export const Footer = () => {
           </motion.div>
         </div>
 
-        {/* Copyright + Developer Credit */}
-
         <motion.div
           variants={fadeIn}
           initial="hidden"
