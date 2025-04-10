@@ -1,6 +1,13 @@
-
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  MessageCircle,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 const fadeIn = {
@@ -99,23 +106,25 @@ export const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-white">Contacto</h3>
             <ul className="space-y-3 w-full list-none">
               <li className="flex justify-center md:justify-start">
-                <a 
-                  href="https://maps.app.goo.gl/KLxWBLKvu5YvCrQk8" 
-                  target="_blank" 
+                <a
+                  href="https://maps.app.goo.gl/KLxWBLKvu5YvCrQk8"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start space-x-2 text-center md:text-left hover:text-[#CE1212] transition-colors group"
                 >
                   <MapPin className="h-5 w-5 text-[#D4AF37] shrink-0 mt-1 group-hover:text-[#CE1212]" />
                   <span className="text-gray-300 leading-snug">
-                    Pablo Urzúa 1489,<br />
-                    local 2, Independencia,<br />
+                    Pablo Urzúa 1489,
+                    <br />
+                    local 2, Independencia,
+                    <br />
                     Santiago.
                   </span>
                 </a>
               </li>
 
               <li>
-                <a 
+                <a
                   href="tel:+56958404733"
                   className="flex items-center justify-center md:justify-start hover:text-[#CE1212] transition-colors group"
                 >
@@ -124,7 +133,7 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
+                <a
                   href="mailto:contacto@carneselnovillo.cl"
                   className="flex items-center justify-center md:justify-start hover:text-[#CE1212] transition-colors group"
                 >
@@ -152,7 +161,10 @@ export const Footer = () => {
                 { day: "Sábados", time: "9:00 - 14:00" },
                 { day: "Domingos", time: "Cerrado" },
               ].map((item, i) => (
-                <li className="flex items-start justify-center md:justify-start" key={i}>
+                <li
+                  className="flex items-start justify-center md:justify-start"
+                  key={i}
+                >
                   <Clock className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0 mt-0.5" />
                   <div>
                     <p className="text-gray-300">{item.day}</p>
@@ -165,6 +177,7 @@ export const Footer = () => {
         </div>
 
         {/* Copyright + Developer Credit */}
+
         <motion.div
           variants={fadeIn}
           initial="hidden"
@@ -179,10 +192,10 @@ export const Footer = () => {
           {/* Developer credit */}
           <div className="flex items-center justify-center text-xs text-gray-500">
             <span className="mr-2">Sitio desarrollado por</span>
-            <img 
-              src="/lovable-uploads/4d61745a-bcf8-4729-8e46-7c8074d574dd.png" 
-              alt="Logo del desarrollador" 
-              className="h-5 w-auto" 
+            <img
+              src="/lovable-uploads/4d61745a-bcf8-4729-8e46-7c8074d574dd.png"
+              alt="Logo del desarrollador"
+              className="h-5 w-auto"
             />
           </div>
         </motion.div>

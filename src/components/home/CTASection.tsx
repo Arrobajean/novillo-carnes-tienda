@@ -1,7 +1,13 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Truck, ShoppingCart, CreditCard, CheckCircle, ArrowRight, Check } from "lucide-react";
+import {
+  Truck,
+  ShoppingCart,
+  CreditCard,
+  CheckCircle,
+  ArrowRight,
+  Check,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 export const CTASection = () => {
@@ -20,7 +26,7 @@ export const CTASection = () => {
         backgroundImage: "url('/images/ui/background-pattern.jpg')",
       }}
     >
-      {/* Upper decorative wave */}
+      {/* Wave superior */}
       <svg
         className="w-full block pointer-events-none -mt-1"
         viewBox="0 0 1440 150"
@@ -33,11 +39,11 @@ export const CTASection = () => {
         />
       </svg>
 
-      {/* Dark overlay */}
+      {/* Capa oscura */}
       <div className="absolute inset-0 bg-black/80 z-0" />
 
       <div className="container mx-auto px-4 relative z-10 py-16 md:py-20">
-        {/* Quick Purchase Process */}
+        {/* Proceso de compra */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Tu Compra <span className="text-[#D4AF37]">Rápida y Segura</span>
@@ -54,14 +60,14 @@ export const CTASection = () => {
                 text: "Selecciona los mejores cortes",
               },
               {
-                Icon: CreditCard,
-                title: "2. Realiza tu Pago",
-                text: "Métodos seguros y confiables",
+                Icon: Truck,
+                title: "2. Elige tu Entrega",
+                text: "Despacho a domicilio o retiro",
               },
               {
-                Icon: Truck,
-                title: "3. Elige tu Entrega",
-                text: "Despacho a domicilio o retiro",
+                Icon: CreditCard,
+                title: "3. Realiza tu Pago",
+                text: "Métodos seguros y confiables",
               },
               {
                 Icon: CheckCircle,
@@ -71,19 +77,21 @@ export const CTASection = () => {
             ].map(({ Icon, title, text }, i) => (
               <div
                 key={i}
-                className="bg-novillo-black p-3 md:p-4 rounded-lg border border-[#D4AF37]/20 hover:border-[#D4AF37] transition-colors h-full"
+                className="bg-[#1B1717] p-3 md:p-4 rounded-lg border border-novillo-red hover:scale-105 transition-transform duration-300 h-full"
               >
                 <div className="bg-gradient-to-br from-novillo-red to-novillo-red/70 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
                   <Icon className="h-5 w-5 md:h-6 md:w-6 text-white" />
                 </div>
-                <h3 className="text-base md:text-lg font-semibold mb-1">{title}</h3>
+                <h3 className="text-base md:text-lg font-semibold mb-1">
+                  {title}
+                </h3>
                 <p className="text-white/70 text-xs md:text-sm">{text}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Combined About Section Content */}
+        {/* Sección About resumida */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center my-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -109,10 +117,10 @@ export const CTASection = () => {
             <Button
               asChild
               variant="link"
-              className="text-[#CE1212] hover:text-[#CE1212]/80 p-0 h-auto font-semibold text-lg"
+              className="text-novillo-gold hover:text-novillo-gold/80 p-0 h-auto font-semibold text-lg"
             >
               <Link to="/productos" className="inline-flex items-center">
-                Ver nuestros productos 🍖{" "}
+                Ver nuestros productos 🍖
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -133,7 +141,7 @@ export const CTASection = () => {
           </motion.div>
         </div>
 
-        {/* CTA Button */}
+        {/* CTA final */}
         <div className="bg-gradient-to-r from-novillo-red to-[#A00000] p-5 md:p-8 rounded-xl max-w-5xl mx-auto mt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
@@ -157,17 +165,14 @@ export const CTASection = () => {
         </div>
       </div>
 
-      {/* Lower decorative wave */}
+      {/* Wave inferior */}
       <svg
         className="w-full block pointer-events-none -mb-1"
-        viewBox="0 0 1440 150"
+        viewBox="0 0 1440 60"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          fill="#810000"
-          d="M0,0 C360,120 1080,0 1440,120 L1440,150 L0,150 Z"
-        />
+        <path fill="#000000" d="M0,0 C360,40 1080,0 1440,40 L1440,60 L0,60 Z" />
       </svg>
     </section>
   );

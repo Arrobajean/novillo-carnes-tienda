@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -6,26 +5,27 @@ import { motion } from "framer-motion";
 
 export const HeroSection = () => {
   return (
-    <section 
-      className="relative h-[650px] md:h-[700px] flex items-center text-white overflow-hidden"
-    >
+    <section className="relative h-[650px] md:h-[700px] flex items-center text-white overflow-hidden">
       {/* Video de fondo */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/60 z-10"></div>
-        <video 
-          autoPlay 
-          loop 
-          muted 
+        <video
+          autoPlay
+          loop
+          muted
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="https://cdn.coverr.co/videos/coverr-beef-steak-on-grill-1891/1080p.mp4" type="video/mp4" />
+          <source
+            src="https://cdn.cover.co/videos/coverr-beef-steak-on-grill-1891/1080p.mp4"
+            type="video/mp4"
+          />
           Tu navegador no soporta videos HTML5.
         </video>
       </div>
 
       <div className="container mx-auto px-4 z-10 relative">
-        <motion.div 
+        <motion.div
           className="max-w-2xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export const HeroSection = () => {
           </div>
         </motion.div>
       </div>
-      
+
       {/* Bottom wave decoration */}
       <svg
         className="absolute bottom-0 left-0 right-0 pointer-events-none"

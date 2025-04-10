@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,22 +9,22 @@ interface CategoriesSectionProps {
 
 export const CategoriesSection = ({ categories }: CategoriesSectionProps) => {
   return (
-    <section className="py-20 px-4 bg-background">
-      {/* Upper wave decoration - connecting with previous section */}
+    <section className="pt-10 pb-5 px-4 bg-background relative">
+      {/* Wave superior negro */}
       <svg
-        className="-mt-1 w-full block pointer-events-none"
-        viewBox="0 0 1440 150"
+        className="w-full block pointer-events-none -mt-1"
+        viewBox="0 0 1440 60"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path fill="#000000" d="M0,150 C600,100 900,0 1440,80 L1440,0 L0,0 Z" />
+        <path fill="#000000" d="M0,60 C360,30 1080,30 1440,0 L1440,0 L0,0 Z" />
       </svg>
 
       <div className="container mx-auto">
         <h2 className="text-3xl font-semibold mb-2 text-center text-foreground">
           Nuestras Categorías
         </h2>
-        <p className="text-center text-foreground/70 mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-foreground/70 mb-10 max-w-2xl mx-auto text-base md:text-lg">
           Explora nuestra variedad de cortes frescos y productos seleccionados
           para cada ocasión
         </p>
@@ -63,26 +62,20 @@ export const CategoriesSection = ({ categories }: CategoriesSectionProps) => {
         </div>
 
         <div className="text-center mt-10">
-          <Button
-            asChild
-            className="bg-primary hover:bg-primary/80 text-white"
-          >
+          <Button asChild className="bg-primary hover:bg-primary/80 text-white">
             <Link to="/productos">Ver todas las categorías</Link>
           </Button>
         </div>
       </div>
-      
-      {/* Lower wave decoration - connecting with next section */}
+
+      {/* Wave inferior rojo oscuro reducido */}
       <svg
-        className="w-full block pointer-events-none mt-12"
-        viewBox="0 0 1440 150"
+        className="absolute bottom-0 left-0 w-full h-[40px] block pointer-events-none"
+        viewBox="0 0 1440 40"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          fill="#810000"
-          d="M0,0 C360,120 1080,0 1440,120 L1440,150 L0,150 Z"
-        />
+        <path fill="#810000" d="M0,0 C360,20 1080,0 1440,20 L1440,40 L0,40 Z" />
       </svg>
     </section>
   );
