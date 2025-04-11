@@ -1,10 +1,18 @@
+
 import { motion } from "framer-motion";
 
 export const ContactHero = () => {
   return (
-    <section className="relative h-[260px] flex items-center text-white bg-black overflow-hidden">
-      {/* Overlay opcional para contraste */}
-      <div className="absolute inset-0 bg-black/60 z-10"></div>
+    <section 
+      className="relative h-[260px] flex items-center text-white overflow-hidden"
+      style={{
+        backgroundImage: "url('/images/ui/background-pattern.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Overlay for contrast */}
+      <div className="absolute inset-0 bg-black/80 z-10"></div>
 
       <div className="container mx-auto px-4 z-20">
         <div className="max-w-2xl">

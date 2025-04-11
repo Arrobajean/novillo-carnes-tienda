@@ -37,7 +37,7 @@ export const Footer = () => {
               <img
                 src="/lovable-uploads/ad88ae2f-4290-481b-9136-cd76d4c7eac1.png"
                 alt="Carnes El Novillo Logo"
-                className="h-36 w-auto" // Increased logo size slightly
+                className="h-36 w-auto"
               />
             </Link>
             <p className="text-gray-300 mb-4">
@@ -72,7 +72,7 @@ export const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Links - Modificado para usar iconos con hover simple en el texto */}
+          {/* Links - Mejorada la alineación */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -81,19 +81,19 @@ export const Footer = () => {
             className="flex flex-col items-center md:items-start"
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Enlaces</h3>
-            <ul className="space-y-2 list-none">
+            <ul className="space-y-3 w-full">
               {[
                 { label: "Inicio", path: "/", icon: <Home className="h-4 w-4" /> },
                 { label: "Productos", path: "/productos", icon: <ShoppingBasket className="h-4 w-4" /> },
                 { label: "Nosotros", path: "/nosotros", icon: <Users className="h-4 w-4" /> },
                 { label: "Contacto", path: "/contacto", icon: <Contact className="h-4 w-4" /> },
               ].map((link) => (
-                <li key={link.path}>
+                <li key={link.path} className="flex justify-center md:justify-start">
                   <Link
                     to={link.path}
-                    className="text-gray-300 hover:text-[#CE1212] transition-colors flex items-center"
+                    className="text-gray-300 flex items-center"
                   >
-                    <span className="mr-2 text-[#D4AF37]">
+                    <span className="mr-2 text-[#D4AF37] w-5 flex justify-center">
                       {link.icon}
                     </span>
                     <span className="hover:text-[#CE1212] transition-colors">
@@ -105,7 +105,7 @@ export const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Contact - with improved centering for address */}
+          {/* Contact - with improved hover effects */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -114,16 +114,16 @@ export const Footer = () => {
             className="flex flex-col items-center md:items-start"
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Contacto</h3>
-            <ul className="space-y-3 w-full list-none">
+            <ul className="space-y-3 w-full">
               <li className="flex justify-center md:justify-start">
                 <a
                   href="https://maps.app.goo.gl/KLxWBLKvu5YvCrQk8"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start space-x-2 text-center md:text-left hover:text-[#CE1212] transition-colors group"
+                  className="flex items-start space-x-2 text-center md:text-left group"
                 >
-                  <MapPin className="h-5 w-5 text-[#D4AF37] shrink-0 mt-1 group-hover:text-[#CE1212]" />
-                  <span className="text-gray-300 leading-snug">
+                  <MapPin className="h-5 w-5 text-[#D4AF37] shrink-0 mt-1" />
+                  <span className="text-gray-300 leading-snug group-hover:text-[#CE1212] transition-colors">
                     Pablo Urzúa 1489,
                     <br />
                     local 2, Independencia,
@@ -136,19 +136,19 @@ export const Footer = () => {
               <li>
                 <a
                   href="tel:+56958404733"
-                  className="flex items-center justify-center md:justify-start hover:text-[#CE1212] transition-colors group"
+                  className="flex items-center justify-center md:justify-start group"
                 >
-                  <Phone className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0 group-hover:text-[#CE1212]" />
-                  <span className="text-gray-300">+56 9 5840 4733</span>
+                  <Phone className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0" />
+                  <span className="text-gray-300 group-hover:text-[#CE1212] transition-colors">+56 9 5840 4733</span>
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:contacto@carneselnovillo.cl"
-                  className="flex items-center justify-center md:justify-start hover:text-[#CE1212] transition-colors group"
+                  className="flex items-center justify-center md:justify-start group"
                 >
-                  <Mail className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0 group-hover:text-[#CE1212]" />
-                  <span className="text-gray-300">
+                  <Mail className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0" />
+                  <span className="text-gray-300 group-hover:text-[#CE1212] transition-colors">
                     contacto@carneselnovillo.cl
                   </span>
                 </a>
@@ -156,7 +156,7 @@ export const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Hours */}
+          {/* Hours - with hover effects */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -165,20 +165,20 @@ export const Footer = () => {
             className="flex flex-col items-center md:items-start"
           >
             <h3 className="text-lg font-semibold mb-4 text-white">Horarios</h3>
-            <ul className="space-y-2 text-left list-none">
+            <ul className="space-y-3 w-full">
               {[
                 { day: "Lunes a Viernes", time: "9:00 - 22:00" },
                 { day: "Sábados", time: "9:00 - 14:00" },
                 { day: "Domingos", time: "Cerrado" },
               ].map((item, i) => (
                 <li
-                  className="flex items-start justify-center md:justify-start"
+                  className="flex items-start justify-center md:justify-start group"
                   key={i}
                 >
                   <Clock className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-gray-300">{item.day}</p>
-                    <p className="text-gray-300">{item.time}</p>
+                    <p className="text-gray-300 group-hover:text-[#CE1212] transition-colors">{item.day}</p>
+                    <p className="text-gray-300 group-hover:text-[#CE1212] transition-colors">{item.time}</p>
                   </div>
                 </li>
               ))}

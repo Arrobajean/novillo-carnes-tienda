@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,10 +22,7 @@ export const CTASection = () => {
 
   return (
     <section
-      className="relative bg-contain bg-repeat bg-center text-white font-poppins overflow-hidden"
-      style={{
-        backgroundImage: "url('/images/ui/background-pattern.jpg')",
-      }}
+      className="relative bg-black text-white font-poppins overflow-hidden"
     >
       {/* Upper wave */}
       <svg
@@ -38,9 +36,6 @@ export const CTASection = () => {
           d="M0,120 C360,40 1080,140 1440,60 L1440,0 L0,0 Z"
         />
       </svg>
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/80 z-0" />
 
       <div className="container mx-auto px-4 relative z-10 py-16 md:py-20">
         {/* Proceso de compra */}

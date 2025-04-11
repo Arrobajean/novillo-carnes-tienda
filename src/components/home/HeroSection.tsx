@@ -6,16 +6,16 @@ import { motion } from "framer-motion";
 
 export const HeroSection = () => {
   return (
-    <section className="relative h-[650px] md:h-[700px] flex items-center text-white overflow-hidden">
-      {/* Imagen de fondo */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/70 z-10"></div>
-        <img 
-          src="/lovable-uploads/f8ffd64b-bcc6-4bcc-81e6-ef8101784d3c.png" 
-          alt="Carnes y cortes fondo"
-          className="w-full h-full object-cover object-center"
-        />
-      </div>
+    <section 
+      className="relative h-[650px] md:h-[700px] flex items-center text-white overflow-hidden"
+      style={{
+        backgroundImage: "url('/images/ui/background-pattern.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Overlay oscuro */}
+      <div className="absolute inset-0 bg-black/80 z-0"></div>
 
       <div className="container mx-auto px-4 z-10 relative">
         <motion.div
