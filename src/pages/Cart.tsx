@@ -26,17 +26,34 @@ const Cart = () => {
     navigate(-1); // Navigate back
   };
 
+  // Variantes de animación para el icono X
+  const iconVariants = {
+    hover: { scale: 1.2, rotate: 90, transition: { duration: 0.2 } },
+    tap: { scale: 0.9 },
+    initial: { scale: 1, rotate: 0 }
+  };
+
   if (items.length === 0) {
     return (
       <div className="container mx-auto py-20 px-4 bg-[#1B1717] text-white min-h-screen">
         <div className="relative max-w-md mx-auto">
-          <Button 
-            variant="ghost" 
-            className="absolute right-0 top-0 text-gray-400 hover:text-white"
-            onClick={handleClose}
+          <motion.div 
+            className="absolute right-0 top-0"
+            initial="initial"
+            whileHover="hover"
+            whileTap="tap"
           >
-            <X className="h-6 w-6" />
-          </Button>
+            <Button 
+              variant="ghost" 
+              className="text-gray-400 hover:text-white"
+              onClick={handleClose}
+              aria-label="Cerrar carrito"
+            >
+              <motion.div variants={iconVariants}>
+                <X className="h-6 w-6" />
+              </motion.div>
+            </Button>
+          </motion.div>
           
           <div className="text-center">
             <div className="bg-[#333] rounded-full p-6 w-24 h-24 mx-auto mb-6 flex items-center justify-center">
@@ -65,14 +82,22 @@ const Cart = () => {
     <div className="container mx-auto py-10 px-4 bg-[#1B1717] text-white min-h-screen font-sans">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl font-bold">Tu Carrito</h1>
-        <Button 
-          variant="ghost" 
-          className="text-gray-400 hover:text-white"
-          onClick={handleClose}
-          aria-label="Cerrar carrito"
+        <motion.div
+          initial="initial"
+          whileHover="hover"
+          whileTap="tap"
         >
-          <X className="h-6 w-6" />
-        </Button>
+          <Button 
+            variant="ghost" 
+            className="text-gray-400 hover:text-white"
+            onClick={handleClose}
+            aria-label="Cerrar carrito"
+          >
+            <motion.div variants={iconVariants}>
+              <X className="h-6 w-6" />
+            </motion.div>
+          </Button>
+        </motion.div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">

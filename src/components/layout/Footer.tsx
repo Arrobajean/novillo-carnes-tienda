@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import {
   Facebook,
@@ -7,6 +8,10 @@ import {
   Mail,
   Clock,
   MessageCircle,
+  Home,
+  ShoppingBasket,
+  Users,
+  Contact
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -78,17 +83,20 @@ export const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-white">Enlaces</h3>
             <ul className="space-y-2 list-none">
               {[
-                { label: "Inicio", path: "/" },
-                { label: "Productos", path: "/productos" },
-                { label: "Nosotros", path: "/nosotros" },
-                { label: "Contacto", path: "/contacto" },
+                { label: "Inicio", path: "/", icon: <Home className="h-4 w-4 text-[#D4AF37]" /> },
+                { label: "Productos", path: "/productos", icon: <ShoppingBasket className="h-4 w-4 text-[#D4AF37]" /> },
+                { label: "Nosotros", path: "/nosotros", icon: <Users className="h-4 w-4 text-[#D4AF37]" /> },
+                { label: "Contacto", path: "/contacto", icon: <Contact className="h-4 w-4 text-[#D4AF37]" /> },
               ].map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-gray-300 hover:text-[#CE1212] transition-colors"
+                    className="text-gray-300 hover:text-[#CE1212] transition-colors flex items-center group"
                   >
-                    {link.label}
+                    <span className="mr-2 transition-transform duration-300 group-hover:translate-x-1">
+                      {link.icon}
+                    </span>
+                    <span>{link.label}</span>
                   </Link>
                 </li>
               ))}
