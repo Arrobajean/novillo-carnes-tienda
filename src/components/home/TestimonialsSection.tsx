@@ -31,7 +31,7 @@ export const TestimonialsSection = () => {
         >
           <div className="flex justify-center mb-4 items-center">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
+              src="/lovable-uploads/f5f3e536-1879-4fb0-a148-3b507fc2f2d4.png"
               alt="Google Logo"
               className="h-8 w-auto mr-2"
             />
@@ -116,7 +116,7 @@ export const TestimonialsSection = () => {
               {/* Footer con logo de Google */}
               <div className="px-4 py-2 bg-gray-50 flex items-center border-t border-gray-100">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
+                  src="/lovable-uploads/f5f3e536-1879-4fb0-a148-3b507fc2f2d4.png"
                   alt="Google Logo"
                   className="h-4 w-auto mr-1"
                 />

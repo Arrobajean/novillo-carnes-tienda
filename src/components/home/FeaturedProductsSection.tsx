@@ -30,11 +30,10 @@ export const FeaturedProductsSection = ({
           ))}
         </div>
         
-        <div className="text-center mt-8">
+        <div className="flex justify-center mt-10">
           <Button
             asChild
-            variant="link"
-            className="text-novillo-gold hover:text-white font-semibold"
+            className="bg-[#D4AF37] hover:bg-[#D4AF37]/80 text-black font-medium"
           >
             <Link to="/productos" className="inline-flex items-center">
               Ver todos los productos

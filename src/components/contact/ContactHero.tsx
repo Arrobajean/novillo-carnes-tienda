@@ -4,18 +4,10 @@ import { motion } from "framer-motion";
 export const ContactHero = () => {
   return (
     <section 
-      className="relative h-[260px] flex items-center text-white overflow-hidden"
-      style={{
-        backgroundImage: "url('/images/ui/background-pattern.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="relative h-[260px] flex items-center text-white overflow-hidden bg-black"
     >
-      {/* Overlay for contrast */}
-      <div className="absolute inset-0 bg-black/80 z-10"></div>
-
       <div className="container mx-auto px-4 z-20">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl mx-auto md:mx-0 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-poppins font-bold mb-1">
             Contacto
           </h1>

@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,6 +8,7 @@ import { CartProvider } from "@/context/CartContext";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { AnimatePresence, motion } from "framer-motion";
+import { useEffect } from "react";
 
 // Pages
 import Index from "@/pages/Index";
@@ -18,6 +20,17 @@ import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
+
+// ScrollToTop component to handle automatic scroll on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 // Animation wrapper component
 const AnimatedRoutes = () => {
@@ -68,6 +81,7 @@ const App = () => (
         <BrowserRouter>
           <div className="flex flex-col min-h-screen bg-background text-foreground font-sans">
             <Navbar />
+            <ScrollToTop />
             <main className="flex-grow bg-background text-foreground font-sans">
               <AnimatedRoutes />
             </main>

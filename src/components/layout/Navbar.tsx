@@ -54,22 +54,6 @@ export const Navbar = () => {
     close: { rotate: 90, scale: 1.1 },
   };
 
-  // Variantes para líneas del menú hamburguesa (implementado como versión alternativa)
-  const lineTopVariants = {
-    closed: { rotate: 0, translateY: 0 },
-    open: { rotate: 45, translateY: 8 },
-  };
-
-  const lineCenterVariants = {
-    closed: { opacity: 1 },
-    open: { opacity: 0 },
-  };
-
-  const lineBottomVariants = {
-    closed: { rotate: 0, translateY: 0 },
-    open: { rotate: -45, translateY: -8 },
-  };
-
   return (
     <>
       <nav
@@ -168,7 +152,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#000000] text-white py-4 shadow-inner px-4 backdrop-blur-sm bg-opacity-95"
+            className="md:hidden bg-[#000000] text-white py-4 shadow-inner px-4 backdrop-blur-sm bg-opacity-95 fixed w-full z-40"
           >
             <div className="flex flex-col items-center space-y-4">
               {["/", "/productos", "/nosotros", "/contacto"].map(
