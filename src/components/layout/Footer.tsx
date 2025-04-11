@@ -72,7 +72,7 @@ export const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Links - Modificado para usar iconos con hover simple */}
+          {/* Links - Modificado para usar iconos con hover simple en el texto */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -93,10 +93,12 @@ export const Footer = () => {
                     to={link.path}
                     className="text-gray-300 hover:text-[#CE1212] transition-colors flex items-center"
                   >
-                    <span className="mr-2 text-[#D4AF37] hover:text-[#CE1212] transition-colors">
+                    <span className="mr-2 text-[#D4AF37]">
                       {link.icon}
                     </span>
-                    <span>{link.label}</span>
+                    <span className="hover:text-[#CE1212] transition-colors">
+                      {link.label}
+                    </span>
                   </Link>
                 </li>
               ))}

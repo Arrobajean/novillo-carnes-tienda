@@ -48,6 +48,12 @@ export const Navbar = () => {
     open: { rotate: 180, scale: 1 },
   };
 
+  // Variantes para el icono del carrito/X cuando está abierto/cerrado
+  const cartIconVariants = {
+    cart: { rotate: 0, scale: 1 },
+    close: { rotate: 90, scale: 1.1 },
+  };
+
   // Variantes para líneas del menú hamburguesa (implementado como versión alternativa)
   const lineTopVariants = {
     closed: { rotate: 0, translateY: 0 },
@@ -122,16 +128,23 @@ export const Navbar = () => {
               )}
             </div>
 
-            {/* Cart - Right on mobile */}
+            {/* Cart - Right on mobile - Animado entre carrito y X */}
             <div className="flex items-center md:order-3 order-3">
               <a href="#" onClick={handleCartClick} className="relative">
                 <motion.div
                   whileTap={{ scale: 0.9 }}
                   whileHover={{ scale: 1.1 }}
                   className="relative"
+                  animate={isCartPage ? "close" : "cart"}
+                  variants={cartIconVariants}
+                  transition={{ duration: 0.3 }}
                 >
-                  <ShoppingCart className={`h-6 w-6 transition-colors duration-300 ${isCartPage ? "text-[#CE1212]" : "hover:text-[#CE1212]"}`} />
-                  {totalItems > 0 && (
+                  {isCartPage ? (
+                    <X className="h-6 w-6 text-[#CE1212] transition-colors duration-300" />
+                  ) : (
+                    <ShoppingCart className="h-6 w-6 hover:text-[#CE1212] transition-colors duration-300" />
+                  )}
+                  {totalItems > 0 && !isCartPage && (
                     <motion.span
                       className="absolute -top-2 -right-2 bg-[#CE1212] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
                       initial={{ scale: 0 }}

@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,13 +15,22 @@ export const FeaturedProductsSection = ({
   return (
     <section className="relative pt-14 pb-14 px-4 bg-[#810000] text-white font-poppins overflow-hidden">
       <div className="container mx-auto relative z-10">
-        <div className="flex justify-between items-center mb-10 flex-wrap gap-4">
-          <div>
-            <h2 className="text-3xl font-semibold">Productos Destacados</h2>
-            <p className="text-white/80">
-              ¡Nuestras mejores selecciones para ti!
-            </p>
-          </div>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-semibold">Productos Destacados</h2>
+          <p className="text-white/80">
+            ¡Nuestras mejores selecciones para ti!
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center mb-10">
+          {products.map((product) => (
+            <div key={product.id} className="w-full max-w-xs">
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </div>
+        
+        <div className="text-center mt-8">
           <Button
             asChild
             variant="link"
@@ -31,14 +41,6 @@ export const FeaturedProductsSection = ({
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-          {products.map((product) => (
-            <div key={product.id} className="w-full max-w-xs">
-              <ProductCard product={product} />
-            </div>
-          ))}
         </div>
       </div>
     </section>
