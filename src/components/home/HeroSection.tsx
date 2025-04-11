@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -6,22 +7,14 @@ import { motion } from "framer-motion";
 export const HeroSection = () => {
   return (
     <section className="relative h-[650px] md:h-[700px] flex items-center text-white overflow-hidden">
-      {/* Video de fondo */}
+      {/* Imagen de fondo */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source
-            src="https://cdn.cover.co/videos/coverr-beef-steak-on-grill-1891/1080p.mp4"
-            type="video/mp4"
-          />
-          Tu navegador no soporta videos HTML5.
-        </video>
+        <div className="absolute inset-0 bg-black/70 z-10"></div>
+        <img 
+          src="/lovable-uploads/f8ffd64b-bcc6-4bcc-81e6-ef8101784d3c.png" 
+          alt="Carnes y cortes fondo"
+          className="w-full h-full object-cover object-center"
+        />
       </div>
 
       <div className="container mx-auto px-4 z-10 relative">

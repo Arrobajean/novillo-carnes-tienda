@@ -1,5 +1,6 @@
+
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ShoppingCart, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
@@ -9,8 +10,11 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { items } = useCart();
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const totalItems = items.reduce((acc, item) => acc + item.quantity, 0);
+  const isCartPage = location.pathname === "/carrito";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +28,19 @@ export const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Función para manejar el clic en el carrito
+  const handleCartClick = (e) => {
+    e.preventDefault(); // Prevenir el comportamiento de enlace predeterminado
+    
+    if (isCartPage) {
+      // Si ya estamos en la página del carrito, navigamos hacia atrás
+      navigate(-1);
+    } else {
+      // Si no, vamos a la página del carrito
+      navigate("/carrito");
+    }
+  };
 
   // Variantes de animación para el icono del menú hamburguesa
   const iconVariants = {
@@ -107,13 +124,13 @@ export const Navbar = () => {
 
             {/* Cart - Right on mobile */}
             <div className="flex items-center md:order-3 order-3">
-              <Link to="/carrito" className="relative">
+              <a href="#" onClick={handleCartClick} className="relative">
                 <motion.div
                   whileTap={{ scale: 0.9 }}
                   whileHover={{ scale: 1.1 }}
                   className="relative"
                 >
-                  <ShoppingCart className="h-6 w-6 hover:text-[#CE1212] transition-colors duration-300" />
+                  <ShoppingCart className={`h-6 w-6 transition-colors duration-300 ${isCartPage ? "text-[#CE1212]" : "hover:text-[#CE1212]"}`} />
                   {totalItems > 0 && (
                     <motion.span
                       className="absolute -top-2 -right-2 bg-[#CE1212] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
@@ -125,7 +142,7 @@ export const Navbar = () => {
                     </motion.span>
                   )}
                 </motion.div>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -171,12 +188,13 @@ export const Navbar = () => {
                   className="bg-[#CE1212] hover:bg-[#CE1212]/80 text-white w-full mt-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <Link
-                    to="/carrito"
+                  <a
+                    href="#"
+                    onClick={handleCartClick}
                     className="flex items-center justify-center gap-2"
                   >
                     <ShoppingCart className="h-5 w-5" /> Ver carrito
-                  </Link>
+                  </a>
                 </Button>
               </motion.div>
             </div>

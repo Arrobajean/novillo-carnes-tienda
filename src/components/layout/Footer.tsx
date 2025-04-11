@@ -72,7 +72,7 @@ export const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Links */}
+          {/* Links - Modificado para usar iconos con hover simple */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -83,17 +83,17 @@ export const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-white">Enlaces</h3>
             <ul className="space-y-2 list-none">
               {[
-                { label: "Inicio", path: "/", icon: <Home className="h-4 w-4 text-[#D4AF37]" /> },
-                { label: "Productos", path: "/productos", icon: <ShoppingBasket className="h-4 w-4 text-[#D4AF37]" /> },
-                { label: "Nosotros", path: "/nosotros", icon: <Users className="h-4 w-4 text-[#D4AF37]" /> },
-                { label: "Contacto", path: "/contacto", icon: <Contact className="h-4 w-4 text-[#D4AF37]" /> },
+                { label: "Inicio", path: "/", icon: <Home className="h-4 w-4" /> },
+                { label: "Productos", path: "/productos", icon: <ShoppingBasket className="h-4 w-4" /> },
+                { label: "Nosotros", path: "/nosotros", icon: <Users className="h-4 w-4" /> },
+                { label: "Contacto", path: "/contacto", icon: <Contact className="h-4 w-4" /> },
               ].map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-gray-300 hover:text-[#CE1212] transition-colors flex items-center group"
+                    className="text-gray-300 hover:text-[#CE1212] transition-colors flex items-center"
                   >
-                    <span className="mr-2 transition-transform duration-300 group-hover:translate-x-1">
+                    <span className="mr-2 text-[#D4AF37] hover:text-[#CE1212] transition-colors">
                       {link.icon}
                     </span>
                     <span>{link.label}</span>

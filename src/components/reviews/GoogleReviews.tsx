@@ -3,6 +3,20 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { useState } from "react";
 
+// Componente para estrellas de calificación
+const RatingStars = ({ rating }: { rating: number }) => {
+  return (
+    <div className="flex">
+      {[...Array(5)].map((_, i) => (
+        <Star
+          key={i}
+          className={`h-4 w-4 ${i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
+        />
+      ))}
+    </div>
+  );
+};
+
 // Reviews data
 const googleReviews = [
   {
@@ -41,20 +55,6 @@ const googleReviews = [
     text: "Como chef, valoro mucho la calidad de los productos. El Novillo nunca me ha defraudado. Su carne es de primera categoría y los cortes son perfectos."
   }
 ];
-
-// Rating stars component
-const RatingStars = ({ rating }: { rating: number }) => {
-  return (
-    <div className="flex">
-      {[...Array(5)].map((_, i) => (
-        <Star
-          key={i}
-          className={`h-4 w-4 ${i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
-        />
-      ))}
-    </div>
-  );
-};
 
 const GoogleReviews = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -138,7 +138,7 @@ const GoogleReviews = () => {
             </button>
           </div>
           
-          {/* Reviews container */}
+          {/* Reviews container - Rediseñado para ser más similar a las tarjetas de Google */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {googleReviews.slice(activeIndex, activeIndex + reviewsToShow).map((review, index) => (
               <motion.div
@@ -147,24 +147,35 @@ const GoogleReviews = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg shadow-md"
+                className="bg-white rounded-lg shadow-md overflow-hidden"
               >
-                <div className="flex items-center mb-4">
-                  <img 
-                    src={review.image} 
-                    alt={review.name} 
-                    className="w-12 h-12 rounded-full mr-4 object-cover border-2 border-gray-200"
-                  />
-                  <div>
-                    <h4 className="font-medium text-gray-800">{review.name}</h4>
-                    <div className="flex items-center">
-                      <RatingStars rating={review.rating} />
-                      <span className="text-gray-500 ml-2 text-sm">{review.date}</span>
+                {/* Header con información del autor */}
+                <div className="p-4 border-b border-gray-100">
+                  <div className="flex items-center mb-2">
+                    <img 
+                      src={review.image} 
+                      alt={review.name} 
+                      className="w-10 h-10 rounded-full mr-3 border border-gray-200"
+                    />
+                    <div>
+                      <h4 className="font-medium text-gray-800">{review.name}</h4>
+                      <div className="flex items-center text-gray-500 text-xs">
+                        <span>{review.date}</span>
+                      </div>
                     </div>
                   </div>
+                  <div className="flex">
+                    <RatingStars rating={review.rating} />
+                  </div>
                 </div>
-                <p className="text-gray-600">{review.text}</p>
-                <div className="mt-4 flex items-center">
+                
+                {/* Contenido de la reseña */}
+                <div className="p-4">
+                  <p className="text-gray-700 text-sm">{review.text}</p>
+                </div>
+                
+                {/* Footer con logo de Google */}
+                <div className="px-4 py-2 bg-gray-50 flex items-center border-t border-gray-100">
                   <img 
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" 
                     alt="Google Logo" 
