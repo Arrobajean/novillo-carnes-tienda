@@ -1,6 +1,11 @@
+
 import { ArrowRight } from "lucide-react";
 
-export const LocationMap = () => {
+interface LocationMapProps {
+  googleMapsLink?: string;
+}
+
+export const LocationMap = ({ googleMapsLink = "https://maps.app.goo.gl/kcvTSkiAY7AFzFrX7" }: LocationMapProps) => {
   return (
     <div>
       <h2 className="text-3xl font-poppins font-semibold mb-6 text-white">
@@ -22,7 +27,7 @@ export const LocationMap = () => {
 
       <div className="mt-3 text-center">
         <a
-          href="https://maps.app.goo.gl/kcvTSkiAY7AFzFrX7"
+          href={googleMapsLink}
           target="_blank"
           rel="noopener noreferrer"
           className="text-novillo-red hover:underline inline-flex items-center"
