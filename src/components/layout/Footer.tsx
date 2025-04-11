@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import {
   Facebook,
@@ -11,7 +10,7 @@ import {
   Home,
   ShoppingBasket,
   Users,
-  Contact
+  Contact,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -25,7 +24,7 @@ export const Footer = () => {
     <footer className="bg-[#000000] text-white text-sm font-poppins">
       <div className="container mx-auto py-10 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
-          {/* Logo and About */}
+          {/* Logo + descripción */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -33,46 +32,46 @@ export const Footer = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center md:items-start"
           >
-            <Link to="/" className="mb-4 transition-transform hover:scale-105">
+            <Link to="/" className="mb-4 hover:scale-105 transition-transform">
               <img
                 src="/lovable-uploads/ad88ae2f-4290-481b-9136-cd76d4c7eac1.png"
                 alt="Carnes El Novillo Logo"
-                className="h-36 w-auto"
+                className="h-28 sm:h-32 md:h-36 w-auto"
               />
             </Link>
-            <p className="text-gray-300 mb-4">
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4 text-center md:text-left">
               Tradición y calidad en carnes desde 2020. Ofrecemos los mejores
               cortes con el sabor auténtico que caracteriza a nuestra marca.
             </p>
-            <div className="flex space-x-4 justify-center md:justify-start">
-              <a
-                href="https://www.instagram.com/carneselnovillo/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors text-white hover:scale-110 transform duration-200"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="https://www.facebook.com/profile.php?id=61550850388071"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors text-white hover:scale-110 transform duration-200"
-              >
-                <Facebook size={20} />
-              </a>
-              <a
-                href="https://wa.me/56958404733"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors text-white hover:scale-110 transform duration-200"
-              >
-                <MessageCircle size={20} />
-              </a>
+            <div className="flex space-x-4">
+              {[
+                {
+                  href: "https://www.instagram.com/carneselnovillo/",
+                  icon: <Instagram className="h-5 w-5 sm:h-6 sm:w-6" />,
+                },
+                {
+                  href: "https://www.facebook.com/profile.php?id=61550850388071",
+                  icon: <Facebook className="h-5 w-5 sm:h-6 sm:w-6" />,
+                },
+                {
+                  href: "https://wa.me/56958404733",
+                  icon: <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />,
+                },
+              ].map((item, i) => (
+                <a
+                  key={i}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-800 p-2 rounded-full hover:bg-[#CE1212] transition-colors"
+                >
+                  {item.icon}
+                </a>
+              ))}
             </div>
           </motion.div>
 
-          {/* Links - Mejorada la alineación */}
+          {/* Enlaces */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -80,32 +79,35 @@ export const Footer = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center md:items-start"
           >
-            <h3 className="text-lg font-semibold mb-4 text-white">Enlaces</h3>
-            <ul className="space-y-3 w-full">
+            <h3 className="text-base font-semibold mb-4 text-white">Enlaces</h3>
+            <ul className="space-y-3 w-full list-none text-sm sm:text-base">
               {[
-                { label: "Inicio", path: "/", icon: <Home className="h-4 w-4" /> },
-                { label: "Productos", path: "/productos", icon: <ShoppingBasket className="h-4 w-4" /> },
-                { label: "Nosotros", path: "/nosotros", icon: <Users className="h-4 w-4" /> },
-                { label: "Contacto", path: "/contacto", icon: <Contact className="h-4 w-4" /> },
-              ].map((link) => (
-                <li key={link.path} className="flex justify-center md:justify-start">
+                { label: "Inicio", path: "/", icon: Home },
+                {
+                  label: "Productos",
+                  path: "/productos",
+                  icon: ShoppingBasket,
+                },
+                { label: "Nosotros", path: "/nosotros", icon: Users },
+                { label: "Contacto", path: "/contacto", icon: Contact },
+              ].map(({ label, path, icon: Icon }) => (
+                <li
+                  key={path}
+                  className="flex justify-center md:justify-start items-center"
+                >
                   <Link
-                    to={link.path}
-                    className="text-gray-300 flex items-center"
+                    to={path}
+                    className="text-gray-300 flex items-center space-x-2 hover:text-[#CE1212]"
                   >
-                    <span className="mr-2 text-[#D4AF37] w-5 flex justify-center">
-                      {link.icon}
-                    </span>
-                    <span className="hover:text-[#CE1212] transition-colors">
-                      {link.label}
-                    </span>
+                    <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-[#D4AF37]" />
+                    <span>{label}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </motion.div>
 
-          {/* Contact - with improved hover effects */}
+          {/* Contacto */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -113,8 +115,10 @@ export const Footer = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center md:items-start"
           >
-            <h3 className="text-lg font-semibold mb-4 text-white">Contacto</h3>
-            <ul className="space-y-3 w-full">
+            <h3 className="text-base font-semibold mb-4 text-white">
+              Contacto
+            </h3>
+            <ul className="space-y-3 w-full list-none text-sm sm:text-base">
               <li className="flex justify-center md:justify-start">
                 <a
                   href="https://maps.app.goo.gl/KLxWBLKvu5YvCrQk8"
@@ -122,24 +126,23 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-start space-x-2 text-center md:text-left group"
                 >
-                  <MapPin className="h-5 w-5 text-[#D4AF37] shrink-0 mt-1" />
-                  <span className="text-gray-300 leading-snug group-hover:text-[#CE1212] transition-colors">
+                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-[#D4AF37]" />
+                  <span className="text-gray-300 group-hover:text-[#CE1212] transition-colors leading-snug">
                     Pablo Urzúa 1489,
-                    <br />
-                    local 2, Independencia,
-                    <br />
-                    Santiago.
+                    <br /> local 2, Independencia
+                    <br /> Santiago
                   </span>
                 </a>
               </li>
-
               <li>
                 <a
                   href="tel:+56958404733"
                   className="flex items-center justify-center md:justify-start group"
                 >
-                  <Phone className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0" />
-                  <span className="text-gray-300 group-hover:text-[#CE1212] transition-colors">+56 9 5840 4733</span>
+                  <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-[#D4AF37] mr-2" />
+                  <span className="text-gray-300 group-hover:text-[#CE1212] transition-colors">
+                    +56 9 5840 4733
+                  </span>
                 </a>
               </li>
               <li>
@@ -147,7 +150,7 @@ export const Footer = () => {
                   href="mailto:contacto@carneselnovillo.cl"
                   className="flex items-center justify-center md:justify-start group"
                 >
-                  <Mail className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0" />
+                  <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-[#D4AF37] mr-2" />
                   <span className="text-gray-300 group-hover:text-[#CE1212] transition-colors">
                     contacto@carneselnovillo.cl
                   </span>
@@ -156,7 +159,7 @@ export const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Hours - with hover effects */}
+          {/* Horarios */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
@@ -164,21 +167,27 @@ export const Footer = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center md:items-start"
           >
-            <h3 className="text-lg font-semibold mb-4 text-white">Horarios</h3>
-            <ul className="space-y-3 w-full">
+            <h3 className="text-base font-semibold mb-4 text-white">
+              Horarios
+            </h3>
+            <ul className="space-y-3 w-full list-none text-sm sm:text-base">
               {[
                 { day: "Lunes a Viernes", time: "9:00 - 22:00" },
                 { day: "Sábados", time: "9:00 - 14:00" },
                 { day: "Domingos", time: "Cerrado" },
               ].map((item, i) => (
                 <li
-                  className="flex items-start justify-center md:justify-start group"
                   key={i}
+                  className="flex items-start justify-center md:justify-start group"
                 >
-                  <Clock className="mr-2 h-5 w-5 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <Clock className="h-5 w-5 sm:h-6 sm:w-6 text-[#D4AF37] mr-2 mt-[2px]" />
                   <div>
-                    <p className="text-gray-300 group-hover:text-[#CE1212] transition-colors">{item.day}</p>
-                    <p className="text-gray-300 group-hover:text-[#CE1212] transition-colors">{item.time}</p>
+                    <p className="text-gray-300 group-hover:text-[#CE1212] transition-colors">
+                      {item.day}
+                    </p>
+                    <p className="text-gray-300 group-hover:text-[#CE1212] transition-colors">
+                      {item.time}
+                    </p>
                   </div>
                 </li>
               ))}
@@ -186,6 +195,7 @@ export const Footer = () => {
           </motion.div>
         </div>
 
+        {/* Footer bottom */}
         <motion.div
           variants={fadeIn}
           initial="hidden"
@@ -193,12 +203,11 @@ export const Footer = () => {
           viewport={{ once: true }}
           className="border-t border-gray-700 mt-10 pt-6 text-center"
         >
-          <p className="text-gray-400 text-xs mb-3">
+          <p className="text-gray-400 text-xs sm:text-sm mb-3">
             © {new Date().getFullYear()} Carnes el Novillo. Todos los derechos
             reservados.
           </p>
-          {/* Developer credit */}
-          <div className="flex items-center justify-center text-xs text-gray-500">
+          <div className="flex items-center justify-center text-xs sm:text-sm text-gray-500">
             <span className="mr-2">Sitio desarrollado por</span>
             <img
               src="/lovable-uploads/4d61745a-bcf8-4729-8e46-7c8074d574dd.png"

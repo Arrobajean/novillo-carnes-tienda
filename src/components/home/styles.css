@@ -1,44 +1,73 @@
-
+/* HERO BACKGROUND CONFIGURATION */
 .hero-gradient {
   position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-gradient::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background-image: var(--image-url);
-  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.8;
+  background-size: cover;
+  opacity: 0.85;
   z-index: 0;
 }
 
 .hero-gradient::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
   z-index: 1;
 }
 
+/* FADE IN ANIMATION */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0;
+  /* importante para la transición */
 }
 
-.animate-fade-in:nth-child(1) { animation-delay: 0.1s; }
-.animate-fade-in:nth-child(2) { animation-delay: 0.3s; }
-.animate-fade-in:nth-child(3) { animation-delay: 0.5s; }
+.animate-fade-in:nth-child(1) {
+  animation-delay: 0.2s;
+}
 
+.animate-fade-in:nth-child(2) {
+  animation-delay: 0.4s;
+}
 
+.animate-fade-in:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* UTILITY CLASSES TO ENSURE IMAGE COVERAGE ON ALL DEVICES */
+.bg-hero-mobile {
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .bg-hero-desktop {
+    background-repeat: repeat;
+    background-size: 100% 100%;
+    background-position: center;
+  }
+}
