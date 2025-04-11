@@ -18,7 +18,7 @@ export const FeaturedProductsSection = ({
           <div>
             <h2 className="text-3xl font-semibold">Productos Destacados</h2>
             <p className="text-white/80">
-              Nuestras mejores selecciones para ti
+              ¡Nuestras mejores selecciones para ti!
             </p>
           </div>
           <Button

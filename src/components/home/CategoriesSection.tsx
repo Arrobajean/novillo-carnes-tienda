@@ -68,7 +68,7 @@ export const CategoriesSection = ({ categories }: CategoriesSectionProps) => {
         </div>
       </div>
 
-      {/* Wave inferior rojo oscuro reducido */}
+      {/* Wave inferior */}
       <svg
         className="absolute bottom-0 left-0 w-full h-[40px] block pointer-events-none"
         viewBox="0 0 1440 40"

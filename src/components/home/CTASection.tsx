@@ -91,7 +91,7 @@ export const CTASection = () => {
           </div>
         </div>
 
-        {/* Sección About resumida */}
+        {/* Sección About */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center my-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
