@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 export const HeroSection = () => {
   return (
     <>
-      {/* Versión Mobile */}
       <section
         className="block md:hidden relative h-[650px] flex items-center text-white font-poppins overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
