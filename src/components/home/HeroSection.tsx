@@ -72,7 +72,6 @@ export const HeroSection = () => {
         </svg>
       </section>
 
-      {/* Versión Desktop */}
       <section
         className="hidden md:flex relative h-[700px] items-center text-white font-poppins overflow-hidden bg-repeat bg-center bg-[length:contain]"
         style={{

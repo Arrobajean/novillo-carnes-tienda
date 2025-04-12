@@ -2,23 +2,21 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { useState } from "react";
 
-// Componente para estrellas de calificación
-const RatingStars = ({ rating }: { rating: number }) => {
-  return (
-    <div className="flex">
-      {[...Array(5)].map((_, i) => (
-        <Star
-          key={i}
-          className={`h-4 w-4 ${
-            i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
-          }`}
-        />
-      ))}
-    </div>
-  );
-};
+// Componente de estrellas
+const RatingStars = ({ rating }: { rating: number }) => (
+  <div className="flex">
+    {[...Array(5)].map((_, i) => (
+      <Star
+        key={i}
+        className={`h-4 w-4 ${
+          i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
+        }`}
+      />
+    ))}
+  </div>
+);
 
-// Datos de reseñas simuladas
+// Datos simulados
 const googleReviews = [
   {
     name: "Roberto Méndez",
@@ -41,27 +39,13 @@ const googleReviews = [
     date: "hace 2 meses",
     text: "Muy buenos cortes y servicio. Las promociones son excelentes. Punto a mejorar: a veces hay que esperar un poco porque tienen mucha clientela, ¡pero vale la pena!",
   },
-  {
-    name: "Patricia Soto",
-    image: "https://randomuser.me/api/portraits/women/59.jpg",
-    rating: 5,
-    date: "hace 3 meses",
-    text: "Me encanta comprar aquí. El lomo vetado y la plateada son mis favoritos. Todo siempre fresco y bien cortado. Además, tienen servicio a domicilio.",
-  },
-  {
-    name: "Miguel Ángel Fernández",
-    image: "https://randomuser.me/api/portraits/men/22.jpg",
-    rating: 5,
-    date: "hace 4 meses",
-    text: "Como chef, valoro mucho la calidad de los productos. El Novillo nunca me ha defraudado. Su carne es de primera categoría y los cortes son perfectos.",
-  },
 ];
 
 const GoogleReviews = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const totalReviews = googleReviews.length;
   const reviewsToShow =
     typeof window !== "undefined" && window.innerWidth >= 768 ? 3 : 1;
+  const totalReviews = googleReviews.length;
 
   const nextReviews = () => {
     setActiveIndex((prev) => (prev + 1) % (totalReviews - (reviewsToShow - 1)));
@@ -76,85 +60,74 @@ const GoogleReviews = () => {
   return (
     <section className="py-16 px-4 bg-gray-100">
       <div className="container mx-auto">
+        {/* Encabezado */}
         <div className="text-center mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="flex justify-center items-center gap-2 mb-4"
+            className="flex justify-center items-center gap-2 mb-3"
           >
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
               alt="Google Logo"
-              className="h-7 w-7 sm:h-8 sm:w-8"
+              className="h-7 w-auto sm:h-8"
             />
             <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800">
               Reseñas
             </h2>
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto text-gray-600"
-          >
+          <p className="max-w-2xl mx-auto text-gray-600">
             Opiniones de nuestros clientes en Google
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="flex justify-center items-center mt-2 mb-6"
-          >
-            <div className="flex mr-2">
-              <RatingStars rating={4.8} />
-            </div>
-            <span className="text-lg font-semibold">4.8</span>
-            <span className="text-gray-500 ml-1">
-              ({googleReviews.length} reseñas)
+          <div className="flex justify-center items-center mt-2 mb-6">
+            <RatingStars rating={4.8} />
+            <span className="text-base font-semibold ml-2">4.8</span>
+            <span className="text-gray-500 ml-1 text-sm">
+              ({totalReviews} reseñas)
             </span>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Navegación en mobile */}
+        {/* Navegación móvil */}
         <div className="relative">
           <div className="md:hidden flex justify-between absolute top-1/2 left-0 right-0 -translate-y-1/2 z-10 px-2">
             <button
               onClick={prevReviews}
-              className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
+              className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100"
+              aria-label="Reseñas anteriores"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
+                fill="none"
                 stroke="currentColor"
-                className="text-gray-700"
+                strokeWidth="2"
               >
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
             </button>
             <button
               onClick={nextReviews}
-              className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
+              className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100"
+              aria-label="Reseñas siguientes"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
+                fill="none"
                 stroke="currentColor"
-                className="text-gray-700"
+                strokeWidth="2"
               >
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </button>
           </div>
 
-          {/* Tarjetas de reseñas */}
+          {/* Tarjetas */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {googleReviews
               .slice(activeIndex, activeIndex + reviewsToShow)
@@ -163,38 +136,39 @@ const GoogleReviews = () => {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full"
+                  className="bg-white rounded-lg shadow-md border border-gray-200 flex flex-col min-h-[300px]"
                 >
                   <div className="p-4 border-b border-gray-100">
                     <div className="flex items-center mb-2">
                       <img
                         src={review.image}
                         alt={review.name}
-                        className="w-10 h-10 rounded-full mr-3 border border-gray-200"
+                        className="w-10 h-10 rounded-full mr-3 border border-gray-300"
                       />
                       <div>
                         <h4 className="font-medium text-gray-800">
                           {review.name}
                         </h4>
-                        <div className="text-gray-500 text-xs">
+                        <span className="text-xs text-gray-500">
                           {review.date}
-                        </div>
+                        </span>
                       </div>
                     </div>
                     <RatingStars rating={review.rating} />
                   </div>
 
                   <div className="p-4 flex-grow">
-                    <p className="text-gray-700 text-sm">{review.text}</p>
+                    <p className="text-sm text-gray-700">{review.text}</p>
                   </div>
 
-                  <div className="px-4 py-2 bg-gray-50 flex items-center border-t border-gray-100 mt-auto">
+                  {/* Footer fijo */}
+                  <div className="px-4 py-2 bg-gray-50 border-t border-gray-200 flex items-center">
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
-                      alt="Google Logo"
-                      className="h-4 w-auto mr-1"
+                      src="/public/lovable-uploads/6b236ce7-68d7-44f3-9e87-106f6e078528.png"
+                      alt="Publicado en Google"
+                      className="h-4 w-auto mr-2"
                     />
                     <span className="text-xs text-gray-500">
                       Publicado en Google
@@ -204,20 +178,14 @@ const GoogleReviews = () => {
               ))}
           </div>
 
-          {/* Paginación en desktop */}
-          <div className="hidden md:flex justify-center mt-8 space-x-4">
+          {/* Navegación desktop */}
+          <div className="hidden md:flex justify-center mt-8 gap-3">
             <button
               onClick={prevReviews}
-              className="bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100"
+              className="w-10 h-10 bg-white border border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                stroke="currentColor"
-                className="text-gray-700"
-              >
-                <polyline points="15 18 9 12 15 6"></polyline>
+              <svg width="20" height="20" stroke="currentColor">
+                <polyline points="15 18 9 12 15 6" />
               </svg>
             </button>
             {[...Array(Math.ceil(totalReviews / 3))].map((_, i) => (
@@ -231,21 +199,16 @@ const GoogleReviews = () => {
             ))}
             <button
               onClick={nextReviews}
-              className="bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100"
+              className="w-10 h-10 bg-white border border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                stroke="currentColor"
-                className="text-gray-700"
-              >
-                <polyline points="9 18 15 12 9 6"></polyline>
+              <svg width="20" height="20" stroke="currentColor">
+                <polyline points="9 18 15 12 9 6" />
               </svg>
             </button>
           </div>
         </div>
 
+        {/* Enlace inferior */}
         <div className="text-center mt-8">
           <a
             href="https://g.page/r/CfG_Flk8x_e9EB0/review"
@@ -254,15 +217,9 @@ const GoogleReviews = () => {
             className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
           >
             <span>Dejanos tu opinión en Google</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              stroke="currentColor"
-              className="ml-2"
-            >
-              <path d="M7 17L17 7"></path>
-              <path d="M7 7h10v10"></path>
+            <svg width="20" height="20" stroke="currentColor" className="ml-2">
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
             </svg>
           </a>
         </div>
