@@ -105,7 +105,7 @@ export const Navbar = () => {
               </motion.div>
             </button>
 
-      
+            {/* Logo - Centered on mobile, left on desktop - With Link to home */}
             <Link
               to="/"
               className="flex items-center md:order-1 order-2 mx-auto md:mx-0"

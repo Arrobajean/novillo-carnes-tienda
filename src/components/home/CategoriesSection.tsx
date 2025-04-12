@@ -11,10 +11,10 @@ interface CategoriesSectionProps {
 
 export const CategoriesSection = ({ categories }: CategoriesSectionProps) => {
   return (
-    <section className="pt-10 pb-5 px-4 bg-background relative">
+    <section className="py-16 px-4 bg-background relative">
       {/* Wave superior negro */}
       <svg
-        className="w-full block pointer-events-none -mt-1"
+        className="w-full block pointer-events-none absolute top-0 left-0"
         viewBox="0 0 1440 60"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ export const CategoriesSection = ({ categories }: CategoriesSectionProps) => {
         <path fill="#000000" d="M0,60 C360,30 1080,30 1440,0 L1440,0 L0,0 Z" />
       </svg>
 
-      <div className="container mx-auto">
+      <div className="container mx-auto pt-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +79,7 @@ export const CategoriesSection = ({ categories }: CategoriesSectionProps) => {
         </div>
 
         <motion.div 
-          className="text-center mt-10"
+          className="flex justify-center mt-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

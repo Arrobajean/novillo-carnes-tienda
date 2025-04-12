@@ -13,6 +13,8 @@ const Index = () => {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
 
   useEffect(() => {
+    // Asegurar que la página cargue desde arriba
+    window.scrollTo(0, 0);
     setFeaturedProducts(getFeaturedProducts());
   }, []);
 
@@ -28,7 +30,7 @@ const Index = () => {
       <FeaturedProductsSection products={featuredProducts} />
       <AboutSection />
       
-      {/* Use custom Testimonials instead of external Google Reviews */}
+      {/* Testimonials section with carousel */}
       <TestimonialsSection />
     </div>
   );
