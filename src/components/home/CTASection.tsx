@@ -39,7 +39,13 @@ export const CTASection = () => {
 
       <div className="container mx-auto px-4 relative z-10 py-16 md:py-20">
         {/* Proceso de compra */}
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Tu Compra <span className="text-[#D4AF37]">Rápida y Segura</span>
           </h2>
@@ -70,9 +76,13 @@ export const CTASection = () => {
                 text: "Productos frescos de calidad",
               },
             ].map(({ Icon, title, text }, i) => (
-              <div
+              <motion.div
                 key={i}
                 className="bg-[#1B1717] p-3 md:p-4 rounded-lg border border-[#D4AF37]/20 hover:border-[#D4AF37] transition-colors h-full"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <div className="bg-gradient-to-br from-novillo-red to-novillo-red/70 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
                   <Icon className="h-5 w-5 md:h-6 md:w-6 text-white" />
@@ -81,10 +91,10 @@ export const CTASection = () => {
                   {title}
                 </h3>
                 <p className="text-white/70 text-xs md:text-sm">{text}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Sección About */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center my-12">
@@ -102,23 +112,31 @@ export const CTASection = () => {
 
             <ul className="mb-6 space-y-2 md:space-y-3">
               {reasons.map((reason, index) => (
-                <li key={index} className="flex items-start">
+                <motion.li 
+                  key={index} 
+                  className="flex items-start"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
                   <Check className="mr-2 h-5 w-5 text-novillo-gold mt-1 shrink-0" />
                   <span>{reason}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
 
-            <Button
-              asChild
-              variant="link"
-              className="text-[#CE1212] hover:text-[#CE1212]/80 p-0 h-auto font-semibold text-lg"
-            >
-              <Link to="/productos" className="inline-flex items-center">
-                Ver nuestros productos 🍖
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <div className="flex justify-center md:justify-start">
+              <Button
+                asChild
+                className="bg-[#CE1212] hover:bg-[#CE1212]/80 text-white font-medium"
+              >
+                <Link to="/productos" className="inline-flex items-center">
+                  Ver nuestros productos
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </motion.div>
 
           <motion.div
@@ -137,7 +155,13 @@ export const CTASection = () => {
         </div>
 
         {/* CTA final */}
-        <div className="bg-gradient-to-r from-novillo-red to-[#A00000] p-5 md:p-8 rounded-xl max-w-5xl mx-auto mt-8">
+        <motion.div 
+          className="bg-gradient-to-r from-novillo-red to-[#A00000] p-5 md:p-8 rounded-xl max-w-5xl mx-auto mt-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
               <h3 className="text-xl md:text-2xl font-bold mb-1">
@@ -157,7 +181,7 @@ export const CTASection = () => {
               </Link>
             </Button>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Wave final */}

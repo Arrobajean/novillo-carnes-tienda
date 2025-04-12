@@ -126,7 +126,13 @@ export const TestimonialsSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-8">
+        <motion.div 
+          className="text-center mt-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
           <a
             href="https://g.page/r/CfG_Flk8x_e9EB0/review"
             target="_blank"
@@ -149,7 +155,7 @@ export const TestimonialsSection = () => {
               <path d="M7 7h10v10"></path>
             </svg>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

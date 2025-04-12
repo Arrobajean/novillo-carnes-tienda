@@ -29,9 +29,21 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu if cart page opens and vice versa
+  useEffect(() => {
+    if (isCartPage) {
+      setIsMenuOpen(false);
+    }
+  }, [isCartPage]);
+
   // Función para manejar el clic en el carrito
   const handleCartClick = (e) => {
     e.preventDefault(); // Prevenir el comportamiento de enlace predeterminado
+    
+    // If menu is open, close it when opening cart
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
     
     if (isCartPage) {
       // Si ya estamos en la página del carrito, navigamos hacia atrás
@@ -40,6 +52,16 @@ export const Navbar = () => {
       // Si no, vamos a la página del carrito
       navigate("/carrito");
     }
+  };
+
+  // Función para manejar el clic en el menú hamburguesa
+  const handleMenuToggle = () => {
+    // If on cart page and opening menu, navigate away from cart
+    if (isCartPage && !isMenuOpen) {
+      navigate(-1);
+    }
+    
+    setIsMenuOpen(!isMenuOpen);
   };
 
   // Variantes de animación para el icono del menú hamburguesa
@@ -66,7 +88,7 @@ export const Navbar = () => {
             {/* Mobile menu button - Left on mobile - Animado */}
             <button
               className="md:hidden order-1 relative w-6 h-6"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={handleMenuToggle}
               aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
             >
               <motion.div
@@ -162,7 +184,7 @@ export const Navbar = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="w-full"
+                    className="w-full list-none" // Added list-none to remove li::marker
                   >
                     <Link
                       to={path}

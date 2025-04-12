@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -43,7 +44,7 @@ export const HeroSection = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white/20 transition-all transform hover:scale-105"
+                className="border-[#D4AF37] bg-[#D4AF37]/10 text-[#D4AF37] hover:bg-[#D4AF37]/20 transition-all transform hover:scale-105"
               >
                 <Link to="/nosotros">Conocer Nuestra Historia</Link>
               </Button>
@@ -108,7 +109,7 @@ export const HeroSection = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white/20 transition-all transform hover:scale-105"
+                className="border-[#D4AF37] bg-[#D4AF37]/10 text-[#D4AF37] hover:bg-[#D4AF37]/20 transition-all transform hover:scale-105"
               >
                 <Link to="/nosotros">Conocer Nuestra Historia</Link>
               </Button>
