@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { useState } from "react";
@@ -16,7 +17,7 @@ const RatingStars = ({ rating }: { rating: number }) => (
   </div>
 );
 
-// Datos simulados
+// Datos simulados con más reseñas
 const googleReviews = [
   {
     name: "Roberto Méndez",
@@ -38,6 +39,34 @@ const googleReviews = [
     rating: 4,
     date: "hace 2 meses",
     text: "Muy buenos cortes y servicio. Las promociones son excelentes. Punto a mejorar: a veces hay que esperar un poco porque tienen mucha clientela, ¡pero vale la pena!",
+  },
+  {
+    name: "Marta Gutiérrez",
+    image: "https://randomuser.me/api/portraits/women/26.jpg",
+    rating: 5,
+    date: "hace 1 mes",
+    text: "Mi carnicería favorita, siempre encuentro cortes frescos y de alta calidad. El personal es muy amable y conocedor, siempre me aconsejan muy bien sobre qué comprar según lo que voy a preparar.",
+  },
+  {
+    name: "Jorge Salinas",
+    image: "https://randomuser.me/api/portraits/men/41.jpg",
+    rating: 5,
+    date: "hace 3 meses",
+    text: "Los mejores precios y la mejor calidad. Compro aquí desde hace años y nunca me han decepcionado. Sus promociones de fin de semana son geniales para las parrilladas familiares.",
+  },
+  {
+    name: "Ana María Contreras",
+    image: "https://randomuser.me/api/portraits/women/63.jpg",
+    rating: 4,
+    date: "hace 1 mes",
+    text: "Me encanta la variedad de productos que tienen. Los cortes son siempre frescos y la atención es excelente. Recomiendo probar sus promociones familiares.",
+  },
+  {
+    name: "Pedro González",
+    image: "https://randomuser.me/api/portraits/men/22.jpg",
+    rating: 5,
+    date: "hace 2 semanas",
+    text: "Carnicería de primera calidad. Las carnes son frescas y tienen excelente sabor. El personal es muy atento y me ayuda a elegir los mejores cortes para cada ocasión.",
   },
 ];
 
@@ -61,14 +90,14 @@ const GoogleReviews = () => {
     <section className="py-16 px-4 bg-gray-100">
       <div className="container mx-auto">
         {/* Encabezado */}
-        <div className="text-center mb-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="flex justify-center items-center gap-2 mb-3"
-          >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="text-center mb-10"
+        >
+          <div className="flex justify-center items-center gap-2 mb-3">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
               alt="Google Logo"
@@ -77,7 +106,7 @@ const GoogleReviews = () => {
             <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800">
               Reseñas
             </h2>
-          </motion.div>
+          </div>
 
           <p className="max-w-2xl mx-auto text-gray-600">
             Opiniones de nuestros clientes en Google
@@ -90,7 +119,7 @@ const GoogleReviews = () => {
               ({totalReviews} reseñas)
             </span>
           </div>
-        </div>
+        </motion.div>
 
         {/* Navegación móvil */}
         <div className="relative">

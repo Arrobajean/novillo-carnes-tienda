@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 
-// Datos simulados de reseñas
+// Datos simulados de reseñas ampliados
 const testimonials = [
   {
     name: "Roberto Méndez",
@@ -47,6 +47,34 @@ const testimonials = [
     date: "hace 1 mes",
     rating: 4,
     text: "Buenos cortes y excelente servicio. Siempre encuentro lo que necesito para mis asados familiares."
+  },
+  {
+    name: "Laura Torres",
+    image: "https://randomuser.me/api/portraits/women/63.jpg",
+    date: "hace 2 semanas",
+    rating: 5,
+    text: "Desde que descubrí El Novillo, no compro carne en ningún otro lugar. Su calidad es incomparable y sus precios muy justos."
+  },
+  {
+    name: "Miguel Ángel Castro",
+    image: "https://randomuser.me/api/portraits/men/77.jpg",
+    date: "hace 1 mes",
+    rating: 5,
+    text: "El servicio es excepcional. Siempre me ayudan a elegir los mejores cortes para mis reuniones y no me han fallado."
+  },
+  {
+    name: "Valentina Parra",
+    image: "https://randomuser.me/api/portraits/women/33.jpg",
+    date: "hace 3 meses",
+    rating: 5,
+    text: "Tienen los mejores precios de la zona. La calidad de sus productos es constante y su atención siempre es cordial y eficiente."
+  },
+  {
+    name: "Eduardo Navarro",
+    image: "https://randomuser.me/api/portraits/men/55.jpg",
+    date: "hace 2 meses",
+    rating: 4,
+    text: "Gran variedad de cortes. El personal conoce muy bien sus productos y siempre dan buenos consejos de preparación."
   }
 ];
 
@@ -127,7 +155,7 @@ export const TestimonialsSection = () => {
               <RatingStars rating={5} />
             </div>
             <span className="text-base md:text-lg font-semibold">4.9</span>
-            <span className="text-gray-500 ml-1 text-sm">(28 reseñas)</span>
+            <span className="text-gray-500 ml-1 text-sm">({testimonials.length} reseñas)</span>
           </motion.div>
         </motion.div>
 
