@@ -18,7 +18,13 @@ export const ProductQuantitySelector = ({
   const [customQuantity, setCustomQuantity] = useState(1);
   
   if (isCombo) {
-    return null; // No selector for combos
+    // Empty placeholder for combos to maintain consistent card height
+    return (
+      <div className="mt-3">
+        <p className="mb-2 text-sm text-gray-300">Pack completo</p>
+        <div className="h-[42px]"></div>
+      </div>
+    );
   }
 
   // Weight-based products (kg, gr)

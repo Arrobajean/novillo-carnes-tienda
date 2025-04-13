@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Trash, Minus, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,10 +13,32 @@ interface CartItemProps {
 export const CartItem = ({ item }: CartItemProps) => {
   const { updateQuantity, removeItem } = useCart();
   const [isHovered, setIsHovered] = useState(false);
+  
+  const isWeightProduct = item.unit === 'kg' || item.unit === 'gr';
 
   const handleQuantityChange = (newQuantity: number) => {
     if (newQuantity < 1) return;
     updateQuantity(item.id, newQuantity);
+  };
+  
+  // Format the weight display
+  const getWeightDisplay = () => {
+    if (!item.weightQuantity) return '';
+    
+    if (item.weightQuantity === 0.25) return '(250gr)';
+    if (item.weightQuantity === 0.5) return '(500gr)';
+    if (item.weightQuantity === 1) return '(1kg)';
+    
+    return `(${item.weightQuantity}kg)`;
+  };
+  
+  // Calculate the total price based on product type
+  const getTotalPrice = () => {
+    if (isWeightProduct && item.weightQuantity) {
+      return item.price * item.weightQuantity;
+    }
+    
+    return item.price * item.quantity;
   };
 
   return (
@@ -45,36 +68,51 @@ export const CartItem = ({ item }: CartItemProps) => {
         >
           {item.name}
         </Link>
+        
         <div className="text-sm text-gray-400 mb-1">
           {formatPrice(item.price)} / {item.unit || "unidad"}
+          {isWeightProduct && item.weightQuantity && (
+            <span className="ml-2 text-gray-300">{getWeightDisplay()}</span>
+          )}
         </div>
 
         <div className="flex items-center justify-between mt-2">
           <div className="flex items-center">
-            <Button
-              variant="outline"
-              size="icon"
-              className="h-7 w-7 rounded-full border-gray-500 text-white hover:bg-[#CE1212]/80"
-              onClick={() => handleQuantityChange(item.quantity - 1)}
-            >
-              <Minus className="h-3 w-3" />
-            </Button>
-            <span className="mx-2 min-w-10 text-center text-white">
-              {item.quantity}
-            </span>
-            <Button
-              variant="outline"
-              size="icon"
-              className="h-7 w-7 rounded-full border-gray-500 text-white hover:bg-[#CE1212]/80"
-              onClick={() => handleQuantityChange(item.quantity + 1)}
-            >
-              <Plus className="h-3 w-3" />
-            </Button>
+            {!isWeightProduct && (
+              <>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-7 w-7 rounded-full border-gray-500 text-white hover:bg-[#CE1212]/80"
+                  onClick={() => handleQuantityChange(item.quantity - 1)}
+                >
+                  <Minus className="h-3 w-3" />
+                </Button>
+                <span className="mx-2 min-w-10 text-center text-white">
+                  {item.quantity}
+                </span>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-7 w-7 rounded-full border-gray-500 text-white hover:bg-[#CE1212]/80"
+                  onClick={() => handleQuantityChange(item.quantity + 1)}
+                >
+                  <Plus className="h-3 w-3" />
+                </Button>
+              </>
+            )}
+            
+            {isWeightProduct && (
+              <div className="text-white text-sm">
+                {item.quantity} {item.unit === 'kg' ? 'paquete' : 'unidad'}
+                {item.quantity > 1 ? 's' : ''}
+              </div>
+            )}
           </div>
 
           <div className="flex items-center">
             <span className="font-semibold text-[#CE1212] mr-3">
-              {formatPrice(item.price * item.quantity)}
+              {formatPrice(getTotalPrice())}
             </span>
             <Button
               variant="ghost"

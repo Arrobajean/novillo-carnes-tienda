@@ -8,17 +8,26 @@ import { Product } from "@/types";
 
 const Products = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   useEffect(() => {
     const categoryParam = searchParams.get("categoria");
+    
+    // Filter out "cordero" and "parrilleros" categories
+    const availableProducts = products.filter(
+      product => product.category !== "cordero" && product.category !== "parrilleros"
+    );
+    
     if (categoryParam) {
       setSelectedCategory(categoryParam);
-      setFilteredProducts(getProductsByCategory(categoryParam));
+      // Apply both filters - remove unwanted categories and filter by selected category
+      setFilteredProducts(
+        availableProducts.filter(product => product.category === categoryParam)
+      );
     } else {
       setSelectedCategory(null);
-      setFilteredProducts(products);
+      setFilteredProducts(availableProducts);
     }
   }, [searchParams]);
 
