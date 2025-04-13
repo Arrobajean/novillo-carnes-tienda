@@ -1,12 +1,13 @@
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ShoppingBag, ArrowRight, ClipboardCheck } from "lucide-react";
+import { ShoppingBag, ArrowRight, ClipboardCheck, Trash } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { CartItem } from "@/components/cart/CartItem";
 import { formatPrice, generateWhatsAppUrl } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { Separator } from "@/components/ui/separator";
 
 const Cart = () => {
   const { items, getTotalPrice, clearCart } = useCart();
@@ -67,19 +68,20 @@ const Cart = () => {
               </h2>
             </div>
 
-            <div className="divide-y divide-gray-700">
+            <div className="space-y-1">
               {items.map((item) => (
                 <CartItem key={item.id} item={item} />
               ))}
             </div>
 
-            <div className="mt-6 text-right">
+            <div className="mt-8 text-right">
               <Button
                 variant="outline"
-                className="border border-gray-600 text-gray-400 hover:text-white"
+                className="border border-gray-600 text-gray-400 hover:text-white flex items-center gap-2"
                 onClick={clearCart}
               >
-                Vaciar Carrito
+                <Trash className="h-4 w-4" />
+                <span>Vaciar Carrito</span>
               </Button>
             </div>
           </div>
@@ -95,36 +97,40 @@ const Cart = () => {
           >
             <h2 className="text-xl font-semibold mb-4">Resumen del Pedido</h2>
 
-            <div className="space-y-3 mb-6">
+            <div className="space-y-4 mb-8">
               <div className="flex justify-between text-gray-400">
                 <span>Subtotal</span>
                 <span>{formatPrice(totalPrice)}</span>
               </div>
 
-              <div className="border-t border-gray-700 pt-3 flex justify-between text-xl font-semibold">
-                <span>Total</span>
-                <span className="text-novillo-red">
+              <Separator className="bg-gray-800 my-2" />
+
+              <div className="flex justify-between text-xl font-bold">
+                <span className="text-white">Total</span>
+                <span className="text-novillo-red text-2xl">
                   {formatPrice(totalPrice)}
                 </span>
               </div>
             </div>
 
-            <Button
-              className="w-full bg-novillo-red hover:bg-red-900 text-white text-lg py-6 mb-4"
-              onClick={handleCheckout}
-            >
-              Finalizar Compra
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <div className="space-y-4">
+              <Button
+                className="w-full bg-novillo-red hover:bg-red-900 text-white text-lg py-6"
+                onClick={handleCheckout}
+              >
+                Finalizar Compra
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
 
-            <div className="text-gray-400 text-sm">
-              <p className="flex items-start mb-2">
-                <ClipboardCheck className="h-5 w-5 mr-2 shrink-0 text-novillo-gold" />
-                <span>
-                  Serás redirigido a WhatsApp para confirmar tu pedido con
-                  nosotros.
-                </span>
-              </p>
+              <div className="text-gray-400 text-sm">
+                <p className="flex items-start mb-4">
+                  <ClipboardCheck className="h-5 w-5 mr-2 shrink-0 text-novillo-gold" />
+                  <span>
+                    Serás redirigido a WhatsApp para confirmar tu pedido con
+                    nosotros.
+                  </span>
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
