@@ -1,9 +1,12 @@
+
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { Product } from "@/types";
 import { formatPrice } from "@/lib/utils";
+import { ProductQuantitySelector } from "./QuantitySelector";
 
 interface ProductCardProps {
   product: Product;
@@ -11,11 +14,17 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product }: ProductCardProps) => {
   const { addItem } = useCart();
+  const [quantity, setQuantity] = useState(1);
+  const isCombo = product.category === "promociones";
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    addItem(product, 1);
+    addItem(product, quantity);
+  };
+
+  const handleQuantityChange = (amount: number) => {
+    setQuantity(amount);
   };
 
   return (
@@ -48,6 +57,13 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             {product.description}
           </p>
 
+          {/* Selector de cantidad */}
+          <ProductQuantitySelector 
+            unit={product.unit} 
+            onQuantityChange={handleQuantityChange}
+            isCombo={isCombo}
+          />
+
           <div className="flex items-center justify-between mt-4">
             <span className="font-semibold text-novillo-red">
               {formatPrice(product.price)}{" "}
@@ -68,4 +84,4 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       </Link>
     </div>
   );
-};
+}

@@ -11,6 +11,8 @@ export interface CartItem {
   quantity: number;
   image: string;
   unit?: string;
+  // Para productos con unidad de peso, almacenamos la cantidad en kg
+  weightQuantity?: number;
 }
 
 interface CartState {
@@ -42,13 +44,28 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
         (item) => item.id === action.payload.id
       );
 
+      // Determinar si el producto se vende por peso
+      const isWeightProduct = action.payload.unit === 'kg' || action.payload.unit === 'gr';
+      
       if (existingItemIndex >= 0) {
         // Item exists, update quantity
         const updatedItems = [...state.items];
-        updatedItems[existingItemIndex] = {
-          ...updatedItems[existingItemIndex],
-          quantity: updatedItems[existingItemIndex].quantity + action.quantity,
-        };
+        
+        // Si es un producto de peso, podemos sumar las cantidades
+        if (isWeightProduct) {
+          updatedItems[existingItemIndex] = {
+            ...updatedItems[existingItemIndex],
+            quantity: updatedItems[existingItemIndex].quantity + 1,
+            weightQuantity: (updatedItems[existingItemIndex].weightQuantity || 0) + action.quantity
+          };
+        } else {
+          // Para productos por unidad, incrementamos la cantidad
+          updatedItems[existingItemIndex] = {
+            ...updatedItems[existingItemIndex],
+            quantity: updatedItems[existingItemIndex].quantity + action.quantity,
+          };
+        }
+        
         return { ...state, items: updatedItems };
       } else {
         // New item
@@ -61,7 +78,8 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
               name: action.payload.name,
               price: action.payload.price,
               image: action.payload.image,
-              quantity: action.quantity,
+              quantity: isWeightProduct ? 1 : action.quantity, // Si es por peso, la cantidad es 1 (1 ítem)
+              weightQuantity: isWeightProduct ? action.quantity : undefined, // Si es por peso, guardamos la cantidad en kg
               unit: action.payload.unit,
             },
           ],
@@ -120,9 +138,20 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Actions
   const addItem = (product: Product, quantity: number) => {
     dispatch({ type: 'ADD_ITEM', payload: product, quantity });
+    
+    // Mensaje personalizado según el tipo de producto
+    const isWeightProduct = product.unit === 'kg' || product.unit === 'gr';
+    let qtyMessage = "";
+    
+    if (isWeightProduct) {
+      qtyMessage = ` (${quantity === 1 ? '1kg' : quantity === 0.5 ? '500gr' : '250gr'})`;
+    } else if (quantity > 1) {
+      qtyMessage = ` (${quantity} unidades)`;
+    }
+    
     toast({
       title: "Producto agregado",
-      description: `${product.name} agregado al carrito`,
+      description: `${product.name}${qtyMessage} agregado al carrito`,
     });
   };
 
@@ -144,7 +173,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const getTotalPrice = () => {
     return state.items.reduce(
-      (total, item) => total + item.price * item.quantity,
+      (total, item) => {
+        // Si es un producto por peso, calculamos el precio basado en el peso seleccionado
+        if (item.weightQuantity !== undefined) {
+          return total + item.price * item.weightQuantity;
+        }
+        // Para productos por unidad o combos
+        return total + item.price * item.quantity;
+      },
       0
     );
   };
