@@ -11,18 +11,18 @@ interface CategoriesSectionProps {
 
 export const CategoriesSection = ({ categories }: CategoriesSectionProps) => {
   return (
-    <section className="py-16 px-4 bg-background relative">
-      {/* Wave superior negro */}
+    <section className="py-12 px-4 bg-background relative">
+      {/* Wave superior negro - Ajustado para reducir el espacio */}
       <svg
         className="w-full block pointer-events-none absolute top-0 left-0"
-        viewBox="0 0 1440 60"
+        viewBox="0 0 1440 40"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path fill="#000000" d="M0,60 C360,30 1080,30 1440,0 L1440,0 L0,0 Z" />
+        <path fill="#000000" d="M0,40 C360,20 1080,20 1440,0 L1440,0 L0,0 Z" />
       </svg>
 
-      <div className="container mx-auto pt-10">
+      <div className="container mx-auto pt-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,14 +33,17 @@ export const CategoriesSection = ({ categories }: CategoriesSectionProps) => {
           <h2 className="text-3xl font-semibold mb-2 text-center text-foreground">
             Nuestras Categorías
           </h2>
-          <p className="text-center text-foreground/70 mb-10 max-w-2xl mx-auto text-base md:text-lg">
+          <p className="text-center text-foreground/70 mb-8 max-w-2xl mx-auto text-base md:text-lg">
             Explora nuestra variedad de cortes frescos y productos seleccionados
             para cada ocasión
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {categories.slice(0, 4).map((category, index) => (
+          {categories
+            .filter(category => category.id !== "cordero" && category.id !== "parrilleros")
+            .slice(0, 4)
+            .map((category, index) => (
             <motion.div
               key={category.id}
               initial={{ opacity: 0, y: 20 }}
@@ -79,7 +82,7 @@ export const CategoriesSection = ({ categories }: CategoriesSectionProps) => {
         </div>
 
         <motion.div 
-          className="flex justify-center mt-10"
+          className="flex justify-center mt-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -91,14 +94,14 @@ export const CategoriesSection = ({ categories }: CategoriesSectionProps) => {
         </motion.div>
       </div>
 
-      {/* Wave inferior */}
+      {/* Wave inferior - Ajustado para reducir el espacio */}
       <svg
-        className="absolute bottom-0 left-0 w-full h-[40px] block pointer-events-none"
-        viewBox="0 0 1440 40"
+        className="absolute bottom-0 left-0 w-full h-[30px] block pointer-events-none"
+        viewBox="0 0 1440 30"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path fill="#810000" d="M0,0 C360,20 1080,0 1440,20 L1440,40 L0,40 Z" />
+        <path fill="#810000" d="M0,0 C360,15 1080,0 1440,15 L1440,30 L0,30 Z" />
       </svg>
     </section>
   );

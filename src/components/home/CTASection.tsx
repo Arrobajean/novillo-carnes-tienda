@@ -6,7 +6,6 @@ import {
   ShoppingCart,
   CreditCard,
   CheckCircle,
-  ArrowRight,
   Check,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -126,17 +125,7 @@ export const CTASection = () => {
               ))}
             </ul>
 
-            <div className="flex justify-center md:justify-start">
-              <Button
-                asChild
-                className="bg-[#CE1212] hover:bg-[#CE1212]/80 text-white font-medium"
-              >
-                <Link to="/productos" className="inline-flex items-center">
-                  Ver nuestros productos
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
+            {/* Botón removido como solicitado */}
           </motion.div>
 
           <motion.div
