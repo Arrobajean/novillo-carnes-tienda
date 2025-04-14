@@ -1,7 +1,6 @@
-
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { products, getProductsByCategory } from "@/data/products";
+import { products } from "@/data/products";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import { CategoryFilter } from "@/components/product/CategoryFilter";
 import { Product } from "@/types";
@@ -13,17 +12,16 @@ const Products = () => {
 
   useEffect(() => {
     const categoryParam = searchParams.get("categoria");
-    
-    // Filter out "cordero" and "parrilleros" categories
+    // Filtrar cordero y parrilleros
     const availableProducts = products.filter(
-      product => product.category !== "cordero" && product.category !== "parrilleros"
+      (product) =>
+        product.category !== "cordero" && product.category !== "parrilleros"
     );
-    
+
     if (categoryParam) {
       setSelectedCategory(categoryParam);
-      // Apply both filters - remove unwanted categories and filter by selected category
       setFilteredProducts(
-        availableProducts.filter(product => product.category === categoryParam)
+        availableProducts.filter((product) => product.category === categoryParam)
       );
     } else {
       setSelectedCategory(null);
@@ -40,21 +38,18 @@ const Products = () => {
   };
 
   return (
-    <div className="bg-[#7D0A0A] min-h-screen">
-      {/* Upper wave decoration */}
+    <div className="bg-[#7D0A0A] min-h-screen relative">
+      {/* Wave superior posicionado absolutamente */}
       <svg
-        className="w-full block pointer-events-none -mt-1"
-        viewBox="0 0 1440 150"
+        className="absolute top-0 left-0 w-full block pointer-events-none"
+        viewBox="0 0 1440 80"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          fill="#7D0A0A"
-          d="M0,150 C600,100 900,0 1440,80 L1440,0 L0,0 Z"
-        />
+        <path fill="#7D0A0A" d="M0,80 C600,50 900,0 1440,30 L1440,0 L0,0 Z" />
       </svg>
-      
-      <div className="container mx-auto py-10 px-4">
+
+      <div className="container mx-auto px-4 pt-4 pb-10 relative z-10">
         {/* Encabezado centrado */}
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-bold text-white font-sans mb-2">
@@ -75,8 +70,8 @@ const Products = () => {
         {/* Lista de productos */}
         <ProductGrid products={filteredProducts} />
       </div>
-      
-      {/* Bottom wave decoration */}
+
+      {/* Wave inferior */}
       <svg
         className="w-full block pointer-events-none"
         viewBox="0 0 1440 150"

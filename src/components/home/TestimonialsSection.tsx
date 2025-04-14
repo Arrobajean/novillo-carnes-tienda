@@ -122,8 +122,9 @@ export const TestimonialsSection = () => {
             <img
               src="/lovable-uploads/f5f3e536-1879-4fb0-a148-3b507fc2f2d4.png"
               alt="Google Logo"
-              className="h-6 w-auto mr-2"
+              className="h-1 md:h-12 w-auto mr-1"
             />
+
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
               Reseñas
             </h2>
@@ -199,9 +200,8 @@ export const TestimonialsSection = () => {
                       <img
                         src="/lovable-uploads/f5f3e536-1879-4fb0-a148-3b507fc2f2d4.png"
                         alt="Google Logo"
-                        className="h-8 md:h-8 w-auto mr-1"
+                        className="h-4 md:h-4 w-auto mr-1"
                       />
-
                       <span className="text-xs text-gray-500">
                         Publicado en Google
                       </span>
