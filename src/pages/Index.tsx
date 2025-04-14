@@ -11,8 +11,15 @@ import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 
 const Index = () => {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
+  
+  // Filtrar las categorías excluyendo cordero y parrilleros
+  const filteredCategories = categories.filter(
+    category => category.id !== "cordero" && category.id !== "parrilleros"
+  );
 
   useEffect(() => {
+    // Asegurar que la página cargue desde arriba
+    window.scrollTo(0, 0);
     setFeaturedProducts(getFeaturedProducts());
   }, []);
 
@@ -24,11 +31,11 @@ const Index = () => {
       <CTASection />
       
       {/* Moved Categories before Featured Products */}
-      <CategoriesSection categories={categories} />
+      <CategoriesSection categories={filteredCategories} />
       <FeaturedProductsSection products={featuredProducts} />
       <AboutSection />
       
-      {/* Use custom Testimonials instead of external Google Reviews */}
+      {/* Testimonials section with carousel */}
       <TestimonialsSection />
     </div>
   );

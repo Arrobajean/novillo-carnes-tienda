@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/product/ProductCard";
 import { Product } from "@/types";
+import { motion } from "framer-motion";
 
 interface FeaturedProductsSectionProps {
   products: Product[];
@@ -14,21 +15,34 @@ export const FeaturedProductsSection = ({
   return (
     <section className="relative pt-14 pb-14 px-4 bg-[#810000] text-white font-poppins overflow-hidden">
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-10">
+        <motion.div 
+          className="text-center mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-3xl font-semibold">Productos Destacados</h2>
           <p className="text-white/80">
             ¡Nuestras mejores selecciones para ti!
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center mb-10">
-          {products.map((product) => (
-            <div key={product.id} className="w-full max-w-xs">
+          {products.map((product, index) => (
+            <motion.div 
+              key={product.id} 
+              className="w-full max-w-xs"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
               <ProductCard product={product} />
-            </div>
+            </motion.div>
           ))}
         </div>
-
+        
         <div className="flex justify-center mt-10">
           <Button
             asChild
@@ -39,7 +53,7 @@ export const FeaturedProductsSection = ({
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

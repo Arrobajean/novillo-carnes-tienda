@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { getProductById, getProductsByCategory } from "@/data/products";
 import { ProductCard } from "@/components/product/ProductCard";
 import { QuantitySelector } from "@/components/ui/quantity-selector";
+import { ProductQuantitySelector } from "@/components/product/QuantitySelector";
 import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/utils";
 import { Product } from "@/types";
@@ -23,6 +24,7 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
   const { addItem } = useCart();
+  const isCombo = product?.category === "promociones";
 
   useEffect(() => {
     if (id) {
@@ -43,6 +45,10 @@ const ProductDetail = () => {
     if (product) {
       addItem(product, quantity);
     }
+  };
+
+  const handleQuantityChange = (amount: number) => {
+    setQuantity(amount);
   };
 
   if (!product) {
@@ -141,6 +147,26 @@ const ProductDetail = () => {
               </AccordionItem>
             </Accordion>
           </div>
+
+          {/* Selector de cantidad */}
+          {!isCombo && (
+            <div className="mb-6">
+              <h3 className="text-lg font-medium mb-2">Seleccionar cantidad</h3>
+              {product.unit === "kg" || product.unit === "gr" ? (
+                <ProductQuantitySelector
+                  unit={product.unit}
+                  onQuantityChange={handleQuantityChange}
+                />
+              ) : (
+                <QuantitySelector
+                  quantity={quantity}
+                  onQuantityChange={setQuantity}
+                  min={1}
+                  max={99}
+                />
+              )}
+            </div>
+          )}
 
           <Button
             className="w-full bg-novillo-red hover:bg-red-900 text-white text-lg py-6 transition duration-300"

@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,19 +12,21 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product }: ProductCardProps) => {
   const { addItem } = useCart();
+  const isCombo = product.category === "promociones";
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    // Agregar producto con cantidad predeterminada de 1
     addItem(product, 1);
   };
 
   return (
     <div
-      className="product-card group bg-black text-[#EEEBDD] shadow-md hover:shadow-lg transition-shadow duration-300 rounded-lg overflow-hidden"
+      className="product-card group bg-black text-[#EEEBDD] shadow-md hover:shadow-lg transition-shadow duration-300 rounded-lg overflow-hidden h-full flex flex-col"
       aria-label={`Producto: ${product.name}`}
     >
-      <Link to={`/productos/${product.id}`} className="block">
+      <Link to={`/productos/${product.id}`} className="block flex-grow flex flex-col">
         {/* Imagen con hover-zoom y overlay oscuro */}
         <div className="relative h-64 overflow-hidden">
           <img
@@ -39,7 +42,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         </div>
 
         {/* Contenido textual */}
-        <div className="p-4">
+        <div className="p-4 flex-grow flex flex-col">
           <h3 className="text-lg font-semibold mb-1 text-white transition-transform duration-300 group-hover:scale-[1.02]">
             {product.name}
           </h3>
@@ -47,6 +50,9 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           <p className="text-sm text-[#CCC] mb-2 line-clamp-2">
             {product.description}
           </p>
+
+          {/* Espacio para mantener consistencia en altura */}
+          <div className="flex-grow"></div>
 
           <div className="flex items-center justify-between mt-4">
             <span className="font-semibold text-novillo-red">
@@ -68,4 +74,4 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       </Link>
     </div>
   );
-};
+}
