@@ -34,7 +34,7 @@ export function QuantitySelector({
         <Button
           variant="outline"
           size="icon"
-          className="h-10 w-10 rounded-l-md rounded-r-none bg-black hover:bg-gray-800 border-gray-600 transition-all duration-300"
+          className="h-9 w-9 rounded-l-md rounded-r-none bg-black hover:bg-novillo-gold/20 border-gray-700/50 transition-all duration-300 text-white hover:text-novillo-gold"
           onClick={handleDecrease}
           disabled={quantity <= min}
         >
@@ -42,15 +42,19 @@ export function QuantitySelector({
         </Button>
       </motion.div>
       
-      <div className="h-10 w-12 flex items-center justify-center border-y border-input bg-black text-white">
+      <motion.div 
+        className="h-9 w-12 flex items-center justify-center border-y border-gray-700/50 bg-black/50 text-white font-medium"
+        whileTap={{ scale: 0.95 }}
+        transition={{ duration: 0.2 }}
+      >
         {quantity}
-      </div>
+      </motion.div>
       
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <Button
           variant="outline"
           size="icon"
-          className="h-10 w-10 rounded-r-md rounded-l-none bg-black hover:bg-gray-800 border-gray-600 transition-all duration-300"
+          className="h-9 w-9 rounded-r-md rounded-l-none bg-black hover:bg-novillo-gold/20 border-gray-700/50 transition-all duration-300 text-white hover:text-novillo-gold"
           onClick={handleIncrease}
           disabled={quantity >= max}
         >

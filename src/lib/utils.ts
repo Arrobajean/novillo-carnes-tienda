@@ -31,9 +31,9 @@ export function generateWhatsAppUrl(
         const weightDisplay = item.weightQuantity === 0.25 ? '250gr' : 
                              item.weightQuantity === 0.5 ? '500gr' : 
                              `${item.weightQuantity}kg`;
-        return `• ${item.name} - ${weightDisplay} - ${formatPrice(item.price * item.weightQuantity)}`;
+        return `• ${item.name} - ${weightDisplay} (${formatPrice(item.price)}/kg) - ${formatPrice(item.price * item.weightQuantity)}`;
       } else {
-        return `• ${item.name} x ${item.quantity} - ${formatPrice(item.price * item.quantity)}`;
+        return `• ${item.name} × ${item.quantity} - ${formatPrice(item.price)} c/u - ${formatPrice(item.price * item.quantity)}`;
       }
     })
     .join('\n');
