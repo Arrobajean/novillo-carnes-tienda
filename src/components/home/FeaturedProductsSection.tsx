@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/product/ProductCard";
 import { Product } from "@/types";
@@ -51,11 +50,10 @@ export const FeaturedProductsSection = ({
         <div className="flex justify-center mt-10">
           <Button
             asChild
-            className="bg-[#D4AF37] hover:bg-[#D4AF37]/80 text-black font-medium"
+            className="bg-[#CE1212] hover:bg-[#CE1212]/80 text-white font-medium transition-colors"
           >
             <Link to="/productos" className="inline-flex items-center">
               Ver todos los productos
-              <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

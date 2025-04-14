@@ -24,17 +24,7 @@ export const CTASection = () => {
       className="relative bg-black text-white font-poppins overflow-hidden"
     >
       {/* Upper wave */}
-      <svg
-        className="w-full block pointer-events-none -mt-1"
-        viewBox="0 0 1440 150"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill="#000000"
-          d="M0,120 C360,40 1080,140 1440,60 L1440,0 L0,0 Z"
-        />
-      </svg>
+
 
       <div className="container mx-auto px-4 relative z-10 py-16 md:py-20">
         {/* Proceso de compra */}
@@ -174,14 +164,8 @@ export const CTASection = () => {
       </div>
 
       {/* Wave final */}
-      <svg
-        className="w-full block pointer-events-none -mb-1"
-        viewBox="0 0 1440 60"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path fill="#000000" d="M0,0 C360,40 1080,0 1440,40 L1440,60 L0,60 Z" />
-      </svg>
+
+
     </section>
   );
 };

@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -13,7 +12,7 @@ export const HeroSection = () => {
           backgroundImage: "url('/images/ui/background-pattern.jpg')",
         }}
       >
-        <div className="absolute inset-0 bg-black/80 z-0" />
+        <div className="absolute inset-0 bg-black/50 z-0" />
         <div className="container mx-auto px-4 z-10 relative">
           <motion.div
             className="max-w-2xl"
@@ -34,17 +33,18 @@ export const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-[#CE1212] hover:bg-[#CE1212]/80 text-white transition-all transform hover:scale-105"
+                className="bg-[#CE1212] hover:bg-[#B50F0F] text-white transition-colors"
               >
                 <Link to="/productos" className="flex items-center gap-2">
-                  Ver Catálogo <ArrowRight className="h-5 w-5" />
+                  Ver Catálogo
                 </Link>
               </Button>
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-[#D4AF37] bg-[#D4AF37]/10 text-[#D4AF37] hover:bg-[#D4AF37]/20 transition-all transform hover:scale-105"
+                // Fondo sólido sin transparencia y hover intensificando el color
+                className="border-[#D4AF37] bg-[#D4AF37] text-white hover:bg-[#C59A34] transition-colors"
               >
                 <Link to="/nosotros">Conocer Nuestra Historia</Link>
               </Button>
@@ -99,7 +99,7 @@ export const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-[#CE1212] hover:bg-[#CE1212]/80 text-white transition-all transform hover:scale-105"
+                className="bg-[#CE1212] hover:bg-[#B50F0F] text-white transition-colors"
               >
                 <Link to="/productos" className="flex items-center gap-2">
                   Ver Catálogo <ArrowRight className="h-5 w-5" />
@@ -109,7 +109,7 @@ export const HeroSection = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-[#D4AF37] bg-[#D4AF37]/10 text-[#D4AF37] hover:bg-[#D4AF37]/20 transition-all transform hover:scale-105"
+                className="border-[#D4AF37] bg-[#D4AF37] text-white hover:bg-[#C59A34] transition-colors"
               >
                 <Link to="/nosotros">Conocer Nuestra Historia</Link>
               </Button>
