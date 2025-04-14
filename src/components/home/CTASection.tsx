@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,15 +19,12 @@ export const CTASection = () => {
   ];
 
   return (
-    <section
-      className="relative bg-black text-white font-poppins overflow-hidden"
-    >
+    <section className="relative bg-black text-white font-poppins overflow-hidden">
       {/* Upper wave */}
-
 
       <div className="container mx-auto px-4 relative z-10 py-16 md:py-20">
         {/* Proceso de compra */}
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,8 +97,8 @@ export const CTASection = () => {
 
             <ul className="mb-6 space-y-2 md:space-y-3">
               {reasons.map((reason, index) => (
-                <motion.li 
-                  key={index} 
+                <motion.li
+                  key={index}
                   className="flex items-start"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -134,7 +130,7 @@ export const CTASection = () => {
         </div>
 
         {/* CTA final */}
-        <motion.div 
+        <motion.div
           className="bg-gradient-to-r from-novillo-red to-[#A00000] p-5 md:p-8 rounded-xl max-w-5xl mx-auto mt-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -164,8 +160,6 @@ export const CTASection = () => {
       </div>
 
       {/* Wave final */}
-
-
     </section>
   );
 };
