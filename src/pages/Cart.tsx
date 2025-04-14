@@ -26,6 +26,34 @@ const Cart = () => {
   const handleClose = () => {
     navigate(-1); // Navigate back
   };
+  
+  // Calculate total weight/quantity
+  const calculateTotalQuantity = () => {
+    let totalKilos = 0;
+    let totalUnits = 0;
+    
+    items.forEach(item => {
+      if (item.unit === 'kg' || item.unit === 'gr') {
+        // Convert to kilos if needed
+        if (item.weightQuantity) {
+          totalKilos += item.weightQuantity;
+        }
+      } else {
+        totalUnits += item.quantity;
+      }
+    });
+    
+    // Create formatted result
+    const parts = [];
+    if (totalKilos > 0) {
+      parts.push(`${totalKilos.toFixed(2)}kg`);
+    }
+    if (totalUnits > 0) {
+      parts.push(`${totalUnits} unidades`);
+    }
+    
+    return parts.join(' y ');
+  };
 
   if (items.length === 0) {
     return (
@@ -61,10 +89,16 @@ const Cart = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
         {/* Cart Items */}
         <div className="lg:col-span-2">
-          <div className="bg-black rounded-lg shadow-md p-6">
+          <div className="bg-black/80 backdrop-blur-sm rounded-lg shadow-xl border border-gray-800 p-6">
             <div className="border-b border-gray-700 pb-4 mb-4">
-              <h2 className="text-xl font-semibold">
-                Productos ({items.length})
+              <h2 className="text-xl font-semibold flex items-center gap-2">
+                <ShoppingBag className="h-5 w-5 text-novillo-gold" />
+                <span>Productos ({items.length})</span>
+                {calculateTotalQuantity() && (
+                  <span className="text-sm text-gray-400 ml-2">
+                    Total: {calculateTotalQuantity()}
+                  </span>
+                )}
               </h2>
             </div>
 
@@ -74,10 +108,10 @@ const Cart = () => {
               ))}
             </div>
 
-            <div className="mt-8 text-right">
+            <div className="mt-8 flex justify-center">
               <Button
                 variant="outline"
-                className="border border-gray-600 text-gray-400 hover:text-white flex items-center gap-2"
+                className="border border-novillo-gold text-novillo-gold hover:bg-novillo-gold/20 hover:text-white flex items-center gap-2 transition-all duration-300"
                 onClick={clearCart}
               >
                 <Trash className="h-4 w-4" />
@@ -90,7 +124,7 @@ const Cart = () => {
         {/* Order Summary */}
         <div className="lg:col-span-1">
           <motion.div 
-            className="bg-black rounded-lg shadow-md p-6 sticky top-24"
+            className="bg-black/80 backdrop-blur-sm rounded-lg shadow-xl border border-gray-800 p-6 sticky top-24"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
@@ -107,7 +141,7 @@ const Cart = () => {
 
               <div className="flex justify-between text-xl font-bold">
                 <span className="text-white">Total</span>
-                <span className="text-novillo-red text-2xl">
+                <span className="text-novillo-gold text-2xl">
                   {formatPrice(totalPrice)}
                 </span>
               </div>
@@ -115,7 +149,7 @@ const Cart = () => {
 
             <div className="space-y-4">
               <Button
-                className="w-full bg-novillo-red hover:bg-red-900 text-white text-lg py-6"
+                className="w-full bg-novillo-red hover:bg-red-900 text-white text-lg py-6 shadow-lg shadow-red-900/30 transition-all duration-300"
                 onClick={handleCheckout}
               >
                 Finalizar Compra
