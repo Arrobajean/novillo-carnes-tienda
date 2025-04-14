@@ -199,8 +199,9 @@ export const TestimonialsSection = () => {
                       <img
                         src="/lovable-uploads/f5f3e536-1879-4fb0-a148-3b507fc2f2d4.png"
                         alt="Google Logo"
-                        className="h-3 md:h-4 w-auto mr-1"
+                        className="h-8 md:h-8 w-auto mr-1"
                       />
+
                       <span className="text-xs text-gray-500">
                         Publicado en Google
                       </span>
@@ -237,7 +238,7 @@ export const TestimonialsSection = () => {
           viewport={{ once: true }}
         >
           <a
-            href="https://g.page/r/CfG_Flk8x_e9EB0/review"
+            href="https://www.google.com/search?q=carnes+el+novillo+independencia&client=opera-gx&sca_esv=ccd2c1cf7e06f38b&biw=2290&bih=1168&ei=shn9Z5DPDZbOxc8PmIyOmAU&ved=0ahUKEwiQ8N6K3NeMAxUWZ_EDHRiGA1MQ4dUDCBA&uact=5&oq=carnes+el+novillo+independencia&gs_lp=Egxnd3Mtd2l6LXNlcnAiH2Nhcm5lcyBlbCBub3ZpbGxvIGluZGVwZW5kZW5jaWEyBRAhGKABMgUQIRigATIFECEYoAFI1B1QpQhYkh1wAngAkAEAmAF-oAHBEaoBBDI0LjG4AQPIAQD4AQGYAhGgAowLwgILEAAYgAQYsAMYogTCAgUQABiABMICBhAAGBYYHsICCBAAGIAEGKIEwgIFEAAY7wXCAggQABiiBBiJBcICBRAhGJ8FmAMAiAYBkAYEkgcEMTYuMaAHyV-yBwQxNC4xuAeICw&sclient=gws-wiz-serp"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm md:text-base"
