@@ -83,7 +83,7 @@ export const Footer = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center md:items-start"
           >
-            <h3 className="text-base font-semibold mb-4 text-white">Enlaces</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">Enlaces</h3>
             <ul className="space-y-3 w-full list-none text-sm sm:text-base">
               {[
                 { label: "Inicio", path: "/", icon: Home },
@@ -119,9 +119,7 @@ export const Footer = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center md:items-start"
           >
-            <h3 className="text-base font-semibold mb-4 text-white">
-              Contacto
-            </h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">Contacto</h3>
             <ul className="space-y-3 w-full list-none text-sm sm:text-base">
               <li className="flex justify-center md:justify-start">
                 <a
@@ -171,9 +169,7 @@ export const Footer = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center md:items-start"
           >
-            <h3 className="text-base font-semibold mb-4 text-white">
-              Horarios
-            </h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">Horarios</h3>
             <ul className="space-y-3 w-full list-none text-sm sm:text-base">
               {[
                 { day: "Lunes a Sábado", time: "9:00 - 21:00" },

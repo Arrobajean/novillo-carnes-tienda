@@ -9,16 +9,21 @@ interface FeaturedProductsSectionProps {
   products: Product[];
 }
 
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 export const FeaturedProductsSection = ({
   products,
 }: FeaturedProductsSectionProps) => {
   return (
     <section className="relative pt-14 pb-14 px-4 bg-[#810000] text-white font-poppins overflow-hidden">
       <div className="container mx-auto relative z-10">
-        <motion.div 
+        <motion.div
           className="text-center mb-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
@@ -30,11 +35,11 @@ export const FeaturedProductsSection = ({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center mb-10">
           {products.map((product, index) => (
-            <motion.div 
-              key={product.id} 
+            <motion.div
+              key={product.id}
               className="w-full max-w-xs"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
@@ -42,7 +47,7 @@ export const FeaturedProductsSection = ({
             </motion.div>
           ))}
         </div>
-        
+
         <div className="flex justify-center mt-10">
           <Button
             asChild
@@ -53,7 +58,7 @@ export const FeaturedProductsSection = ({
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
