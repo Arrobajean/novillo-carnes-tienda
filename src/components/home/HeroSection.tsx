@@ -53,7 +53,7 @@ export const HeroSection = () => {
               <p className="text-lg">
                 Calidad Premium
                 <br />
-                Tradición Artesanal
+                Tradición Artesanal.
               </p>
             </div>
           </motion.div>

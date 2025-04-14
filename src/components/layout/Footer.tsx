@@ -16,34 +16,38 @@ import { motion } from "framer-motion";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8 },
+  },
 };
 
 export const Footer = () => {
   return (
     <footer className="bg-[#000000] text-white text-sm font-poppins">
-      <div className="container mx-auto py-10 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
+      <div className="container mx-auto py-8 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center md:text-left">
           {/* Logo + descripción */}
           <motion.div
             variants={fadeIn}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-col items-center md:items-start"
+            className="flex flex-col items-center text-center"
           >
-            <Link to="/" className="mb-4 hover:scale-105 transition-transform">
+            <Link to="/" className="mb-2 hover:scale-105 transition-transform">
               <img
                 src="/lovable-uploads/ad88ae2f-4290-481b-9136-cd76d4c7eac1.png"
                 alt="Carnes El Novillo Logo"
                 className="h-28 sm:h-32 md:h-36 w-auto"
               />
             </Link>
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4 text-center md:text-left">
-              Tradición y calidad en carnes desde 2020. Ofrecemos los mejores
-              cortes con el sabor auténtico que caracteriza a nuestra marca.
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-2">
+              Los mejores cortes con sabor auténtico, tradición y calidad en
+              carnes desde 2020.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex justify-center space-x-4 mt-2">
               {[
                 {
                   href: "https://www.instagram.com/carneselnovillo/",
@@ -172,9 +176,8 @@ export const Footer = () => {
             </h3>
             <ul className="space-y-3 w-full list-none text-sm sm:text-base">
               {[
-                { day: "Lunes a Viernes", time: "9:00 - 22:00" },
-                { day: "Sábados", time: "9:00 - 14:00" },
-                { day: "Domingos", time: "Cerrado" },
+                { day: "Lunes a Sábado", time: "9:00 - 21:00" },
+                { day: "Domingo", time: "9:00 - 18:00" },
               ].map((item, i) => (
                 <li
                   key={i}
@@ -201,7 +204,7 @@ export const Footer = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="border-t border-gray-700 mt-10 pt-6 text-center"
+          className="border-t border-gray-700 mt-6 pt-4 text-center"
         >
           <p className="text-gray-400 text-xs sm:text-sm mb-3">
             © {new Date().getFullYear()} Carnes el Novillo. Todos los derechos

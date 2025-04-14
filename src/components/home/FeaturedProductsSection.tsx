@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -29,7 +28,7 @@ export const FeaturedProductsSection = ({
             </div>
           ))}
         </div>
-        
+
         <div className="flex justify-center mt-10">
           <Button
             asChild
