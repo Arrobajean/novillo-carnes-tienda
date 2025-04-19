@@ -8,7 +8,7 @@ export const products: Product[] = [
     description:
       "La entraña de vacuno es un corte selecto que destaca por su sabor profundo y su textura suave y jugosa. Presentada en bandejas de 1 kilo, cada porción ha sido cuidadosamente seleccionada para garantizar una experiencia de calidad superior. Gracias a su veteado natural y su cocción uniforme, es ideal para la parrilla o platos especiales que exigen lo mejor del sabor tradicional.",
     price: 15990,
-    image: "/public/images/products/vacuno/entrana.webp",
+    image: "lovable-uploads/images/products/vacuno/entrana.webp",
     category: "vacuno",
     unit: "kg",
     details: [
