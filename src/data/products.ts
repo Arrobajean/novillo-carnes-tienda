@@ -63,7 +63,7 @@ export const products: Product[] = [
     description:
       "El trutro cuarto de pollo es el trutro largo y el trutro corto en el mismo corte junto con rabadilla. Es perfecto para múltiples preparaciones, gracias a su gran sabor y facilidad para cocinar. Es conocido popularmente como tuto, y quedará excelente en cualquier plato.",
     price: 5990,
-    image: "/public/images/products/aves/truto.webp",
+    image: "/products/aves/truto.webp",
     category: "aves",
     unit: "kg",
     details: [
@@ -81,7 +81,7 @@ export const products: Product[] = [
     description:
       "Nuestro Chorizo Parrillero es un embutido artesanal que destaca por su sabor robusto, ahumado y especiado. Elaborado mediante recetas tradicionales y con ingredientes seleccionados, ofrece una textura jugosa y un perfil aromático único, ideal para realzar tus asados y encuentros. ¡Una explosión de sabor en cada bocado!",
     price: 7990,
-    image: "/public/images/products/elaborado/longaniza-artesanal.webp",
+    image: "/products/elaborado/longaniza-artesanal.webp",
     category: "embutidos",
     unit: "kg",
     details: [
@@ -110,7 +110,7 @@ export const products: Product[] = [
     description:
       "Disfruta de nuestras albóndigas de vacuno, elaboradas con carne selecta y un toque de especias gourmet que intensifica su sabor. Su textura tierna y jugosa las convierte en la opción perfecta para pastas, salsas o recetas caseras, llevando tradición y calidad a cada bocado.",
     price: 29990,
-    image: "/public/images/products/vacuno/albondigas.webp",
+    image: "/products/vacuno/albondigas.webp",
     category: "vacuno",
     unit: "pack",
     details: [
@@ -128,7 +128,7 @@ export const products: Product[] = [
     description:
       "Descubre el Combo Semana, la selección ideal para darle variedad y sabor a tus recetas diarias. Con 1kg de carne molida, 1kg de bistec, 1kg de chuleta ahumada, 1kg de truto cuarto y 1kg de pechuga entera, este combo te ofrece la versatilidad perfecta para asados, guisos y platillos caseros. Calidad y frescura garantizadas para que disfrutes de una semana llena de delicias culinarias.",
     price: 22990,
-    image: "/public/images/products/combos/combo-semana.webp",
+    image: "/products/combos/combo-semana.webp",
     category: "promociones",
     unit: "pack",
   },

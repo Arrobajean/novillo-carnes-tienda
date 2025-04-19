@@ -17,7 +17,7 @@ const About = () => {
         className="hero-gradient relative h-[400px] flex items-center text-white"
         style={
           {
-            "--image-url": 'url("/public/images/el-novillo2.webp")',
+            "--image-url": 'url("/public/el-novillo.webp")',
           } as React.CSSProperties
         }
       >
@@ -101,7 +101,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <img
-                src="/public/images/el-novillo2.webp"
+                src="/public/ui/mision.jpg"
                 alt="Inicios El Novillo"
                 className="w-full h-auto"
               />
@@ -122,7 +122,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <img
-                src="/public/images/ui/mision.jpg"
+                src="/public/images/ui/ganaderia-sostenible.jpeg"
                 alt="Misión y valores"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
