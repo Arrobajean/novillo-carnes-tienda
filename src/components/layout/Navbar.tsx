@@ -110,7 +110,7 @@ export const Navbar = () => {
               className="flex items-center md:order-1 order-2 mx-auto md:mx-0"
             >
               <motion.img
-                src="/ui/logo.png"
+                src="/ui/logo-png-full.png"
                 alt="Carnes el Novillo"
                 className="h-16 w-auto" // Slightly larger logo
                 whileHover={{ scale: 1.05 }}

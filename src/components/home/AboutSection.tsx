@@ -31,7 +31,7 @@ export const AboutSection = () => {
             viewport={{ once: true }}
           >
             <img
-              src="/images/ui/ganaderia-sostenible.jpeg"
+              src="ui/el-novillo.webp"
               alt="Ganadería sostenible"
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />

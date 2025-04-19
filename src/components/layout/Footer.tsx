@@ -38,7 +38,7 @@ export const Footer = () => {
           >
             <Link to="/" className="mb-2 hover:scale-105 transition-transform">
               <img
-                src="/public/ui/logo.png"
+                src="/public/ui/logo-png-full.png"
                 alt="Carnes El Novillo Logo"
                 className="h-28 sm:h-32 md:h-36 w-auto"
               />
@@ -209,7 +209,7 @@ export const Footer = () => {
           <div className="flex items-center justify-center text-xs sm:text-sm text-gray-500">
             <span className="mr-2">Sitio desarrollado por</span>
             <img
-              src="/public/ui/dev-logo.png"
+              src="/ui/dev-logo.png"
               alt="Logo del desarrollador"
               className="h-5 w-auto"
             />

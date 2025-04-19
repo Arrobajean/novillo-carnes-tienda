@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { useState } from "react";
@@ -99,7 +98,7 @@ const GoogleReviews = () => {
         >
           <div className="flex justify-center items-center gap-2 mb-3">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
+              src="/ui/google-logo.png"
               alt="Google Logo"
               className="h-7 w-auto sm:h-8"
             />

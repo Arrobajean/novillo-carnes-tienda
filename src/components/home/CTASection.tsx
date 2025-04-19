@@ -122,7 +122,7 @@ export const CTASection = () => {
             className="relative order-1 md:order-2"
           >
             <img
-              src="/images/ui/pedidos-novillo.jpg"
+              src="/ui/pedidos-novillo.jpg"
               alt="Carnicería El Novillo"
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
