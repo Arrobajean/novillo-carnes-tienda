@@ -1,73 +1,70 @@
-# Welcome to your Lovable project
+# Carnes El Novillo – Web de catálogo y promoción
 
-## Project info
+🔗 **Ver proyecto online**: [lovable.dev/projects/cc3028d3-2258-4f8a-bdde-b97fdd645a58](https://lovable.dev/projects/cc3028d3-2258-4f8a-bdde-b97fdd645a58)
 
-**URL**: https://lovable.dev/projects/cc3028d3-2258-4f8a-bdde-b97fdd645a58
+## 🧾 Descripción del proyecto
 
-## How can I edit this code?
+Este proyecto consiste en una **landing page moderna y funcional** desarrollada para **Carnes El Novillo**, una carnicería local ubicada en Santiago de Chile. El objetivo fue ofrecer una presencia digital sólida para un comercio tradicional, permitiéndole mostrar sus productos, promociones y valores de forma clara, accesible y atractiva.
 
-There are several ways of editing your application.
+La solución final combina diseño visual, velocidad, usabilidad y adaptabilidad, entregando una experiencia coherente tanto en escritorio como en dispositivos móviles.
 
-**Use Lovable**
+## 🔍 Funcionalidades destacadas
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/cc3028d3-2258-4f8a-bdde-b97fdd645a58) and start prompting.
+- ✅ **Catálogo de productos** organizado por categorías (incluyendo sección de promociones y congelados)
+- ✅ **Página de detalles** por producto, con descripción y diseño responsivo
+- ✅ **Reseñas reales de Google** integradas mediante API de Google Places, con estilo fiel a la plataforma
+- ✅ **Sección “Sobre Nosotros”** con historia, procesos y compromiso sostenible
+- ✅ **Mapa interactivo de ubicación** con integración de Google Maps iframe
+- ✅ **Animaciones fluidas** usando Framer Motion en secciones como Hero, About y FAQ
+- ✅ **Diseño coherente** basado en una paleta visual corporativa con fondos oscuros, tipografía clara y CTA bien definidos
 
-Changes made via Lovable will be committed automatically to this repo.
+## ✨ Tecnologías utilizadas
 
-**Use your preferred IDE**
+- **Vite** – Bundler ultrarrápido
+- **React + TypeScript** – Composición de componentes con tipado estático
+- **Tailwind CSS** – Sistema de diseño basado en utilidades
+- **Framer Motion** – Para animaciones suaves y modulares
+- **shadcn/ui** – Librería moderna para componentes accesibles
+- **Google Maps + Google Places API** – Para ubicación y reseñas automáticas
+- **GitHub Pages** – Para despliegue estático
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🎯 Retos y aprendizajes
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 🔧 **1. Estructura escalable y mantenible**
 
-Follow these steps:
+Se diseñó una estructura basada en componentes reutilizables (`HeroSection`, `ProductCard`, `ReviewCard`, etc.) con separación clara entre secciones. Esto permitió una navegación más fluida, menor duplicación de código y facilidad para iterar o extender funcionalidades.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+> **Aprendizaje**: organizar el contenido en archivos modulares y controlados mejora el mantenimiento a largo plazo.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 📱 **2. Optimización para mobile**
 
-# Step 3: Install the necessary dependencies.
-npm i
+Adaptar la UI para pantallas pequeñas requería atención especial a la jerarquía visual y espaciado. Se aplicaron media queries y condicionales de Tailwind para asegurar que el catálogo, los botones y los textos fueran totalmente legibles y táctiles.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+> **Aprendizaje**: una interfaz que funciona en móvil primero, luego escala a escritorio sin romper la experiencia.
 
-**Edit a file directly in GitHub**
+### 💬 **3. Integración de APIs externas**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+La conexión con Google Places para obtener reseñas implicó aprender sobre autenticación de claves, parseo de datos JSON y manejo de errores ante llamadas fallidas.
 
-**Use GitHub Codespaces**
+> **Aprendizaje**: integrar APIs reales aporta valor inmediato al cliente y otorga confianza al usuario final.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🚀 Próximos pasos
 
-This project is built with:
+- [ ] Añadir funcionalidad de carrito de compras (modo catálogo)
+- [ ] Panel privado de administración para actualizar productos y precios
+- [ ] Mejora del SEO para aumentar presencia en búsquedas locales
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## ✍️ Autor
 
-Simply open [Lovable](https://lovable.dev/projects/cc3028d3-2258-4f8a-bdde-b97fdd645a58) and click on Share -> Publish.
+Desarrollado por [Jean Castañeda](https://github.com/Arrobajean) como parte de mi portafolio profesional.  
+Este proyecto representa mi enfoque práctico y visual en el desarrollo web, adaptado a negocios reales con necesidades reales.
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes it is!
+> ¿Te interesa un desarrollo similar para tu emprendimiento o pyme?  
+> 👉 [Contáctame](mailto:jean.castanedah@gmail.com)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
