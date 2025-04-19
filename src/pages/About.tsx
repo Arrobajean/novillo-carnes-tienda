@@ -17,7 +17,7 @@ const About = () => {
         className="hero-gradient relative h-[400px] flex items-center text-white"
         style={
           {
-            "--image-url": 'url("/public/ui/el-novillo.webp")',
+            "--image-url": 'url("/ui/el-novillo.webp")',
           } as React.CSSProperties
         }
       >

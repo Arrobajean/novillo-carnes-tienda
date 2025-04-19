@@ -294,7 +294,7 @@ export const products: Product[] = [
     description:
       "Un corte versátil y excepcionalmente jugoso, perfecto para realzar tus recetas. Su sabor natural y textura suave lo hacen ideal para asados, guisos y frituras, aportando un toque de tradición y calidad en cada preparación.",
     price: 6990,
-    image: "/public/images/products/cerdo/pulpa-cerdo.webp",
+    image: "/products/cerdo/pulpa-cerdo.webp",
     category: "cerdo",
     unit: "kg",
     details: [
@@ -312,7 +312,7 @@ export const products: Product[] = [
     description:
       "Tocineta Premium: lonchas finamente cortadas y seleccionadas para ofrecer un toque ahumado e intenso a tus recetas. Su sabor distintivo y textura crujiente la hacen perfecta para realzar desde desayunos hasta platos gourmet, aportando un giro especial a cada preparación.",
     price: 13490,
-    image: "/public/images/products/cerdo/tocineta.webp",
+    image: "/products/cerdo/tocineta.webp",
     category: "cerdo",
     unit: "kg",
     details: [
@@ -330,7 +330,7 @@ export const products: Product[] = [
     description:
       "Irresistible Lomo Vetado, un corte excepcional de vacuno que equilibra perfectamente la jugosidad de la grasa con la terneza de la carne. Su sabor profundo y textura inigualable transforman cada preparación en una experiencia gourmet, ideal para asados memorables y platos sofisticados.",
     price: 19990,
-    image: "/public/images/products/vacuno/lomo-vetado.webp",
+    image: "/products/vacuno/lomo-vetado.webp",
     category: "vacuno",
     unit: "kg",
   },
@@ -372,7 +372,7 @@ export const products: Product[] = [
     description:
       "Nuestra Carne Molida Especial es elaborada con cortes seleccionados de vacuno, entregando un sabor intenso y una textura homogénea ideal para tus preparaciones favoritas. Presentada en bandejas de 1 kilo, es perfecta para empanadas, hamburguesas caseras, albóndigas o salsas. Su frescura y bajo contenido de grasa la convierten en una aliada versátil para quienes buscan calidad y rendimiento en la cocina.",
     price: 9990,
-    image: "/public/images/products/vacuno/carne-molida.webp",
+    image: "/products/vacuno/carne-molida.webp",
     featured: true,
     category: "vacuno",
     unit: "kg",
@@ -391,7 +391,7 @@ export const products: Product[] = [
     description:
       "Descubre la excelencia del vacuno con nuestra Posta, un corte selecto que se distingue por su textura tierna y su sabor intensamente concentrado. Ideal para asados a la brasa o guisos sofisticados, este corte se convierte en el protagonista de cualquier preparación, ofreciendo una experiencia culinaria única y memorable.",
     price: 12990,
-    image: "/public/images/products/vacuno/posta.webp",
+    image: "/products/vacuno/posta.webp",
     category: "vacuno",
     unit: "kg",
     details: [
@@ -409,7 +409,7 @@ export const products: Product[] = [
     description:
       "Descubre nuestro Asiento, un corte de vacuno reconocido por su ternura y sabor excepcional. Perfecto para preparaciones de cocción lenta, su marmoleo equilibrado y jugosidad incomparable potencian un sabor profundo y auténtico, convirtiéndolo en el protagonista ideal de estofados y guisos gourmet.",
     price: 13490,
-    image: "/public/images/products/vacuno/asiento.webp",
+    image: "/products/vacuno/asiento.webp",
     category: "vacuno",
     unit: "kg",
     details: [
@@ -427,7 +427,7 @@ export const products: Product[] = [
     description:
       "Experimenta la tradición y el sabor robusto con nuestra selección de cortes de vacuno: sobrecostilla, huachalomo, asado carnicero y abastero. Cada pieza ha sido meticulosamente seleccionada para ofrecer una textura inigualable y un sabor intenso, ideal para preparaciones de cocción lenta que realzan su carácter auténtico. Perfecto para asados, guisos y recetas que celebran la verdadera esencia del vacuno.",
     price: 10990,
-    image: "/public/images/products/vacuno/Sobrecostilla-Vacuno.webp",
+    image: "/products/vacuno/Sobrecostilla-Vacuno.webp",
     category: "vacuno",
     unit: "kg",
     details: [
@@ -445,7 +445,7 @@ export const products: Product[] = [
     description:
       "Descubre el Tapapecho, un corte distintivo de vacuno reconocido por su sabor excepcional y su increíble versatilidad. Ideal para preparar brisket, este corte se adapta perfectamente a recetas tradicionales y a creaciones innovadoras, ya sea al horno, en cacerola, estofados o mechadas. Su textura jugosa y perfil de sabor único aportan un toque gourmet a cada plato.",
     price: 10990,
-    image: "/public/images/products/vacuno/tapapecho.webp",
+    image: "/products/vacuno/tapapecho.webp",
     category: "vacuno",
     unit: "kg",
     details: [
@@ -463,7 +463,7 @@ export const products: Product[] = [
     description:
       "El corte ideal para asados o frituras. Con una piel crujiente y carne jugosa, ofrece una experiencia completa de sabor y textura en cada bocado. Perfecta para reuniones familiares o platillos tradicionales, esta ala realza tus recetas con un toque auténtico y delicioso.",
     price: 5490,
-    image: "/public/images/products/aves/ala.webp",
+    image: "/products/aves/ala.webp",
     category: "aves",
     unit: "kg",
     details: [
@@ -481,7 +481,7 @@ export const products: Product[] = [
     description:
       "Corte de pollo sin hueso que combina versatilidad y un sabor delicado. Ideal para recetas ligeras, platillos innovadores y preparaciones saludables, su textura suave y alto contenido proteico la convierten en la opción perfecta para una alimentación equilibrada.",
     price: 6990,
-    image: "/public/images/products/aves/pechuga-deshuesada.webp",
+    image: "/products/aves/pechuga-deshuesada.webp",
     category: "aves",
     unit: "kg",
     details: [
@@ -499,7 +499,7 @@ export const products: Product[] = [
     description:
       "Un corte excepcional proveniente del lateral del pecho, apreciado por su forma rectangular y su textura aplanada que resalta la jugosidad y el sabor concentrado. Ideal para preparaciones a la parrilla o al horno, este corte se convierte en la opción perfecta para los amantes del buen vacuno.",
     price: 12959,
-    image: "/public/images/products/vacuno/Plateada-vacuno.webp",
+    image: "/products/vacuno/Plateada-vacuno.webp",
     category: "vacuno",
     unit: "kg",
     details: [
@@ -517,7 +517,7 @@ export const products: Product[] = [
     description:
       "Las patas de pollo, con su carne firme y textura única, son perfectas para caldos y guisos que requieren un sabor intenso y profundo. Su mezcla de carne y cartílago aporta un toque auténtico y tradicional a cada receta, enriqueciendo tus preparaciones con un sabor robusto.",
     price: 2490,
-    image: "/public/images/products/aves/patas pollo.webp",
+    image: "/products/aves/patas pollo.webp",
     category: "aves",
     unit: "unidad",
     details: [
@@ -535,7 +535,7 @@ export const products: Product[] = [
     description:
       "Elaborada con ingredientes de primera calidad, es perfecta para darle vida a hamburguesas, albóndigas y otros platillos ligeros. Su textura fina y sabor natural aportan nutrición y frescura a cada receta, convirtiéndola en la elección ideal para una alimentación saludable y versátil.",
     price: 5599,
-    image: "/public/images/products/aves/picadodecorral.webp",
+    image: "/products/aves/picadodecorral.webp",
     category: "aves",
     unit: "kg",
     details: [
@@ -553,7 +553,7 @@ export const products: Product[] = [
     description:
       "La Pechuga de Pollo Entera es perfecta para quienes buscan realzar el sabor natural y la jugosidad de este corte. Su carne magra y tierna se adapta idealmente a asados, parrilladas, guisos y salteados, aportando una excelente fuente de proteína de alta calidad para preparaciones saludables y deliciosas.",
     price: 5990,
-    image: "/public/images/products/aves/pechuga.webp",
+    image: "/products/aves/pechuga.webp",
     category: "aves",
     unit: "kg",
     details: [
@@ -571,7 +571,7 @@ export const products: Product[] = [
     description:
       "Un corte de cerdo cuidadosamente sometido a un proceso de ahumado que resalta su jugosidad y sabor profundo. Su textura tierna y el inconfundible toque ahumado la hacen perfecta para realzar cualquier plato, desde asados hasta recetas gourmet. Una opción irresistible para quienes buscan calidad y un sabor auténtico en cada bocado.",
     price: 8490,
-    image: "/public/images/products/cerdo/chuleta-ahumada.webp",
+    image: "/products/cerdo/chuleta-ahumada.webp",
     category: "cerdo",
     unit: "kg",
     details: [
@@ -589,7 +589,7 @@ export const products: Product[] = [
     description:
       "Nuestro Pollo Entero es la opción ideal para reuniones familiares y recetas caseras, ofreciendo una carne jugosa y tierna con un sabor auténtico y fresco. Criado de forma natural y sin aditivos, este pollo realza cualquier preparación, ya sea asado, guisado o a la parrilla, garantizando una experiencia gastronómica excepcional en cada bocado.",
     price: 7490,
-    image: "/public/images/products/aves/pollocorral.webp",
+    image: "/products/aves/pollocorral.webp",
     category: "aves",
     unit: "kg",
     details: [
@@ -607,7 +607,7 @@ export const products: Product[] = [
     description:
       "Corte jugoso y sabroso que se distingue por sus vetas de grasa natural, ofreciendo una cocción uniforme y un sabor excepcional. Presentada en bandejas de 1 kilo, es perfecta para la parrilla, sartén o al horno. Su ternura y textura marmoleada la convierten en una opción ideal para platos de calidad que buscan resaltar el auténtico sabor del cerdo.",
     price: 6990,
-    image: "/public/images/products/cerdo/chuleta-vetada.webp",
+    image: "/products/cerdo/chuleta-vetada.webp",
     category: "cerdo",
     featured: true,
     unit: "kg",
@@ -626,7 +626,7 @@ export const products: Product[] = [
     description:
       "Disfruta de nuestras Longanizas, un embutido tradicional elaborado con ingredientes selectos que garantiza un sabor intenso y auténtico. Su textura suave y jugosa las hace ideales para asar o disfrutar frías, aportando un toque distintivo y equilibrado a tus recetas preferidas.",
     price: 7490,
-    image: "/public/images/products/elaborado/Longaniza.webp",
+    image: "/products/elaborado/Longaniza.webp",
     category: "embutidos",
     unit: "kg",
     details: [
@@ -644,7 +644,7 @@ export const products: Product[] = [
     description:
       "Una opción ligera y versátil extraída de pechugas seleccionadas para ofrecer una textura excepcional y un sabor fresco. Ideales para saltear o asar, estos filetes aportan rapidez y nutrición a tus recetas, combinando calidad y practicidad en cada bocado.",
     price: 7490,
-    image: "/public/images/products/aves/filetillo-pollo.webp",
+    image: "/products/aves/filetillo-pollo.webp",
     category: "aves",
     unit: "kg",
     details: [

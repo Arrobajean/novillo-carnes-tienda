@@ -38,7 +38,7 @@ export const Footer = () => {
           >
             <Link to="/" className="mb-2 hover:scale-105 transition-transform">
               <img
-                src="/lovable-uploads/ad88ae2f-4290-481b-9136-cd76d4c7eac1.png"
+                src="/ui/logo.png"
                 alt="Carnes El Novillo Logo"
                 className="h-28 sm:h-32 md:h-36 w-auto"
               />

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ShoppingCart, Menu, X } from "lucide-react";
@@ -39,12 +38,12 @@ export const Navbar = () => {
   // Función para manejar el clic en el carrito
   const handleCartClick = (e) => {
     e.preventDefault(); // Prevenir el comportamiento de enlace predeterminado
-    
+
     // If menu is open, close it when opening cart
     if (isMenuOpen) {
       setIsMenuOpen(false);
     }
-    
+
     if (isCartPage) {
       // Si ya estamos en la página del carrito, navigamos hacia atrás
       navigate(-1);
@@ -60,7 +59,7 @@ export const Navbar = () => {
     if (isCartPage && !isMenuOpen) {
       navigate(-1);
     }
-    
+
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -111,7 +110,7 @@ export const Navbar = () => {
               className="flex items-center md:order-1 order-2 mx-auto md:mx-0"
             >
               <motion.img
-                src="/lovable-uploads/ad88ae2f-4290-481b-9136-cd76d4c7eac1.png"
+                src="/ui/logo.png"
                 alt="Carnes el Novillo"
                 className="h-16 w-auto" // Slightly larger logo
                 whileHover={{ scale: 1.05 }}
