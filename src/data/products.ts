@@ -8,7 +8,7 @@ export const products: Product[] = [
     description:
       "La entraña de vacuno es un corte selecto que destaca por su sabor profundo y su textura suave y jugosa. Presentada en bandejas de 1 kilo, cada porción ha sido cuidadosamente seleccionada para garantizar una experiencia de calidad superior. Gracias a su veteado natural y su cocción uniforme, es ideal para la parrilla o platos especiales que exigen lo mejor del sabor tradicional.",
     price: 15990,
-    image: "lovable-uploads/images/products/vacuno/entrana.webp",
+    image: "/products/vacuno/entrana.webp",
     category: "vacuno",
     unit: "kg",
     details: [
@@ -26,7 +26,7 @@ export const products: Product[] = [
     description:
       "Descubre el verdadero placer del asado con nuestro Costillar de Cerdo, un corte excepcionalmente jugoso y sabroso, diseñado para conquistar los paladares más exigentes. Sus costillas tiernas se deshacen en la boca, aportando un sabor inigualable que realza cualquier preparación. Ideal para reuniones y ocasiones especiales, cada bocado es una experiencia culinaria de calidad y tradición.",
     price: 8990,
-    image: "/public/images/products/cerdo/costillar.webp",
+    image: "/products/cerdo/costillar.webp",
     category: "cerdo",
     featured: true,
     unit: "kg",
@@ -45,7 +45,7 @@ export const products: Product[] = [
     description:
       "El Lomo Liso es un corte selecto de vacuno altamente apreciado por su extraordinaria terneza y sabor refinado. Presentado en bandejas de 1 kilo, este corte garantiza calidad superior y es perfecto para asados familiares, cenas gourmet o preparaciones innovadoras. Su textura jugosa, perfil aromático y pureza en el sabor lo convierten en la opción ideal para realzar cualquier receta, aportando un toque de distinción y tradición en cada bocado.",
     price: 13990,
-    image: "/public/images/products/vacuno/lomo-liso.webp",
+    image: "/products/vacuno/lomo-liso.webp",
     category: "vacuno",
     unit: "kg",
     details: [
