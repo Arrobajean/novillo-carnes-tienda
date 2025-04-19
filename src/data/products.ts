@@ -138,7 +138,7 @@ export const products: Product[] = [
     description:
       "Un corte exquisito y sumamente versátil, que destaca por su delicada ternura y sabor auténtico. Perfecto para saltear, asar o incorporar en recetas modernas, su textura suave y jugosa garantiza una experiencia culinaria inigualable en cada bocado.",
     price: 7990,
-    image: "/public/images/products/cerdo/filete-cerdo.webp",
+    image: "/products/cerdo/filete-cerdo.webp",
     category: "cerdo",
     unit: "kg",
     details: [
@@ -167,7 +167,7 @@ export const products: Product[] = [
     description:
       "Prueba nuestra Longaniza Artesanal, un embutido premium elaborado con métodos tradicionales que realzan el sabor auténtico de sus ingredientes. Con una mezcla perfecta de especias y carnes selectas, ofrece un perfil de sabor único y consistente, ideal para asar o para dar un toque especial a cualquier receta.",
     price: 8990,
-    image: "/public/images/products/elaborado/Longaniza.webp",
+    image: "/products/elaborado/Longaniza.webp",
     category: "embutidos",
     unit: "kg",
     details: [
@@ -186,7 +186,7 @@ export const products: Product[] = [
     description:
       "La selección perfecta para un asado inolvidable. Este combo reúne 1kg de carne para asar, 1kg de costillar de cerdo, 1kg de ala entera y 1kg de longanizas, acompañado de una bolsa de carbón y la exclusiva salsa para sazonar especial del Novillo. Ideal para transformar cualquier reunión en una experiencia gourmet llena de sabor y calidad.",
     price: 35990,
-    image: "/public/images/products/combos/combo-fuego-sazon.webp",
+    image: "/products/combos/combo-fuego-sazon.webp",
     category: "promociones",
     unit: "pack",
   },
@@ -196,7 +196,7 @@ export const products: Product[] = [
     description:
       "Disfruta del auténtico sabor de la parrilla con el Combo Novillo Parrillero: 1kg de lomo liso, 1kg de chuleta vetada, 1kg de truto, 1kg de longanizas, 2,5kg de carbón y una salsa para sazonar, todo lo necesario para un asado inolvidable.",
     price: 31990,
-    image: "/public/images/products/combos/combo-parrillero2.webp",
+    image: "/products/combos/combo-parrillero2.webp",
     category: "promociones",
     unit: "pack",
   },
@@ -206,7 +206,7 @@ export const products: Product[] = [
     description:
       "Una exclusiva selección de cortes premium para inspirar tus recetas. Incluye ½ pulpa de cerdo, ½ bisteck, ½kg de filetillo, ½kg de truto y ½kg de carne molida, ideales para guisos, platillos gourmet o preparaciones caseras. Calidad, frescura y sabor auténtico en cada bocado para deleitar tu paladar.",
     price: 19990,
-    image: "/public/images/products/combos/combo-delicias.webp",
+    image: "/products/combos/combo-delicias.webp",
     category: "promociones",
     unit: "pack",
   },
@@ -216,7 +216,7 @@ export const products: Product[] = [
     description:
       "La opción ideal para realzar tus asados. Incluye una bandeja de anticuchos, 1kg de medallones de pollo y una salsa para sazonar que realza cada corte, garantizando un toque de sabor auténtico en cada preparación. Perfecto para compartir momentos especiales con amigos y familiares.",
     price: 23490,
-    image: "/public/images/products/combos/combo-sabor-brasa.webp",
+    image: "/products/combos/combo-sabor-brasa.webp",
     category: "promociones",
     unit: "pack",
   },
@@ -236,7 +236,7 @@ export const products: Product[] = [
     description:
       "Descubre el Combo Novillo, una cuidada selección de cortes para inspirar tus creaciones en la cocina: 1kg de Bisteck Asiento, 1kg de Carne para Mechar o Guisar, 1kg de Carne Molida Especial, 1kg de Truto, 1kg de Pechuga Deshuesada, 1kg de Pulpa de Cerdo y 1kg de Chuleta Centro. ¡La opción ideal para disfrutar de calidad y versatilidad en cada preparación!",
     price: 52990,
-    image: "/public/images/products/combos/Combo-novillo.webp",
+    image: "/products/combos/Combo-novillo.webp",
     category: "promociones",
     unit: "pack",
   },
@@ -248,7 +248,7 @@ export const products: Product[] = [
     description:
       "Brochetas de carne, pollo y cerdo de primera, con un equilibrio perfecto entre sabor y textura, ideales para cualquier reunión o evento.",
     price: 9990,
-    image: "/public/images/products/elaborado/anticucho.png",
+    image: "/products/elaborado/anticucho.png",
     category: "embutidos",
     unit: "bandeja",
   },
@@ -258,7 +258,7 @@ export const products: Product[] = [
     description:
       "Medallones de Pollo, cortes redondos y tiernos que destacan por su sabor fresco y su presentación impecable. Ideales para un plato saludable y versátil, mantienen su jugosidad y textura perfecta en cada preparación, convirtiéndolos en la opción ideal para comidas rápidas o elaboradas.",
     price: 9990,
-    image: "/public/images/products/aves/medallones-pollo.webp",
+    image: "/products/aves/medallones-pollo.webp",
     category: "aves",
     unit: "kg",
     details: [
@@ -276,7 +276,7 @@ export const products: Product[] = [
     description:
       "Disfruta de un corte de cerdo excepcionalmente equilibrado y tierno, ideal para realzar cualquier preparación. Su perfecta combinación de carne y grasa garantiza un sabor y jugosidad incomparables, convirtiéndola en la opción ideal para asados, frituras y guisos.",
     price: 6490,
-    image: "/public/images/products/cerdo/chuleta-centro.webp",
+    image: "/products/cerdo/chuleta-centro.webp",
     category: "cerdo",
     unit: "kg",
     details: [

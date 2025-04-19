@@ -17,7 +17,7 @@ const About = () => {
         className="hero-gradient relative h-[400px] flex items-center text-white"
         style={
           {
-            "--image-url": 'url("/public/el-novillo.webp")',
+            "--image-url": 'url("/public/ui/el-novillo.webp")',
           } as React.CSSProperties
         }
       >
@@ -101,7 +101,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <img
-                src="/public/ui/mision.jpg"
+                src="/ui/mision.jpg"
                 alt="Inicios El Novillo"
                 className="w-full h-auto"
               />
