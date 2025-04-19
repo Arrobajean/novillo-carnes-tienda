@@ -122,7 +122,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <img
-                src="/public/images/ui/ganaderia-sostenible.jpeg"
+                src="/ui/el-novillo.webp"
                 alt="Misión y valores"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
