@@ -17,7 +17,7 @@ interface CategoriesSectionProps {
 
 export const CategoriesSection = ({ categories }: CategoriesSectionProps) => {
   return (
-    <section className="relative py-12 px-4 overflow-hidden bg-[url('/images/ui/background.png')] bg-repeat bg-center font-poppins">
+    <section className="relative py-12 px-4 overflow-hidden bg-[url('/ui/background.png')] bg-repeat bg-center font-poppins">
       {/* Máscara para oscurecer la imagen de fondo */}
       <div className="absolute inset-0 bg-black/65 z-0 pointer-events-none"></div>
 
@@ -44,7 +44,8 @@ export const CategoriesSection = ({ categories }: CategoriesSectionProps) => {
             Nuestras Categorías
           </h2>
           <p className="text-center mb-8 max-w-2xl mx-auto text-base md:text-lg text-white">
-            Explora nuestra variedad de cortes frescos y productos seleccionados para cada ocasión
+            Explora nuestra variedad de cortes frescos y productos seleccionados
+            para cada ocasión
           </p>
         </motion.div>
 

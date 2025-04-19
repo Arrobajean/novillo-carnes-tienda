@@ -75,7 +75,7 @@ export const HeroSection = () => {
       <section
         className="hidden md:flex relative h-[700px] items-center text-white font-poppins overflow-hidden bg-repeat bg-center bg-[length:contain]"
         style={{
-          backgroundImage: "url('/images/ui/background-pattern.jpg')",
+          backgroundImage: "url('/ui/background-pattern.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black/80 z-0" />
