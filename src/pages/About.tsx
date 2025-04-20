@@ -271,7 +271,7 @@ const About = () => {
             </div>
             <div className="order-1 lg:order-2 rounded-lg overflow-hidden shadow-lg">
               <img
-                src="/public/images/ui/ganaderia-sostenible.jpeg"
+                src="ui/ganaderia-sostenible.jpeg"
                 alt="Ganadería sostenible"
                 className="w-full h-auto"
               />

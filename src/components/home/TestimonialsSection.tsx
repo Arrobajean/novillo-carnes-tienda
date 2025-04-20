@@ -198,7 +198,7 @@ export const TestimonialsSection = () => {
                     </CardContent>
                     <CardFooter className="px-3 md:px-4 py-2 bg-gray-50 flex items-center border-t border-gray-100">
                       <img
-                        src="/lovable-uploads/f5f3e536-1879-4fb0-a148-3b507fc2f2d4.png"
+                        src="ui/google-logo.png"
                         alt="Google Logo"
                         className="h-4 md:h-4 w-auto mr-1"
                       />
