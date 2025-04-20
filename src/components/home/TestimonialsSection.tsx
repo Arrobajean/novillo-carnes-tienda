@@ -120,7 +120,7 @@ export const TestimonialsSection = () => {
         >
           <div className="flex justify-center items-center mb-3">
             <img
-              src="/ui/google-logo.png"
+              src="ui/google-logo.png"
               alt="Google Logo"
               className="h-1 md:h-12 w-auto mr-1"
             />
