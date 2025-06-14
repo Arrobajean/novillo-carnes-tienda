@@ -4,8 +4,8 @@ import { getFeaturedProducts, categories } from "@/data/products";
 import { Product } from "@/types";
 import { HeroSection } from "@/components/home/HeroSection";
 import { AboutSection } from "@/components/home/AboutSection";
-import { CategoriesAndFeaturedSection } from "@/components/home/CategoriesAndFeaturedSection";
-import { WhyChooseUsSection } from "@/components/home/WhyChooseUsSection";
+import { CategoriesSection } from "@/components/home/CategoriesSection";
+import { FeaturedProductsSection } from "@/components/home/FeaturedProductsSection";
 import { CTASection } from "@/components/home/CTASection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 
@@ -30,15 +30,9 @@ const Index = () => {
       {/* Combined CTA and About Section */}
       <CTASection />
       
-      {/* Fusioned Categories and Featured Products Section */}
-      <CategoriesAndFeaturedSection 
-        categories={filteredCategories} 
-        products={featuredProducts} 
-      />
-      
-      {/* Why Choose Us Section */}
-      <WhyChooseUsSection />
-      
+      {/* Moved Categories before Featured Products */}
+      <CategoriesSection categories={filteredCategories} />
+      <FeaturedProductsSection products={featuredProducts} />
       <AboutSection />
       
       {/* Testimonials section with carousel */}
